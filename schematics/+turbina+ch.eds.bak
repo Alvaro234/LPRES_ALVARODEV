@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE eds SYSTEM "DTDFILE_FULLPATH">
+
+<schematic version="1.2.0" paper="A4" orientation="Landscape" saveAllAtt="true"sorting="alphabetic" aliasingInShapes="true" aliasingInUnitSymbols="true" connector-status="allshowed" connector-creation="true" >
+
+	<grid enabled="true" snap="true" hspacing="8" vspacing="8" colorMain="230,230,230" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<layers>
+			<layer id="1" name="Layer_1" isVisible="true" isActive="true" />
+	</layers>
+	
+	<text id="Text_1" cx="139.5" cy="28" sx="279" sy="56" lineType="0"  color="255,255,220" dx="812" dy="706" layer="1"  >
+		<![CDATA[&#60;!DOCTYPE HTML PUBLIC &#34;-//W3C//DTD HTML 4.0//EN&#34; &#34;http://www.w3.org/TR/REC-html40/strict.dtd&#34;&#62;&#60;html&#62;&#60;head&#62;&#60;meta name=&#34;qrichtext&#34; content=&#34;1&#34; /&#62;&#60;style type=&#34;text/css&#34;&#62;p, li { white-space: pre-wrap; }&#60;/style&#62;&#60;/head&#62;&#60;body style=&#34; font-family:&#39;Arial&#39;; font-size:10pt; font-weight:400; font-style:normal;&#34;&#62;&#60;p style=&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&#34;&#62;LIBRARY: LPRES_EXAMPLES_ALVAROG234&#60;br /&#62;FILE: TurbinaCh&#60;br /&#62;CREATION DATE: 17/02/2022&#60;/p&#62;&#60;/body&#62;&#60;/html&#62;]]>
+	</text>
+
+	<component id="Inlet_1" library="LPRES" type="Inlet" layer="1" >
+	
+		<symbol cx="240.029" cy="144" sx="64.9412" sy="89" dx="152" dy="80" onLabel="true" />
+	
+		<label cx="23" cy="12" dx="369" dy="269" />
+	
+		<instanceData>
+			<datum id="fluid" value="Air" pos="D" />
+		</instanceData>
+	
+	</component>
+
+	<component id="Nozzle_1" library="LPRES" type="Nozzle" layer="1" >
+	
+		<symbol cx="354" cy="281.75" sx="85" sy="148.5" dx="379.75" dy="4.25" rotation="-270" flipY="true" flipX="true" onLabel="true" />
+	
+		<label cx="31" cy="12" dx="702.75" dy="360.75" />
+	
+		<instanceData>
+			<datum id="A" value="0.02" pos="D" />
+		</instanceData>
+	
+	</component>
+
+	<component id="Turbine_ch_1" library="LPRES" type="Turbine_ch" layer="1"  hotPort="f_out" >
+	
+		<symbol cx="236" cy="137.974" sx="129" sy="92.9472" dx="304" dy="192" onLabel="true" />
+	
+		<label cx="42.5" cy="12" dx="497" dy="376.947" />
+	
+		<instanceData>
+			<datum id="eta_d" value="0.88" pos="D" />
+			<datum id="A_in" value="0.01" pos="D" />
+		</instanceData>
+	
+	</component>
+
+	<connector id="Connector_1" sShape="Inlet_1" sPort="f" eShape="Turbine_ch_1" ePort="f_in" points="416,264"  intermediate1="1" dx="-24" dy="24"  />
+
+	<connector id="Connector_2" sShape="Turbine_ch_1" sPort="f_out" eShape="Nozzle_1" ePort="g" dx="-24" dy="24"  />
+
+	<bodyEL>
+	<![CDATA[-- EL code of the schematic.
+-- The COMPONENT definition lines are blocked for edition.
+-- You can edit the parameters clicking over them.
+
+COMPONENT %NAME% 
+
+
+END COMPONENT
+]]>
+	</bodyEL>
+
+	<usedLibrary name="LPRES" version="2.0.1" auto="true" />
+</schematic>
