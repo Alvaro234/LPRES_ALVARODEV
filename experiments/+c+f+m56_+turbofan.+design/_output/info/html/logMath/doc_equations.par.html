@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>Mathematical Model View</title>
+<link href="./css/mlog.css" rel="stylesheet">
+<script src="./css/jquery-1.10.2.min.js"></script>
+<script>
+function includeTimestampHTML() {
+var z, i, elmnt, file, xhttp;
+z = document.getElementsByTagName("*");
+for (i = 0; i < z.length; i++) {
+elmnt = z[i];
+file = elmnt.getAttribute("w3-include-html");
+if (file) {
+xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+if (this.readyState == 4) {
+if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+if (this.status == 404) { elmnt.innerHTML = "Timestamp not available."; }
+elmnt.removeAttribute("w3-include-html");
+includeTimestampHTML();
+}
+}
+xhttp.open("GET", file, true);
+xhttp.send();
+return;
+}
+}
+}
+</script>
+</head><body>
+<div data-role="page">
+<div data-role="main" class="ui-content">
+<div class="qindex"><a class="qindex" rel="external" data-ajax='false' href="../+c+f+m56_+turbofan.+design.par.html">Mathematical Model View</a>
+</div><div class="qindex"><a class="qindex" rel="external" data-ajax='false' href="../+c+f+m56_+turbofan.+design.par.html">Summary</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_vars.par.html">Variables</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_equivalents.par.html">Equivalents</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_boundary.par.html">Boundary</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_jacobian.par.html">Jacobian</a> |
+<a class="qindexHL" rel="external" data-ajax='false' href="doc_equations.par.html">Equations</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_init.par.html">Init</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_discrete.par.html">Discrete</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_design.par.html">Design</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_highindex.par.html">High Index</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_equationmatrix.par.html">Equation Matrix</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_diff.par.html">Validation Differences</a>
+</div><h2>Equations<br /></h2>
+Equations: 23<br>
+Note 3: In equations 'E' means explicit,'I' implicit,'L' linear,'F' function<br>
+<a name="e1">[E-1] </a>Turbine_ch_1.tau = Turbine_ch_1.m.Power / Nozzle_1.g.W<br>
+<a name="e2">[E-2] </a>Turbine_ch_1.m.N = 0.10471975511965977 * Turbine_ch_1.rpm<br>
+<a name="e3">[E-3] </a>Nozzle_1.g.Tt = Inlet_1.Tt - Turbine_ch_1.tau / LPRES.cp(Inlet_1.fluidV)<br>
+<a name="e4">[E-4] </a>Turbine_ch_1.MFP = Nozzle_1.g.W * sqrt(Inlet_1.Tt) / Inlet_1.pt<br>
+<a name="e5">[E-5] </a>Turbine_ch_1.alpha = Nozzle_1.g.Tt / Inlet_1.Tt<br>
+<a name="e6">[E-6] </a>Turbine_ch_1.theta = 1 / Turbine_ch_1.alpha<br>
+<a name="e7">[E-7] </a>Turbine_ch_1.beta = (1 - (1 - Turbine_ch_1.alpha) / Turbine_ch_1.eta_d) ** (1 / ((LPRES.gamma(Inlet_1.fluidV) - 1) / LPRES.gamma(Inlet_1.fluidV)))<br>
+<a name="e8">[E-8] </a>Nozzle_1.g.pt = Turbine_ch_1.beta * Inlet_1.pt<br>
+<a name="e9">[E-9] </a>Turbine_ch_1.pi = 1 / Turbine_ch_1.beta<br>
+<a name="e10">[E-10] </a>Turbine_ch_1.A_in = Turbine_ch_1.MFP * sqrt(LPRES.R(Inlet_1.fluidV)) / LPRES.FGAMMA(Inlet_1.fluidV)<br>
+<a name="e11">[E-11] </a>Nozzle_1.p_amb = LPRES.ISA_Pressure(LPRES.Altitude)<br>
+<a name="e12">[E-12] </a>Nozzle_1.T_amb = LPRES.ISA_Temperature(LPRES.Altitude)<br>
+<a name="e13">[E-13] </a>Nozzle_1.PR = Nozzle_1.g.pt / Nozzle_1.p_amb<br>
+<a name="e14">[E-14] </a>Nozzle_1.PR_sl = ((LPRES.gamma(Inlet_1.fluidV) + 1) / 2) ** (LPRES.gamma(Inlet_1.fluidV) / (LPRES.gamma(Inlet_1.fluidV) - 1))<br>
+<a name="e15">[E-15] </a>Nozzle_1.p_out_ch = Nozzle_1.g.pt / Nozzle_1.PR_sl<br>
+<a name="e16">[E-16] </a>Nozzle_1.A_sl = Nozzle_1.g.W * sqrt(Nozzle_1.g.Tt * LPRES.R(Inlet_1.fluidV)) / Nozzle_1.g.pt / LPRES.FGAMMA(Inlet_1.fluidV)<br>
+<a name="e17">[E-17] </a>Nozzle_1.M_out =  ZONE[2] (Nozzle_1.PR &lt; Nozzle_1.PR_sl) sqrt(2 * (Nozzle_1.PR ** ((LPRES.gamma(Inlet_1.fluidV) - 1) / LPRES.gamma(Inlet_1.fluidV)) - 1) / (LPRES.gamma(Inlet_1.fluidV) - 1))	  OTHERS 1<br>
+<a name="e18">[E-18] </a>Nozzle_1.A =  ZONE[1] (Nozzle_1.M_out &gt; 0) Nozzle_1.A_sl * ((2 + (LPRES.gamma(Inlet_1.fluidV) - 1) * Nozzle_1.M_out ** 2) / (LPRES.gamma(Inlet_1.fluidV) + 1)) ** ((LPRES.gamma(Inlet_1.fluidV) + 1) / (2 * (LPRES.gamma(Inlet_1.fluidV) - 1))) / Nozzle_1.M_out	  OTHERS Nozzle_1.A_sl * ((2 + (LPRES.gamma(Inlet_1.fluidV) - 1) * Nozzle_1.M_out ** 2) / (LPRES.gamma(Inlet_1.fluidV) + 1)) ** ((LPRES.gamma(Inlet_1.fluidV) + 1) / (2 * (LPRES.gamma(Inlet_1.fluidV) - 1))) / -Nozzle_1.M_out<br>
+<a name="e19">[E-19] </a>Nozzle_1.p_out = MATH.max(Nozzle_1.p_amb, Nozzle_1.p_out_ch)<br>
+<a name="e20">[E-20] </a>Nozzle_1.T_out = Nozzle_1.g.Tt / (1 + (LPRES.gamma(Inlet_1.fluidV) - 1) / 2 * Nozzle_1.M_out ** 2)<br>
+<a name="e21">[E-21] </a>Nozzle_1.v_out = Nozzle_1.M_out * sqrt(LPRES.gamma(Inlet_1.fluidV) * LPRES.R(Inlet_1.fluidV) * Nozzle_1.T_out)<br>
+<a name="e22">[E-22] </a>Nozzle_1.Thrust = Nozzle_1.g.W * Nozzle_1.v_out + Nozzle_1.A * (Nozzle_1.p_out - Nozzle_1.p_amb)<br>
+<a name="e23">[E-23] </a>Nozzle_1.i.Data[1] = Nozzle_1.Thrust<br>
+<div w3-include-html="_timestamp.html"></div><script>includeTimestampHTML();</script>
+</body>
+</html>
