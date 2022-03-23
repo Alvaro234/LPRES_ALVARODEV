@@ -18,20 +18,20 @@
 </boundaries>
 <algebraics>
   <variable name="P[02]"/>
-  <variable name="U[02]"/>
   <variable name="P[03]"/>
-  <variable name="U[03]"/>
   <variable name="P[04]"/>
-  <variable name="U[04]"/>
   <variable name="P[05]"/>
-  <variable name="U[05]"/>
   <variable name="P[06]"/>
-  <variable name="U[06]"/>
   <variable name="P[07]"/>
-  <variable name="U[07]"/>
   <variable name="P[08]"/>
-  <variable name="U[08]"/>
   <variable name="P[09]"/>
+  <variable name="U[02]"/>
+  <variable name="U[03]"/>
+  <variable name="U[04]"/>
+  <variable name="U[05]"/>
+  <variable name="U[06]"/>
+  <variable name="U[07]"/>
+  <variable name="U[08]"/>
   <variable name="U[09]"/>
   <variable name="g[10]"/>
   <variable name="g[11]"/>

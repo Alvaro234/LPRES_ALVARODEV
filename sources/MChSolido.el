@@ -22,6 +22,7 @@ COMPONENT MChSolido
 			REAL Exponente =	0.4	
 			REAL Factor_a =	1.27955E-05	
 			REAL R_gas = 307.93  UNITS "J/kgK"			
+			
 			-- DATOS MOTOR
 			REAL Area_de_garganta	 = 8.00E-03	UNITS "m2"
 			REAL Presion_de_camara= 4.20E+06	UNITS "Pa"
@@ -86,40 +87,49 @@ COMPONENT MChSolido
 		g[1] = 0
 		U[1]= 0
 		T[1] = Temperatura_de_combustion
-		P[1] = 6.33E+06 --( P[1]*(g[10]*ce_estrella))/(Area_de_garganta*Pt[10])
+		P[1] = (P[1]*(g[11]*ce_estrella))/(Area_de_garganta*Pt[11])  --Presion_de_camara
+		
+		
 		
 		EXPAND_BLOCK (i IN 1,11)
-			SoundSpeed[i]= sqrt(gamma*R_gas*T[i])
-			MACH[i]= U[i]/SoundSpeed[i]
+			
 			Kp[i] = Ap[i]/Ab[i]
 			Jx[i] = Kp[i]/Klemmug
 			g0[i] = (g[i]/Ap[i])/(Rho_P*rp0[i])
 			Re[i] = ((Rho_P*rp0[i]*4*Ap[i])/S[i])/Viscosidad_camara
 			gRe[i] = g0[i]*(Re[i]/1000)**(-1/8)
-		   eta[i] = 1 + 0.023*(g0[i]**0.8-Comb_Erosiva_gth**0.8)	
+		   
+			eta[i] = 1 + 0.023*(g0[i]**0.8-Comb_Erosiva_gth**0.8)	   -- No se hace 1 en los primeros 4 nodos como debería (Implementar if, da error)
+			
 			rp0[i] = Factor_a*P[i]**Exponente
+			-- Remanso
 			Rho[i] = P[i] /(R_gas*T[i])
+			SoundSpeed[i]= sqrt(gamma*R_gas*T[i])
+			MACH[i]= U[i]/SoundSpeed[i]
 			Tt[i] = T[i]*(1+0.5*(gamma-1)*MACH[i]**2)
 			Pt[i] = P[i]*(Tt[i]/T[i])**(gamma/(gamma-1))
 		END EXPAND_BLOCK
 		EXPAND_BLOCK (i IN 1,10)
-			-- Falta meter tiempo Leyes temporales de momento solo t=0
+			-- Falta meter tiempo Leyes temporales de momento solo t=0 hasta que de resultados del excel
 			--S[]  = 4.09E-01	-- S(to)+2*PI()*rp0(i)*eta[i]*tiempo
 			--Ap[] = 1.33E-02  --Ap(To)+S[i]*eta[i]*rp0[i]*tiempo
 			
 			Ab[i+1] = Ab[i]+(S[i]+S[i+1])*dx
-			dg [i+1] = 0.5* Rho_P*(rp0[i]*S[i]+rp0[i+1]*S[i+1])*dx --Añadir terminos de masa de ignicion?
+			dg [i+1] = 0.5* Rho_P*(rp0[i]*S[i]+rp0[i+1]*S[i+1])*dx   --Añadir terminos de masa de ignicion?
+			
 			g[i+1] = g[i]+ dg[i+1]   
-			U[i+1] = ((Rho[i]*U[i]*Ap[i])+dg[i+1] )/(Rho[i+1]*Ap[i+1])
-			P[i+1] = P[i] - ((Rho[i]*U[i]*Ap[i])*(U[i+1]-U[i])+g[i+1]*U[i+1])/(0.5*(Ap[i+1]+Ap[i]))
-			T[i+1] = T[i] - (0.5*(gamma-1)/(gamma*R_gas))*(U[i+1]**2-U[i]**2)
+			
+			P[i+1] = P[i]-((Rho[i]*U[i]*Ap[i])*(U[i+1]-U[i])+g[i+1]*U[i+1])/(0.5*(Ap[i+1]+Ap[i]))
+			
+			U[i+1] = ((Rho[i]*U[i]*Ap[i])+ dg[i+1] )/(Rho[i+1]*Ap[i+1])
+			
+			T[i+1] = T[i] - ((0.5*(gamma-1))/(gamma*R_gas))  *  (U[i+1]**2 - U[i]**2) 
 			
 			-- Variacion de rp0?
 			
 			Coord[i+1] = Coord[i]+ dx	
 		END EXPAND_BLOCK	
 		
-	
 
 END COMPONENT
 
