@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE eds SYSTEM "DTDFILE_FULLPATH">
+
+<schematic version="1.2.0" paper="A4" orientation="Landscape" sorting="alphabetic" aliasingInShapes="true" aliasingInUnitSymbols="true" connector-status="allshowed" connector-creation="true" >
+
+	<grid enabled="true" snap="true" hspacing="8" vspacing="8" colorMain="230,230,230" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<layers>
+			<layer id="1" name="Layer_1" isVisible="true" isActive="true" />
+	</layers>
+	
+	<text id="Text_1" cx="139.5" cy="28" sx="279" sy="56" lineType="0"  color="255,255,220" dx="812" dy="706" layer="1"  >
+		<![CDATA[&#60;!DOCTYPE HTML PUBLIC &#34;-//W3C//DTD HTML 4.0//EN&#34; &#34;http://www.w3.org/TR/REC-html40/strict.dtd&#34;&#62;&#60;html&#62;&#60;head&#62;&#60;meta name=&#34;qrichtext&#34; content=&#34;1&#34; /&#62;&#60;style type=&#34;text/css&#34;&#62;p, li { white-space: pre-wrap; }&#60;/style&#62;&#60;/head&#62;&#60;body style=&#34; font-family:&#39;Arial&#39;; font-size:10pt; font-weight:400; font-style:normal;&#34;&#62;&#60;p style=&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&#34;&#62;LIBRARY: LPRES_EXAMPLES_ALVAROG234&#60;br /&#62;FILE: GasGenerator&#60;br /&#62;CREATION DATE: 18/02/2022&#60;/p&#62;&#60;/body&#62;&#60;/html&#62;]]>
+	</text>
+
+	<component id="Inlet_LOX" library="LPRES" type="Inlet" layer="1" >
+	
+		<symbol cx="240.029" cy="144" sx="64.9412" sy="89" dx="-112" dy="-48" onLabel="true" />
+	
+		<label cx="31.5" cy="12" dx="96.5" dy="141" />
+	
+		<instanceData>
+			<datum id="fluid" value="LOX" pos="D" />
+		</instanceData>
+	
+	</component>
+
+	<component id="Nozzle_1" library="LPRES" type="Nozzle" layer="1" >
+	
+		<symbol cx="354" cy="281.75" sx="85" sy="148.5" dx="355.75" dy="132.25" rotation="-90" onLabel="true" />
+	
+		<label cx="31" cy="12" dx="678.75" dy="488.75" />
+	
+	</component>
+
+	<component id="Pump_LOX" library="LPRES" type="Pump" layer="1" >
+	
+		<symbol cx="348" cy="289.518" sx="105" sy="84.0355" dx="-209.518" dy="-33.5178" rotation="90" onLabel="true" />
+	
+		<label cx="36.5" cy="12" dx="101.982" dy="298.518" />
+	
+	</component>
+
+	<component id="Shaft_1" library="LPRES" type="Shaft" layer="1" >
+	
+		<symbol cx="332" cy="284" sx="113" sy="9" dx="168" dy="-28" onLabel="true" />
+	
+		<label cx="26" cy="12" dx="474" dy="261" />
+	
+	</component>
+
+	<component id="GasGen_1" library="LPRES" type="GasGen" layer="1" >
+	
+		<symbol cx="244" cy="156" sx="81" sy="121" dx="20" dy="336" rotation="-90" onLabel="true" />
+	
+		<label cx="35" cy="12" dx="229" dy="553" />
+	
+	</component>
+
+	<component id="Injector_LOX" library="LPRES" type="Injector" layer="1" >
+	
+		<symbol cx="240" cy="134" sx="17" sy="69" dx="-112" dy="272" onLabel="true" />
+	
+		<label cx="40.5" cy="12" dx="87.5" dy="441" />
+	
+		<instanceData>
+			<datum id="Type" value="Liquid" pos="P" />
+		</instanceData>
+	
+	</component>
+
+	<component id="Injector_LH2" library="LPRES" type="Injector" layer="1" >
+	
+		<symbol cx="240" cy="134" sx="17" sy="69" dx="-112" dy="444" rotation="-180" onLabel="true" />
+	
+		<label cx="40" cy="12" dx="88" dy="613" />
+	
+		<instanceData>
+			<datum id="Type" value="Liquid" pos="P" />
+		</instanceData>
+	
+	</component>
+
+	<component id="Turbine_ch_1" library="LPRES" type="Turbine_ch" layer="1" >
+	
+		<symbol cx="236" cy="137.974" sx="129" sy="92.9472" dx="280" dy="236.053" rotation="180" flipX="true" onLabel="true" />
+	
+		<label cx="42.5" cy="12" dx="473" dy="421" />
+	
+	</component>
+
+	<connector id="Connector_1" sShape="Shaft_1" sPort="m_1" eShape="Pump_LOX" ePort="m"  />
+
+	<connector id="Connector_4" sShape="Inlet_LOX" sPort="f" eShape="Pump_LOX" ePort="f_in"  />
+
+	<connector id="Connector_5" sShape="Pump_LOX" sPort="f_out" eShape="Injector_LOX" ePort="f_in"  />
+
+	<connector id="Connector_6" sShape="Injector_LOX" sPort="f_out" eShape="GasGen_1" ePort="f_O" points="128,488"  intermediate1="1"  />
+
+	<connector id="Connector_7" sShape="Injector_LH2" sPort="f_out" eShape="GasGen_1" ePort="f_F" points="128,520"  intermediate1="1"  />
+
+	<connector id="Connector_9" sShape="Shaft_1" sPort="m_1" eShape="Turbine_ch_1" ePort="m" points="448,360"  intermediate2="1"  />
+
+	<connector id="Connector_10" sShape="Turbine_ch_1" sPort="f_out" eShape="Nozzle_1" ePort="g"  />
+
+	<connector id="Connector_11" sShape="GasGen_1" sPort="g" eShape="Turbine_ch_1" ePort="f_in" points="456,504"  />
+
+	<component id="Inlet_LH2" library="LPRES" type="Inlet" layer="1" >
+	
+		<symbol cx="240.029" cy="144" sx="64.9412" sy="89" dx="624" dy="-48" onLabel="true" />
+	
+		<label cx="31" cy="12" dx="833" dy="141" />
+	
+		<instanceData>
+			<datum id="fluid" value="LH2" pos="D" />
+		</instanceData>
+	
+	</component>
+
+	<component id="Pump_LH2" library="LPRES" type="Pump" layer="1" >
+	
+		<symbol cx="348" cy="289.518" sx="105" sy="84.0355" dx="505.518" dy="-33.5178" rotation="90" flipY="true" onLabel="true" />
+	
+		<label cx="36" cy="12" dx="817.518" dy="298.518" />
+	
+	</component>
+
+	<connector id="Connector_2" sShape="Inlet_LH2" sPort="f" eShape="Pump_LH2" ePort="f_in"  />
+
+	<connector id="Connector_3" sShape="Shaft_1" sPort="m_2" eShape="Pump_LH2" ePort="m"  />
+
+	<connector id="Connector_8" sShape="Pump_LH2" sPort="f_out" eShape="Injector_LH2" ePort="f_in" points="864,608"  intermediate1="1"  />
+
+	<bodyEL>
+	<![CDATA[-- EL code of the schematic.
+-- The COMPONENT definition lines are blocked for edition.
+-- You can edit the parameters clicking over them.
+
+COMPONENT %NAME% 
+END COMPONENT
+]]>
+	</bodyEL>
+
+	<usedLibrary name="LPRES" version="2.0.1" auto="true" />
+</schematic>

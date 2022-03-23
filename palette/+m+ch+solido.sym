@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" label-status="allshowed" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="MChSolido" >
+
+		<rect id="Rectangle_1" cx="220" cy="124" sx="176" sy="64" dx="-20" dy="-12" color="255,255,255"  />
+
+		<rect id="Rectangle_2" cx="188" cy="92" sx="152" sy="-24" color="255,140,24"  />
+
+		<rect id="Rectangle_3" cx="188" cy="84" sx="152" sy="24" dy="48" color="255,140,24"  />
+
+		<line id="Line_1" points="112,112 288,112" lineType="3"   />
+
+		<editor used="false">
+		</editor>
+
+	</componentType>
+</palette>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<experiment version="1.4.0">
+	<experimentViews>
+		<tab name="Tab_1">
+			<tableWindow title="Table_1" x="0" y="0" dx="350" dy="250" state="maximized">
+				<findBar visible="f" names="t" sensitive="f"/>
+				<table id="Table_1" colums="false">
+					<var name="#Calculation id"/>
+					<var name="#Status"/>
+					<var name="#ESI"/>
+					<var name="#Case"/>
+					<var name="#Point"/>
+					<var name="Inlet_1.Tt"/>
+					<var name="Inlet_1.W"/>
+					<var name="Inlet_1.f.pt"/>
+					<var name="LPRES.Altitude"/>
+					<var name="Turbine_ch_1.f_in.W"/>
+					<var name="Turbine_ch_1.rpm"/>
+					<var name="Nozzle_1.A"/>
+					<var name="Turbine_ch_1.A_in"/>
+					<var name="Turbine_ch_1.m.Power"/>
+					<var name="Turbine_ch_1.tau"/>
+					<var name="Turbine_ch_1.pi"/>
+					<var name="Turbine_ch_1.alpha"/>
+				</table>
+			</tableWindow>
+		</tab>
+	</experimentViews>
+
+	<watch width="630" height="695" visible="true" pos="right" >
+		<currentTab name="view"/>
+		<variables>
+			<tab name="initial"> 
+			</tab> 
+			<tab name="inputs"> 
+				<var name="Inlet_1.f.Tt" value="1550"/>
+				<var name="Inlet_1.f.pt" value="3141075"/>
+				<var name="LPRES.Altitude" value="0"/>
+				<var name="Turbine_ch_1.rpm" value="12000"/>
+			</tab> 
+			<tab name="view"> 
+				<var name="Nozzle_1.A"/>
+				<var name="Turbine_ch_1.A_in"/>
+			</tab> 
+		</variables>
+		<layout>
+			<tab name="initial"> 
+				<column name="name" width="125"/> 
+				<column name="value" width="125"/> 
+				<column name="units" width="125"/> 
+				<column name="category" width="125"/> 
+				<column name="type" width="125"/> 
+			</tab> 
+			<tab name="inputs"> 
+				<column name="name" width="125"/> 
+				<column name="value" width="125"/> 
+				<column name="units" width="125"/> 
+				<column name="category" width="125"/> 
+			</tab> 
+			<tab name="view"> 
+				<column name="name" width="125"/> 
+				<column name="value" width="125"/> 
+				<column name="units" width="125"/> 
+				<column name="category" width="125"/> 
+			</tab> 
+		</layout>
+	</watch>
+
+
+
+
+
+	<outputWindow height="200" width="1920" visible="true" pos="bottom" />
+
+	<alarms globalEnabled="TRUE">
+	</alarms>
+
+
+	<mainWindow  mode="maximized" currentTab="Tab_1" />
+</experiment>

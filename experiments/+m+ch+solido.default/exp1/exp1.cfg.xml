@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<experiment version="1.4.0">
+	<experimentViews>
+		<tab name="Tab_1">
+			<tableWindow title="" x="-80" y="0" dx="1771" dy="250">
+				<findBar visible="f" names="t" sensitive="f"/>
+				<table id="Table_1" colums="true">
+					<var name="#Calculation id"/>
+					<var name="#Status"/>
+					<var name="#ESI"/>
+					<var name="#Case"/>
+					<var name="#Point"/>
+					<var name="Coord[01]"/>
+					<var name="Coord[02]"/>
+					<var name="Coord[03]"/>
+					<var name="Coord[04]"/>
+					<var name="Coord[05]"/>
+					<var name="Coord[06]"/>
+					<var name="Coord[07]"/>
+					<var name="Coord[08]"/>
+					<var name="Coord[09]"/>
+					<var name="Coord[10]"/>
+				</table>
+			</tableWindow>
+			<tableWindow title="Table_3" x="-1" y="215" dx="1664" dy="288">
+				<findBar visible="f" names="t" sensitive="f"/>
+				<table id="Table_3" colums="true">
+					<var name="dg[01]"/>
+					<var name="dg[02]"/>
+					<var name="dg[03]"/>
+					<var name="dg[04]"/>
+					<var name="dg[05]"/>
+					<var name="dg[06]"/>
+					<var name="dg[07]"/>
+					<var name="dg[08]"/>
+					<var name="dg[09]"/>
+					<var name="dg[10]"/>
+				</table>
+			</tableWindow>
+			<tableWindow title="" x="0" y="420" dx="1662" dy="213">
+				<findBar visible="f" names="t" sensitive="f"/>
+				<table id="Table_2" colums="true">
+					<var name="#Calculation id"/>
+					<var name="#Status"/>
+					<var name="#ESI"/>
+					<var name="#Case"/>
+					<var name="#Point"/>
+					<var name="eta[01]"/>
+					<var name="eta[02]"/>
+					<var name="eta[03]"/>
+					<var name="eta[04]"/>
+					<var name="eta[05]"/>
+					<var name="eta[06]"/>
+					<var name="eta[07]"/>
+					<var name="eta[08]"/>
+					<var name="eta[09]"/>
+					<var name="eta[10]"/>
+				</table>
+			</tableWindow>
+		</tab>
+	</experimentViews>
+
+	<watch width="250" height="842" visible="true" pos="right" >
+		<currentTab name="view"/>
+		<variables>
+			<tab name="initial"> 
+			</tab> 
+			<tab name="inputs"> 
+			</tab> 
+			<tab name="view"> 
+			</tab> 
+		</variables>
+		<layout>
+			<tab name="initial"> 
+				<column name="name" width="100"/> 
+				<column name="value" width="100"/> 
+				<column name="units" width="100"/> 
+				<column name="category" width="100"/> 
+				<column name="type" width="100"/> 
+			</tab> 
+			<tab name="inputs"> 
+				<column name="name" width="100"/> 
+				<column name="value" width="100"/> 
+				<column name="units" width="100"/> 
+				<column name="category" width="100"/> 
+			</tab> 
+			<tab name="view"> 
+				<column name="name" width="100"/> 
+				<column name="value" width="100"/> 
+				<column name="units" width="100"/> 
+				<column name="category" width="100"/> 
+			</tab> 
+		</layout>
+	</watch>
+
+
+
+
+
+	<outputWindow height="200" width="1920" visible="true" pos="bottom" />
+
+	<alarms globalEnabled="TRUE">
+	</alarms>
+
+
+	<mainWindow  mode="maximized" currentTab="Tab_1" />
+</experiment>

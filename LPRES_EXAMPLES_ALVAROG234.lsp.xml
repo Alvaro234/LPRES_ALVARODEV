@@ -3,7 +3,11 @@
  <filedeps>
   <file name="version.el"/>
   <file name="F404_AFT.eds"/>
-  <file name="TurbinaCh.eds"/>
+  <file name="GasGenerator.eds"/>
+  <file name="Turbine_ch_test.eds"/>
+  <file name="MChSolido.el"/>
+  <file name="Prueba.eds"/>
+  <file name="PruebaMCPS.eds"/>
  </filedeps>
  <libdeps>
  </libdeps>
