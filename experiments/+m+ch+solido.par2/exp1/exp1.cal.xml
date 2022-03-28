@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<experiment id="exp1" version="1.3.0" component="MChSolido" partition="par2">
+ <header />
+ <options>
+  <maximumTimeCalculation id="maxTimeCalculation" maxTime="" active="no" />
+ </options>
+ <case id="case2" description="Description" run="yes" noplotted="no" type="standard case" deploy="true">
+  <steady id="steady1" description="Steady">
+   <general>
+    <caltype />
+    <nlsolver smethod="NR" tolerance="1e-06" toltype="RELTOL" maxiter="10000" maxfval="40000" maxjaceval="60" maxbroyden="60" rdigits="9" />
+    <stopSimulation stopBadOperation="no" />
+    <debug level="3" />
+    <report id="report.xml" vars="*" type="SAVE_VARS" filterEquivalents="TRUE" alphasort="TRUE" create="yes" />
+    <initialization value="yes" />
+    <run value="yes" />
+   </general>
+   <global>
+    <bounds>
+     <variable id="Ap[01]" alias="" value="1.33E-02" />
+     <variable id="Ap[02]" alias="" value="1.33E-02" />
+     <variable id="Ap[03]" alias="" value="1.33E-02" />
+     <variable id="Ap[04]" alias="" value="1.33E-02" />
+     <variable id="Ap[05]" alias="" value="1.33E-02" />
+     <variable id="Ap[06]" alias="" value="1.33E-02" />
+     <variable id="Ap[07]" alias="" value="1.33E-02" />
+     <variable id="Ap[08]" alias="" value="1.33E-02" />
+     <variable id="Ap[09]" alias="" value="1.33E-02" />
+     <variable id="Ap[10]" alias="" value="1.33E-02" />
+     <variable id="Ap[11]" alias="" value="1.33E-02" />
+     <variable id="S[01]" alias="" value="4.09E-01" />
+     <variable id="S[02]" alias="" value="4.09E-01" />
+     <variable id="S[03]" alias="" value="4.09E-01" />
+     <variable id="S[04]" alias="" value="4.09E-01" />
+     <variable id="S[05]" alias="" value="4.09E-01" />
+     <variable id="S[06]" alias="" value="4.09E-01" />
+     <variable id="S[07]" alias="" value="4.09E-01" />
+     <variable id="S[08]" alias="" value="4.09E-01" />
+     <variable id="S[09]" alias="" value="4.09E-01" />
+     <variable id="S[10]" alias="" value="4.09E-01" />
+     <variable id="S[11]" alias="" value="4.09E-01" />
+    </bounds>
+    <initial>
+     <variable id="P[01]" alias="" value="6.33E+06" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" />
+     <variable id="P[02]" alias="" value="6.32E+06" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" />
+     <variable id="P[03]" alias="" value="6.30E+06" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" />
+     <variable id="P[04]" alias="" value="6.27E+06" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" />
+     <variable id="P[05]" alias="" value="6.22E+06" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" />
+     <variable id="P[06]" alias="" value="6.16E+06" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" />
+     <variable id="P[07]" alias="" value="6.07E+06" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" />
+     <variable id="P[08]" alias="" value="5.95E+06" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" />
+     <variable id="P[09]" alias="" value="5.79E+06" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" />
+     <variable id="P[10]" alias="" value="5.57E+06" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" />
+     <variable id="P[11]" alias="" value="5.27E+06" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" />
+    </initial>
+    <closure>
+     <equation left="T[02]" oper="=" right="T[01] - 0.5 * (gamma - 1) / (gamma * R_gas) * (U[02] ** 2 - U[01] ** 2)" toltype="ABSTOL" tolerance="1e-06" internal="yes" />
+     <equation left="T[03]" oper="=" right="T[02] - 0.5 * (gamma - 1) / (gamma * R_gas) * (U[03] ** 2 - U[02] ** 2)" toltype="ABSTOL" tolerance="1e-06" internal="yes" />
+     <equation left="T[04]" oper="=" right="T[03] - 0.5 * (gamma - 1) / (gamma * R_gas) * (U[04] ** 2 - U[03] ** 2)" toltype="ABSTOL" tolerance="1e-06" internal="yes" />
+     <equation left="T[05]" oper="=" right="T[04] - 0.5 * (gamma - 1) / (gamma * R_gas) * (U[05] ** 2 - U[04] ** 2)" toltype="ABSTOL" tolerance="1e-06" internal="yes" />
+     <equation left="T[06]" oper="=" right="T[05] - 0.5 * (gamma - 1) / (gamma * R_gas) * (U[06] ** 2 - U[05] ** 2)" toltype="ABSTOL" tolerance="1e-06" internal="yes" />
+     <equation left="T[07]" oper="=" right="T[06] - 0.5 * (gamma - 1) / (gamma * R_gas) * (U[07] ** 2 - U[06] ** 2)" toltype="ABSTOL" tolerance="1e-06" internal="yes" />
+     <equation left="T[08]" oper="=" right="T[07] - 0.5 * (gamma - 1) / (gamma * R_gas) * (U[08] ** 2 - U[07] ** 2)" toltype="ABSTOL" tolerance="1e-06" internal="yes" />
+     <equation left="T[09]" oper="=" right="T[08] - 0.5 * (gamma - 1) / (gamma * R_gas) * (U[09] ** 2 - U[08] ** 2)" toltype="ABSTOL" tolerance="1e-06" internal="yes" />
+     <equation left="T[10]" oper="=" right="T[09] - 0.5 * (gamma - 1) / (gamma * R_gas) * (U[10] ** 2 - U[09] ** 2)" toltype="ABSTOL" tolerance="1e-06" internal="yes" />
+     <equation left="Pt[11]" oper="=" right="P[11] * (Tt[11] / T[11]) ** (gamma / (gamma - 1))" toltype="ABSTOL" tolerance="1e-06" internal="yes" />
+     <equation left="T[11]" oper="=" right="T[10] - 0.5 * (gamma - 1) / (gamma * R_gas) * (U[11] ** 2 - U[10] ** 2)" toltype="ABSTOL" tolerance="1e-06" internal="yes" />
+    </closure>
+   </global>
+  </steady>
+ </case>
+</experiment>

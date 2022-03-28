@@ -2,10 +2,25 @@
  LIBRARY: LPRES_EXAMPLES_ALVAROG234
  FILE: MChSolido
  AUTHOR: Álvaro González Villarreal
- DESCRIPTION: Seccion de motor cohete de propelente solido
+ DESCRIPTION: Seccion de motor cohete de propelente solido V0.1
  CREATION DATE: 19/03/2022
 -----------------------------------------------------------------------------------------*/
-COMPONENT MChSolido
+
+/*-----------------------------------------------------------------------------------------
+TAREAS A IMPLEMENTAR:
+
+- Implementar evolución de Ab, Ap y S con el tiempo.
+- Corregir funcionamiento de eta (Algoritmo de mukunda, coeficiente de erosion)/ ¿Implementarlo como función? eta >= 1
+- Establecer una distribucion inicial a partir del modelo cero dimensional?
+- Calculo de la presion en el primer nodo mediante modelo cero dimensional
+- Limpiar datos no necesarios copiados del excel
+
+NOTAS
+
+- Al hacer la particion es importante que la distribucion a introducir sea la de presiones y sin mezclar con la velocidad si no los resultados se van
+
+-----------------------------------------------------------------------------------------*/
+COMPONENT MChSolido(INTEGER nodos = 11)
 	-- De momento sin puertos	
 	DATA
 			-- DATOS GENERALES COMBUSTIBLE Y PARAMETROS COMBUSTION
@@ -15,7 +30,7 @@ COMPONENT MChSolido
 			REAL G_gamma= 0.6726	
 			REAL Viscosidad_camara =	1.80E-05	
 			BOOLEAN Combustion_erosiva = TRUE	
-			REAL Comb_Erosiva_gth =	35	
+			REAL gth =	35	
 			REAL Temperatura_de_combustion =3300 UNITS	"K"
 			REAL ce_estrella =	1498.7	UNITS "m/s"
 			REAL Velocidad_recesion_70 =	7	UNITS "mm/s"
@@ -42,56 +57,65 @@ COMPONENT MChSolido
 			REAL Coef_Volumetrico =	0.990
 			REAL Esbeltez_LD_camara =	4.15
 			REAL L	= 5.48E+00 UNITS "m" 
-			-- DATOS SIM
-			REAL nodos = 11
 			
 			
-			REAL S[11] = {4.09E-01,4.09E-01,4.09E-01,4.09E-01,4.09E-01,4.09E-01,4.09E-01,4.09E-01,4.09E-01,4.09E-01,4.09E-01} UNITS "m"
-			REAL Ap[11]= {1.33E-02,1.33E-02,1.33E-02,1.33E-02,1.33E-02,1.33E-02,1.33E-02,1.33E-02,1.33E-02,1.33E-02,1.33E-02} UNITS "m2"
+			
+			
+			
 				
 	DECLS
-			REAL Coord [11]  UNITS "m"
-					
-			REAL dx
-						
-			REAL Ab[11] UNITS "m2"
-			--REAL S[11] UNITS "m"
-			--REAL Ap[11] UNITS "m2"
-			REAL Kp[11]
-			REAL Jx[11]
-			REAL g0[11]  UNITS "no_units"
-			REAL gRe[11] UNITS "no_units"
-			REAL Re[11]
-			REAL eta[11]
-			REAL g[11]
-			REAL rp0[11] UNITS "no_units"	--(apc^n)
-			REAL dg[11]
-			REAL P[11] UNITS "Pa"
-			REAL U[11] UNITS "m/s"
-			REAL T[11] UNITS "K"
-			REAL Rho[11] UNITS "kg/m3"
-			REAL SoundSpeed[11]
-			REAL MACH[11]
-			REAL Tt[11]
-			REAL Pt[11]
+			CONST REAL Pi = 3.1415926
+			REAL Coord [nodos]  UNITS "m"	
+			REAL dx			
+			REAL Ab[nodos] UNITS "m2"
+			--REAL S[nodos] UNITS "m"
+			--REAL Ap[nodos] UNITS "m2"
+			REAL Kp[nodos]
+			REAL Jx[nodos]
+			REAL g0[nodos]  UNITS "no_units"
+			REAL gRe[nodos] UNITS "no_units"
+			REAL Re[nodos]
+			REAL eta[nodos]
+			REAL g[nodos]
+			REAL rp0[nodos] UNITS "no_units"	--(apc^n)
+			REAL dg[nodos]
+			REAL P[nodos] UNITS "Pa"
+			REAL U[nodos] UNITS "m/s"
+			REAL T[nodos] UNITS "K"
+			REAL Rho[nodos] UNITS "kg/m3"
+			REAL SoundSpeed[nodos]
+			REAL MACH[nodos]
+			REAL Tt[nodos]
+			REAL Pt[nodos]
+			
+			REAL S[nodos]
+			REAL Ap[nodos]
+			REAL S_t0[nodos]
+			REAL Ap_t0[nodos]
+			REAL eta_temp[nodos]
+			
 	
-	
-
+	INIT
+		FOR(i IN 1,nodos)
+			
+			S_t0[i] =  4.09E-01
+			Ap_t0[i] = 1.33E-02
 		
+		END FOR
+	
 	CONTINUOUS	
 		-- Condiciones de contorno
 		dx = L/(nodos-1)
 		Coord[1]=0
 		Ab[1] = 0
-		--dg[1] = 0
+		dg[1] = 0
 		g[1] = 0
 		U[1]= 0
 		T[1] = Temperatura_de_combustion
-		P[1] = (P[1]*(g[11]*ce_estrella))/(Area_de_garganta*Pt[11])  --Presion_de_camara
+		P[1] = (P[1]*(g[nodos]*ce_estrella))/(Area_de_garganta*Pt[nodos])  --Guess inicial mediante modelo cerodimensional?
+	
 		
-		
-		
-		EXPAND_BLOCK (i IN 1,11)
+		EXPAND_BLOCK (i IN 1,nodos)
 			
 			Kp[i] = Ap[i]/Ab[i]
 			Jx[i] = Kp[i]/Klemmug
@@ -99,7 +123,9 @@ COMPONENT MChSolido
 			Re[i] = ((Rho_P*rp0[i]*4*Ap[i])/S[i])/Viscosidad_camara
 			gRe[i] = g0[i]*(Re[i]/1000)**(-1/8)
 		   
-			eta[i] = 1 + 0.023*(g0[i]**0.8-Comb_Erosiva_gth**0.8)	   -- No se hace 1 en los primeros 4 nodos como debería (Implementar if, da error)
+			eta_temp[i] =	1 + 0.023*(g0[i]**0.8-gth**0.8)  -- No funciona sin una variable intermedia
+			eta[i] = IF(eta_temp[i]<1) 1 ELSE eta_temp[i]
+			
 			
 			rp0[i] = Factor_a*P[i]**Exponente
 			-- Remanso
@@ -109,12 +135,14 @@ COMPONENT MChSolido
 			Tt[i] = T[i]*(1+0.5*(gamma-1)*MACH[i]**2)
 			Pt[i] = P[i]*(Tt[i]/T[i])**(gamma/(gamma-1))
 		END EXPAND_BLOCK
-		EXPAND_BLOCK (i IN 1,10)
+		
+		EXPAND_BLOCK (i IN 1,nodos-1)
 			-- Falta meter tiempo Leyes temporales de momento solo t=0 hasta que de resultados del excel
-			--S[]  = 4.09E-01	-- S(to)+2*PI()*rp0(i)*eta[i]*tiempo
-			--Ap[] = 1.33E-02  --Ap(To)+S[i]*eta[i]*rp0[i]*tiempo
+			S[i]  =	S_t0[i] +2*Pi*rp0[i]*eta[i]*TIME
+			Ap[i] =  Ap_t0[i] +S[i]*eta[i]*rp0[i]*TIME
+		  
+		   Ab[i+1] = Ab[i]+0.5*(S[i]+S[i+1])*dx
 			
-			Ab[i+1] = Ab[i]+(S[i]+S[i+1])*dx
 			dg [i+1] = 0.5* Rho_P*(rp0[i]*S[i]+rp0[i+1]*S[i+1])*dx   --Añadir terminos de masa de ignicion?
 			
 			g[i+1] = g[i]+ dg[i+1]   
@@ -129,7 +157,7 @@ COMPONENT MChSolido
 			
 			Coord[i+1] = Coord[i]+ dx	
 		END EXPAND_BLOCK	
-		
+	
 
 END COMPONENT
 

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="no"?>
-<files>
- <file decimalNumber="" calculusName="transient2" caseName="case2">
-  <point name="transient" assigned_to="File" path="C:/PROOSIS_3.8.1/LPRES/libs/LPRES_EXAMPLES_ALVAROG234/experiments/+m+ch+solido.default/exp1/report.xml"/>
- </file>
- <file calculusName="steady2" caseName="case2">
-  <point name="Steady Variables" assigned_to="Wizard values" path=""/>
- </file>
-</files>
