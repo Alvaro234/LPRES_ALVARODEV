@@ -10,14 +10,14 @@
 TAREAS A IMPLEMENTAR:
 
 - Implementar evolución de Ab, Ap y S con el tiempo.
-- Corregir funcionamiento de eta (Algoritmo de mukunda, coeficiente de erosion)/ ¿Implementarlo como función? eta >= 1
-- Establecer una distribucion inicial a partir del modelo cero dimensional?
-- Calculo de la presion en el primer nodo mediante modelo cero dimensional
-- Limpiar datos no necesarios copiados del excel
+- Corregir funcionamiento de eta (Algoritmo de mukunda, coeficiente de erosion)/ ¿Implementarlo como función? eta >= 1 DONE
+- Establecer una distribucion inicial a partir del modelo cero dimensional? 
+
+- Quitar datos sobrantes del codigo
 
 NOTAS
 
-- Al hacer la particion es importante que la distribucion a introducir sea la de presiones y sin mezclar con la velocidad si no los resultados se van
+- Al hacer la partición es importante que la distribucion a introducir sea la de presiones y sin mezclar con la velocidad
 
 -----------------------------------------------------------------------------------------*/
 COMPONENT MChSolido(INTEGER nodos = 11)
@@ -100,7 +100,8 @@ COMPONENT MChSolido(INTEGER nodos = 11)
 			
 			S_t0[i] =  4.09E-01
 			Ap_t0[i] = 1.33E-02
-		
+			S[i] = 4.09E-01
+			Ap[i] = 1.33E-02
 		END FOR
 	
 	CONTINUOUS	
@@ -112,7 +113,7 @@ COMPONENT MChSolido(INTEGER nodos = 11)
 		g[1] = 0
 		U[1]= 0
 		T[1] = Temperatura_de_combustion
-		P[1] = (P[1]*(g[nodos]*ce_estrella))/(Area_de_garganta*Pt[nodos])  --Guess inicial mediante modelo cerodimensional?
+		P[1] = P[1]*(g[nodos]*ce_estrella)/(Area_de_garganta*Pt[nodos]) 
 	
 		
 		EXPAND_BLOCK (i IN 1,nodos)
@@ -137,11 +138,13 @@ COMPONENT MChSolido(INTEGER nodos = 11)
 		END EXPAND_BLOCK
 		
 		EXPAND_BLOCK (i IN 1,nodos-1)
-			-- Falta meter tiempo Leyes temporales de momento solo t=0 hasta que de resultados del excel
-			S[i]  =	S_t0[i] +2*Pi*rp0[i]*eta[i]*TIME
-			Ap[i] =  Ap_t0[i] +S[i]*eta[i]*rp0[i]*TIME
-		  
-		   Ab[i+1] = Ab[i]+0.5*(S[i]+S[i+1])*dx
+			
+			S[i]  =	S_t0[i] + 2*Pi*rp0[i]*eta[i]*TIME  --Evolucion temporal del perimetro y el area de canal en el tiempo para un canal cilindrico
+			Ap[i] =  Ap_t0[i] + S[i]*rp0[i]*eta[i]*TIME
+		   
+			
+			
+		    Ab[i+1] = Ab[i]+0.5*(S[i]+S[i+1])*dx
 			
 			dg [i+1] = 0.5* Rho_P*(rp0[i]*S[i]+rp0[i+1]*S[i+1])*dx   --Añadir terminos de masa de ignicion?
 			
@@ -153,7 +156,6 @@ COMPONENT MChSolido(INTEGER nodos = 11)
 			
 			T[i+1] = T[i] - ((0.5*(gamma-1))/(gamma*R_gas))  *  (U[i+1]**2 - U[i]**2) 
 			
-			-- Variacion de rp0?
 			
 			Coord[i+1] = Coord[i]+ dx	
 		END EXPAND_BLOCK	

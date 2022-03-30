@@ -3,7 +3,7 @@
 <noDerivatives value="FALSE"/>
 <inhibitReductionConstantCoefEqts value="TRUE"/>
 <generatePartitionClass value="FALSE"/>
-<removeNotUsedVars value="TRUE"/>
+<removeNotUsedVars value="FALSE"/>
 <showPropertyPanel value="FALSE"/>
 <generateProtectedMathFunctions value="TRUE"/>
 <generatePerformanceMeters value="FALSE"/>
