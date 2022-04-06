@@ -2,23 +2,24 @@
 <experiment version="1.4.0">
 	<experimentViews>
 		<tab name="Tab_1">
-			<tableWindow title="Table_2" x="0" y="271" dx="1658" dy="271">
+			<tableWindow title="Table_1" x="0" y="542" dx="1658" dy="271">
 				<findBar visible="f" names="t" sensitive="f"/>
-				<table id="Table_2" colums="true">
-					<var name="eta[01]"/>
-					<var name="eta[02]"/>
-					<var name="eta[03]"/>
-					<var name="eta[04]"/>
-					<var name="eta[05]"/>
-					<var name="eta[06]"/>
-					<var name="eta[07]"/>
-					<var name="eta[08]"/>
-					<var name="eta[09]"/>
-					<var name="eta[10]"/>
-					<var name="eta[11]"/>
+				<table id="Table_1" colums="true">
+					<var name="Ap[01]"/>
+					<var name="Ap[02]"/>
+					<var name="Ap[03]"/>
+					<var name="Ap[04]"/>
+					<var name="Ap[05]"/>
+					<var name="Ap[06]"/>
+					<var name="Ap[07]"/>
+					<var name="Ap[08]"/>
+					<var name="Ap[09]"/>
+					<var name="Ap[10]"/>
+					<var name="Ap[11]"/>
+					<var name="Ap[12]"/>
 				</table>
 			</tableWindow>
-			<tableWindow title="Table_3" x="0" y="0" dx="1658" dy="271">
+			<tableWindow title="Table_3" x="0" y="271" dx="1658" dy="271">
 				<findBar visible="f" names="t" sensitive="f"/>
 				<table id="Table_3" colums="true">
 					<var name="Ab[01]"/>
@@ -34,37 +35,26 @@
 					<var name="Ab[11]"/>
 				</table>
 			</tableWindow>
-			<tableWindow title="Table_1" x="0" y="542" dx="1658" dy="271">
+			<tableWindow title="Table_2" x="0" y="0" dx="1658" dy="271">
 				<findBar visible="f" names="t" sensitive="f"/>
-				<table id="Table_1" colums="true">
-					<var name="Ap[01]"/>
-					<var name="Ap[02]"/>
-					<var name="Ap[03]"/>
-					<var name="Ap[04]"/>
-					<var name="Ap[05]"/>
-					<var name="Ap[06]"/>
-					<var name="Ap[07]"/>
-					<var name="Ap[08]"/>
-					<var name="Ap[09]"/>
-					<var name="Ap[10]"/>
-					<var name="Ap[11]"/>
+				<table id="Table_2" colums="true">
+					<var name="eta[01]"/>
+					<var name="eta[02]"/>
+					<var name="eta[03]"/>
+					<var name="eta[04]"/>
+					<var name="eta[05]"/>
+					<var name="eta[06]"/>
+					<var name="eta[07]"/>
+					<var name="eta[08]"/>
+					<var name="eta[09]"/>
+					<var name="eta[10]"/>
+					<var name="eta[11]"/>
+					<var name="eta[12]"/>
 				</table>
 			</tableWindow>
 		</tab>
 		<tab name="Tab_2">
-			<tableWindow title="Table_3" x="0" y="0" dx="829" dy="407">
-				<findBar visible="f" names="t" sensitive="f"/>
-				<table id="Table_3" colums="true">
-					<var name="#Status"/>
-					<var name="g[02]"/>
-					<var name="g[03]"/>
-					<var name="g[08]"/>
-					<var name="g[10]"/>
-					<var name="g[09]"/>
-					<var name="g[11]"/>
-				</table>
-			</tableWindow>
-			<tableWindow title="_1" x="0" y="407" dx="829" dy="407">
+			<tableWindow title="_1" x="829" y="542" dx="829" dy="271">
 				<findBar visible="f" names="t" sensitive="f"/>
 				<table id="_1" colums="true">
 					<var name="U[01]"/>
@@ -80,7 +70,7 @@
 					<var name="U[11]"/>
 				</table>
 			</tableWindow>
-			<tableWindow title="Table_2" x="829" y="542" dx="829" dy="271">
+			<tableWindow title="Table_2" x="829" y="271" dx="829" dy="271">
 				<findBar visible="f" names="t" sensitive="f"/>
 				<table id="Table_2" colums="true">
 					<var name="T[01]"/>
@@ -96,7 +86,7 @@
 					<var name="T[11]"/>
 				</table>
 			</tableWindow>
-			<tableWindow title="Table_1" x="829" y="271" dx="829" dy="268">
+			<tableWindow title="Table_1" x="829" y="0" dx="829" dy="271">
 				<findBar visible="f" names="t" sensitive="f"/>
 				<table id="Table_1" colums="true">
 					<var name="P[01]"/>
@@ -112,7 +102,18 @@
 					<var name="P[11]"/>
 				</table>
 			</tableWindow>
-			<tableWindow title="_2" x="829" y="0" dx="829" dy="271">
+			<tableWindow title="Table_3" x="0" y="0" dx="829" dy="407">
+				<findBar visible="f" names="t" sensitive="f"/>
+				<table id="Table_3" colums="true">
+					<var name="g[02]"/>
+					<var name="g[10]"/>
+					<var name="g[11]"/>
+					<var name="g[01]"/>
+					<var name="g[12]"/>
+					<var name="g[03]"/>
+				</table>
+			</tableWindow>
+			<tableWindow title="_2" x="0" y="407" dx="829" dy="407">
 				<findBar visible="f" names="t" sensitive="f"/>
 				<table id="_2" colums="true">
 					<var name="dg[02]"/>
@@ -125,46 +126,11 @@
 					<var name="dg[09]"/>
 					<var name="dg[10]"/>
 					<var name="dg[11]"/>
+					<var name="dg[01]"/>
 				</table>
 			</tableWindow>
 		</tab>
 		<tab name="Tab_3">
-			<plotWindow title="Plot_1" x="809" y="0" dx="809" dy="814">
-				<plot id="Plot_1" graphType="plot_time">
-						<title value="">
-							<font/>
-						</title>
-						<axeX variableName="TIME">
-							<titleAxe value="TIME"/>
-							<scale scaleType="auto"/>
-						</axeX>
-						<axeY>
-							<titleAxe value=""/>
-							<scale scaleType="auto"/>
-						</axeY>
-						<layout>
-							<font/>
-							<majorGrid/>
-							<minorGrid/>
-						</layout>
-						<legend>
-							<font/>
-						</legend>
-						<chartStyles>
-							<var name="Ab[02]" nick=""/>
-							<var name="Ab[03]" nick=""/>
-							<var name="Ab[04]" nick=""/>
-							<var name="Ab[05]" nick=""/>
-							<var name="Ab[06]" nick=""/>
-							<var name="Ab[07]" nick=""/>
-							<var name="Ab[08]" nick=""/>
-							<var name="Ab[09]" nick=""/>
-							<var name="Ab[10]" nick=""/>
-							<var name="Ab[11]" nick=""/>
-						</chartStyles>
-					
-					</plot>
-			</plotWindow>
 			<plotWindow title="Plot_2" x="0" y="0" dx="809" dy="814">
 				<plot id="Plot_2" graphType="plot_time">
 						<title value="">
@@ -172,11 +138,11 @@
 						</title>
 						<axeX variableName="TIME">
 							<titleAxe value="TIME"/>
-							<scale scaleType="auto"/>
+							<scale minCurrent="-0.555556" maxCurrent="10.5556" scaleType="current"/>
 						</axeX>
 						<axeY>
 							<titleAxe value=""/>
-							<scale scaleType="auto"/>
+							<scale minCurrent="0.00555556" maxCurrent="0.0944444" scaleType="current"/>
 						</axeY>
 						<layout>
 							<font/>
@@ -202,10 +168,85 @@
 					
 					</plot>
 			</plotWindow>
+			<plotWindow title="Plot_1" x="809" y="0" dx="809" dy="814">
+				<plot id="Plot_1" graphType="plot_time">
+						<title value="">
+							<font/>
+						</title>
+						<axeX variableName="TIME">
+							<titleAxe value="TIME"/>
+							<scale minCurrent="8.88178e-16" maxCurrent="10" scaleType="current"/>
+						</axeX>
+						<axeY>
+							<titleAxe value=""/>
+							<scale minCurrent="0.2" maxCurrent="0.6" scaleType="current"/>
+						</axeY>
+						<layout>
+							<font/>
+							<majorGrid/>
+							<minorGrid/>
+						</layout>
+						<legend>
+							<font/>
+						</legend>
+						<chartStyles>
+							<var name="Ab[02]" nick=""/>
+							<var name="Ab[03]" nick=""/>
+							<var name="Ab[04]" nick=""/>
+							<var name="Ab[05]" nick=""/>
+							<var name="Ab[06]" nick=""/>
+							<var name="Ab[07]" nick=""/>
+							<var name="Ab[08]" nick=""/>
+							<var name="Ab[09]" nick=""/>
+							<var name="Ab[10]" nick=""/>
+							<var name="Ab[11]" nick=""/>
+						</chartStyles>
+					
+					</plot>
+			</plotWindow>
+		</tab>
+		<tab name="Tab_4">
+			<plotWindow title="Plot_1" x="0" y="0" dx="1658" dy="814">
+				<plot id="Plot_1" graphType="plot_var">
+						<title value="">
+							<font/>
+						</title>
+						<axeX>
+							<titleAxe value=""/>
+						</axeX>
+						<axeY>
+							<titleAxe value=""/>
+							<scale/>
+						</axeY>
+						<layout>
+							<font/>
+							<majorGrid/>
+							<minorGrid/>
+						</layout>
+						<legend>
+							<font/>
+						</legend>
+						<chartStyles>
+							<var name="#line" isMainLine="true"/>
+							<var name="Ab[01]" nick=""/>
+							<var name="Ab[02]" nick=""/>
+							<var name="Ab[03]" nick=""/>
+							<var name="Ab[04]" nick=""/>
+							<var name="Ab[05]" nick=""/>
+							<var name="Ab[06]" nick=""/>
+							<var name="Ab[07]" nick=""/>
+							<var name="Ab[08]" nick=""/>
+							<var name="Ab[09]" nick=""/>
+							<var name="Ab[10]" nick=""/>
+							<var name="Ab[11]" nick=""/>
+						</chartStyles>
+					
+					</plot>
+			</plotWindow>
 		</tab>
 	</experimentViews>
 
-	<watch width="289" height="842" visible="true" pos="right" >
+	<watch width="250" height="842" visible="true" pos="right" >
 		<currentTab name="view"/>
 		<variables>
 			<tab name="initial"> 
@@ -239,7 +280,8 @@
 		</layout>
 	</watch>
 
-
+	<library3D width="200" height="842" visible="false" pos="left" >
+	</library3D>
 
 
 
@@ -249,5 +291,5 @@
 	</alarms>
 
 
-	<mainWindow  mode="maximized" currentTab="Tab_3" />
+	<mainWindow  mode="maximized" currentTab="Tab_2" />
 </experiment>

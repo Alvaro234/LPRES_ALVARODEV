@@ -147,7 +147,7 @@ COMPONENT MChSolido(INTEGER nodos = 11)
 			
 			P[i+1] = P[i]-((Rho[i]*U[i]*Ap[i])*(U[i+1]-U[i])+g[i+1]*U[i+1])/(0.5*(Ap[i+1]+Ap[i]))
 			
-			U[i+1] = ((Rho[i]*U[i]*Ap[i])+ dg[i+1] )/(Rho[i+1]*Ap[i+1])
+			U[i+1] = ((Rho[i]*U[i]*Ap[i])+ dg[i+1])/(Rho[i+1]*Ap[i+1]) 
 			
 			T[i+1] = T[i] - ((0.5*(gamma-1))/(gamma*R_gas))  *  (U[i+1]**2 - U[i]**2) 
 			
