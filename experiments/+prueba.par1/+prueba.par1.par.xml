@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<partitionInfo version="1.0" library="LPRES_EXAMPLES_ALVAROG234" component="Prueba" partition="par1">
+<noDerivatives value="FALSE"/>
+<inhibitReductionConstantCoefEqts value="TRUE"/>
+<generatePartitionClass value="FALSE"/>
+<removeNotUsedVars value="FALSE"/>
+<showPropertyPanel value="FALSE"/>
+<generateProtectedMathFunctions value="TRUE"/>
+<generatePerformanceMeters value="FALSE"/>
+<generateObfuscatedCpp value="FALSE"/>
+<generateParInfoHTML value="TRUE"/>
+<generateParInfoExtra value="FALSE"/>
+<generateMaxSignificantDigits value="TRUE"/>
+<generateParResiduesForDiff value="FALSE"/>
+<generateAdvancedBox value="disabled"/>
+<highIndexVars>
+  <variable name="MChSolido2_1.Ap[4]."/>
+  <separator/>
+  <variable name="MChSolido2_1.S[4]."/>
+  <separator/>
+  <variable name="Final_1.entrada.Ap"/>
+  <separator/>
+  <variable name="Final_1.entrada.S"/>
+</highIndexVars>
+<boundaries>
+  <variable name="Final_1.g"/>
+</boundaries>
+<dynamics>
+  <variable name="MChSolido2_1.S[2]"/>
+  <variable name="MChSolido2_1.Ap[2]"/>
+  <variable name="MChSolido2_1.S[3]"/>
+  <variable name="MChSolido2_1.Ap[3]"/>
+  <variable name="MChSolido2_2.S[4]"/>
+  <variable name="MChSolido2_2.Ap[4]"/>
+  <variable name="MChSolido2_2.S[2]"/>
+  <variable name="MChSolido2_2.Ap[2]"/>
+  <variable name="MChSolido2_2.S[3]"/>
+  <variable name="MChSolido2_2.Ap[3]"/>
+  <variable name="Pared_1.salida.S"/>
+  <variable name="Pared_1.salida.Ap"/>
+  <variable name="MChSolido2_1.salida.S"/>
+  <variable name="MChSolido2_1.salida.Ap"/>
+</dynamics>
+<algebraics>
+  <variable name="MChSolido2_1.U[2]"/>
+  <variable name="MChSolido2_1.U[4]"/>
+  <variable name="MChSolido2_2.U[2]"/>
+  <variable name="MChSolido2_2.U[4]"/>
+</algebraics>
+<residues>
+</residues>
+</partitionInfo>

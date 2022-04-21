@@ -86,17 +86,13 @@ COMPONENT MChSolido(INTEGER nodos = 11)
 			REAL MACH[nodos]
 			REAL Tt[nodos]
 			REAL Pt[nodos]
-			
 			REAL S[nodos] 
 			REAL Ap[nodos] 
-			--REAL S_t0[nodos]
-			--REAL Ap_t0[nodos]
 			REAL eta_temp[nodos]
 			
 	
 	INIT
 		FOR(i IN 1,nodos)
-			
 			S[i] = 4.09E-01
 			Ap[i] = 1.33E-02
 		END FOR

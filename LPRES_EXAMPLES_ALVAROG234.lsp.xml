@@ -8,6 +8,8 @@
   <file name="MChSolido.el"/>
   <file name="MChSolido2.el"/>
   <file name="Prueba.eds"/>
+  <file name="ParedMCPS.el"/>
+  <file name="Final.el"/>
  </filedeps>
  <libdeps>
  </libdeps>
