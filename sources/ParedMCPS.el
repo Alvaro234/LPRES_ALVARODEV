@@ -7,18 +7,18 @@ COMPONENT Pared
 	PORTS
 		OUT test salida
 	DATA
-		REAL P = 5E6
+		
 		REAL U = 0 
 		REAL Coord = 0  UNITS "m"	
 		REAL g = 0
-
+		
 	DECLS
+	
 	
 	CONTINUOUS 
 	
-	--P = 5E6
-	salida.Pin = P
-	salida.Pout = P
+	--salida.Pin = Phead
+	salida.Pout = salida.Pin 
 	salida.U = U
 	salida.Coord = Coord
 	salida.g = g

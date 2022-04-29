@@ -13,39 +13,35 @@
 <generateMaxSignificantDigits value="TRUE"/>
 <generateParResiduesForDiff value="FALSE"/>
 <generateAdvancedBox value="disabled"/>
-<highIndexVars>
-  <variable name="MChSolido2_1.Ap[4]."/>
-  <separator/>
-  <variable name="MChSolido2_1.S[4]."/>
-  <separator/>
-  <variable name="Final_1.entrada.Ap"/>
-  <separator/>
-  <variable name="Final_1.entrada.S"/>
-</highIndexVars>
 <boundaries>
-  <variable name="Final_1.g"/>
+  <variable name="Conversor.g"/>
+  <variable name="Seccion1.Tt[1]"/>
+  <variable name="Seccion1.entrada.Pout"/>
+  <variable name="Seccion2.Tt[1]"/>
 </boundaries>
 <dynamics>
-  <variable name="MChSolido2_1.S[2]"/>
-  <variable name="MChSolido2_1.Ap[2]"/>
-  <variable name="MChSolido2_1.S[3]"/>
-  <variable name="MChSolido2_1.Ap[3]"/>
-  <variable name="MChSolido2_2.S[4]"/>
-  <variable name="MChSolido2_2.Ap[4]"/>
-  <variable name="MChSolido2_2.S[2]"/>
-  <variable name="MChSolido2_2.Ap[2]"/>
-  <variable name="MChSolido2_2.S[3]"/>
-  <variable name="MChSolido2_2.Ap[3]"/>
-  <variable name="Pared_1.salida.S"/>
-  <variable name="Pared_1.salida.Ap"/>
-  <variable name="MChSolido2_1.salida.S"/>
-  <variable name="MChSolido2_1.salida.Ap"/>
+  <variable name="Seccion1.S[2]"/>
+  <variable name="Seccion1.Ap[2]"/>
+  <variable name="Seccion1.S[3]"/>
+  <variable name="Seccion1.Ap[3]"/>
+  <variable name="Seccion2.S[2]"/>
+  <variable name="Seccion2.Ap[2]"/>
+  <variable name="Seccion2.S[3]"/>
+  <variable name="Seccion2.Ap[3]"/>
+  <variable name="Seccion2.salida.S"/>
+  <variable name="Seccion2.salida.Ap"/>
+  <variable name="Pared.salida.S"/>
+  <variable name="Pared.salida.Ap"/>
+  <variable name="Seccion1.salida.S"/>
+  <variable name="Seccion1.salida.Ap"/>
 </dynamics>
 <algebraics>
-  <variable name="MChSolido2_1.U[2]"/>
-  <variable name="MChSolido2_1.U[4]"/>
-  <variable name="MChSolido2_2.U[2]"/>
-  <variable name="MChSolido2_2.U[4]"/>
+  <variable name="Seccion1.U[2]"/>
+  <variable name="Seccion1.U[3]"/>
+  <variable name="Seccion1.U[4]"/>
+  <variable name="Seccion2.P[2]"/>
+  <variable name="Seccion2.P[3]"/>
+  <variable name="Seccion2.U[4]"/>
 </algebraics>
 <residues>
 </residues>

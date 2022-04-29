@@ -5,26 +5,30 @@
 -----------------------------------------------------------------------------------------*/
 USE LPRES
 
-COMPONENT Final
+COMPONENT Conversor
 	PORTS
 		IN test entrada
 		--OUT Fluid salida
 	DATA
 		REAL c_star = 1500
 		REAL A_th = 8.00E-03
-		REAL pt = 5.83E+06
-
 	DECLS
-	
-		REAL g 
-		
-					
+		BOUND REAL g 	
+		--BOUND REAL Ptdischarge
+		--BOUND REAL Pdischarge
 	CONTINUOUS		
+		entrada.Pin = entrada.Pout
+		--Pdischarge = entrada.Pout
+		
+		
+	
+		-- Condicion de igualdad de gastos entre combustion y tobera 
+		--1 = (g*c_star)/(A_th*Ptdischarge)  --Habria que imponerla en los boundary (presion de remanso en el inicio)-- 
+		
+		c_star=entrada.Pin*A_th/entrada.g
+
 		-- Hay que especificar el gas de salida para que funcione la tobera
 		--ENUM Gases salida.Fluid = setofElem(gases,1)		
 		
-		
-		-- Condicion de igualdad de gastos entre combustion y tobera --  ¿Tramos intermedios? 
-		--1 = (g*c_star)/(A_th*pt)  --Habria que imponerla en los boundary (presion de remanso en el inicio)-- 
 
 END COMPONENT
