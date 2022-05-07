@@ -17,29 +17,9 @@ NOTAS
 -----------------------------------------------------------------------------------------*/
 USE MATH VERSION "3.2"
 
-PORT test SINGLE
-		
-SUM	                   REAL g                 UNITS u_kg_s         RANGE ZERO,Inf       "Mass flow"
-EQUAL		                REAL Ap                UNITS u_m2           RANGE ZERO,Inf       "Port Area"
-EQUAL							 REAL S					   UNITS u_m				RANGE ZERO,Inf			"Perimeter of port"
-EQUAL		                REAL U                 UNITS u_m2           RANGE ZERO,Inf       "Flow speed"			
-EQUAL							 REAL Coord				   UNITS u_m				RANGE ZERO,Inf			"Coordinate"
-
-EQUAL							 REAL Pout				   UNITS u_m				RANGE ZERO,Inf		   "Pre-interface pressure"
-EQUAL							 REAL Pin				   UNITS u_m				RANGE ZERO,Inf		   "Post-interface pressure"						
--- Prueba
-
-
-								 REAL rp0_intermedia						
-CONTINUOUS
-rp0_intermedia = (1.27955E-05)* (0.5*(Pin+Pout))**0.4    -- ¿Hay que pasar variables de la ley de vieille?
-S'  =	2*MATH.PI*rp0_intermedia
-Ap' = S*rp0_intermedia
-END PORT
-
 COMPONENT MChSolido2(INTEGER nodos = 3, BOOLEAN Comb_Erosiva = TRUE )
 	PORTS
-		IN  test  entrada
+		IN  test entrada
 		OUT test salida
 	DATA
 			-- DATOS GENERALES COMBUSTIBLE Y PARAMETROS COMBUSTION
@@ -47,13 +27,13 @@ COMPONENT MChSolido2(INTEGER nodos = 3, BOOLEAN Comb_Erosiva = TRUE )
 			REAL gamma =	1.33
 			REAL R_gas = 307.93
 			REAL Tc = 3300 
-			REAL c_star =	1498.7	
-			-- Combustion erosiva
-			REAL Viscosidad_camara =	1.80E-05	
-			REAL gth =	35	
 			-- Ley de vieille
 			REAL Exponente =	0.4	
 			REAL Factor_a =	1.27955E-05	
+			-- Combustion erosiva
+			REAL Viscosidad_camara =	1.80E-05	
+			REAL gth =	35	
+			
 			-- DATOS GEOMETRIA
 			REAL L = 5 UNITS "m" 			
 	DECLS
@@ -109,7 +89,9 @@ COMPONENT MChSolido2(INTEGER nodos = 3, BOOLEAN Comb_Erosiva = TRUE )
 		Coord[nodos+1]= salida.Coord
 		
 		P[1]= entrada.Pout
-		P[nodos]= salida.Pin 
+		T[1]= entrada.Tout
+		P[nodos]= salida.Pin
+		T[nodos]= salida.Tin 
 		
 		---------------------------------------------
 		
@@ -142,7 +124,8 @@ COMPONENT MChSolido2(INTEGER nodos = 3, BOOLEAN Comb_Erosiva = TRUE )
 		END EXPAND_BLOCK
 		EXPAND_BLOCK(i IN 1,nodos) -- Variables de remanso -- 
 		T[i] = Tt[i]*(1+0.5*(gamma-1)*MACH[i]**2)**(-1)
-		P[i] = pt[i]*(1+0.5*(gamma-1)*MACH[i]**2)**(-(gamma/(gamma-1))) --P[i]*(Tt[i]/T[i])**(gamma/(gamma-1)) 
+		P[i] = pt[i]*(1+0.5*(gamma-1)*MACH[i]**2)**(-(gamma/(gamma-1))) ----pt[i]=P[i]*(Tt[i]/T[i])**(gamma/(gamma-1)) 
+		
 		Rho[i] = P[i] /(R_gas*T[i])
 		SoundSpeed[i]= sqrt(gamma*R_gas*T[i])
 		MACH[i]= 0.5*(U[i]+U[i+1])/SoundSpeed[i]    -- Hacer velocidad media? Y la velocidad del sonido es la media?

@@ -206,25 +206,7 @@
 			</plotWindow>
 		</tab>
 		<tab name="Tab_4">
-			<tableWindow title="Table_2" x="0" y="382" dx="1658" dy="382">
-				<findBar visible="f" names="t" sensitive="f"/>
-				<table id="Table_2" colums="true">
-					<var name="Seccion1.P[1]"/>
-					<var name="Seccion1.P[2]"/>
-					<var name="Seccion1.P[3]"/>
-					<var name="Seccion2.P[1]"/>
-					<var name="Seccion2.P[2]"/>
-					<var name="Seccion2.P[3]"/>
-					<var name="Seccion1.U[1]"/>
-					<var name="Seccion1.U[2]"/>
-					<var name="Seccion1.U[3]"/>
-					<var name="Seccion1.U[4]"/>
-					<var name="Seccion2.U[2]"/>
-					<var name="Seccion2.U[3]"/>
-					<var name="Seccion2.U[4]"/>
-				</table>
-			</tableWindow>
-			<tableWindow title="Table_1" x="0" y="0" dx="1658" dy="382">
+			<tableWindow title="Table_1" x="0" y="382" dx="1658" dy="382">
 				<findBar visible="f" names="t" sensitive="f"/>
 				<table id="Table_1" colums="true">
 					<var name="Seccion1.T[1]"/>
@@ -240,6 +222,24 @@
 					<var name="Seccion2.g[2]"/>
 					<var name="Seccion2.g[3]"/>
 					<var name="Seccion2.g[4]"/>
+				</table>
+			</tableWindow>
+			<tableWindow title="Table_2" x="0" y="0" dx="1658" dy="382">
+				<findBar visible="f" names="t" sensitive="f"/>
+				<table id="Table_2" colums="true">
+					<var name="Seccion1.P[1]"/>
+					<var name="Seccion1.P[2]"/>
+					<var name="Seccion1.P[3]"/>
+					<var name="Seccion2.P[1]"/>
+					<var name="Seccion2.P[2]"/>
+					<var name="Seccion2.P[3]"/>
+					<var name="Seccion1.U[1]"/>
+					<var name="Seccion1.U[2]"/>
+					<var name="Seccion1.U[3]"/>
+					<var name="Seccion1.U[4]"/>
+					<var name="Seccion2.U[2]"/>
+					<var name="Seccion2.U[3]"/>
+					<var name="Seccion2.U[4]"/>
 				</table>
 			</tableWindow>
 		</tab>
@@ -262,6 +262,35 @@
 					<var name="Seccion2.S[4]"/>
 				</table>
 			</tableWindow>
+		</tab>
+		<tab name="Tab_9">
+			<plotWindow title="Plot_1" x="0" y="0" dx="350" dy="250" state="maximized">
+				<plot id="Plot_1" graphType="plot_time">
+						<title value="">
+							<font/>
+						</title>
+						<axeX variableName="TIME">
+							<titleAxe value="TIME"/>
+							<scale scaleType="auto"/>
+						</axeX>
+						<axeY>
+							<titleAxe value=""/>
+							<scale scaleType="auto"/>
+						</axeY>
+						<layout>
+							<font/>
+							<majorGrid/>
+							<minorGrid/>
+						</layout>
+						<legend>
+							<font/>
+						</legend>
+						<chartStyles>
+							<var name="Seccion2.P[3]" nick=""/>
+						</chartStyles>
+					
+					</plot>
+			</plotWindow>
 		</tab>
 	</experimentViews>
 
@@ -308,5 +337,5 @@
 	</alarms>
 
 
-	<mainWindow  mode="maximized" currentTab="Tab_2" />
+	<mainWindow  mode="maximized" currentTab="Tab_4" />
 </experiment>
