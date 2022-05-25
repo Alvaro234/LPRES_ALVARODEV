@@ -52,18 +52,6 @@
 			</tableWindow>
 		</tab>
 		<tab name="Tab_2">
-			<tableWindow title="Table_3" x="0" y="0" dx="829" dy="407">
-				<findBar visible="f" names="t" sensitive="f"/>
-				<table id="Table_3" colums="true">
-					<var name="#Status"/>
-					<var name="g[02]"/>
-					<var name="g[03]"/>
-					<var name="g[08]"/>
-					<var name="g[10]"/>
-					<var name="g[09]"/>
-					<var name="g[11]"/>
-				</table>
-			</tableWindow>
 			<tableWindow title="_1" x="0" y="407" dx="829" dy="407">
 				<findBar visible="f" names="t" sensitive="f"/>
 				<table id="_1" colums="true">
@@ -125,6 +113,18 @@
 					<var name="dg[09]"/>
 					<var name="dg[10]"/>
 					<var name="dg[11]"/>
+				</table>
+			</tableWindow>
+			<tableWindow title="Table_3" x="0" y="0" dx="829" dy="407">
+				<findBar visible="f" names="t" sensitive="f"/>
+				<table id="Table_3" colums="true">
+					<var name="#Status"/>
+					<var name="g[02]"/>
+					<var name="g[03]"/>
+					<var name="g[08]"/>
+					<var name="g[10]"/>
+					<var name="g[09]"/>
+					<var name="g[11]"/>
 				</table>
 			</tableWindow>
 		</tab>
@@ -242,9 +242,38 @@
 					</plot>
 			</plotWindow>
 		</tab>
+		<tab name="Tab_5">
+			<plotWindow title="Plot_1" x="0" y="0" dx="350" dy="250" state="maximized">
+				<plot id="Plot_1" graphType="plot_time">
+						<title value="">
+							<font/>
+						</title>
+						<axeX variableName="TIME">
+							<titleAxe value="TIME"/>
+							<scale scaleType="auto"/>
+						</axeX>
+						<axeY>
+							<titleAxe value=""/>
+							<scale scaleType="auto"/>
+						</axeY>
+						<layout>
+							<font/>
+							<majorGrid/>
+							<minorGrid/>
+						</layout>
+						<legend>
+							<font/>
+						</legend>
+						<chartStyles>
+							<var name="P[11]" nick=""/>
+						</chartStyles>
+					
+					</plot>
+			</plotWindow>
+		</tab>
 	</experimentViews>
 
-	<watch width="250" height="842" visible="true" pos="right" >
+	<watch width="250" height="1181" visible="true" pos="right" >
 		<currentTab name="view"/>
 		<variables>
 			<tab name="initial"> 
@@ -282,11 +311,11 @@
 
 
 
-	<outputWindow height="200" width="1920" visible="true" pos="bottom" />
+	<outputWindow height="200" width="2560" visible="true" pos="bottom" />
 
 	<alarms globalEnabled="TRUE">
 	</alarms>
 
 
-	<mainWindow  mode="maximized" currentTab="Tab_3" />
+	<mainWindow  mode="maximized" currentTab="Tab_2" />
 </experiment>

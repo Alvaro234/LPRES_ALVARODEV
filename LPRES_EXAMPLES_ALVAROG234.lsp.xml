@@ -9,8 +9,9 @@
   <file name="MChSolido2.el"/>
   <file name="Prueba.eds"/>
   <file name="ParedMCPS.el"/>
-  <file name="Final.el"/>
+  <file name="Conversor.el"/>
   <file name="PuertoMCHsolido.el"/>
+  <file name="Pruebamonoseccion.eds"/>
  </filedeps>
  <libdeps>
  </libdeps>

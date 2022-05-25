@@ -7,11 +7,11 @@
  <case id="case2" description="Description" run="yes" noplotted="no" type="standard case" deploy="true">
   <transient id="transient1" description="Transient">
    <settings>
-    <advanced advancedTransient="true" nonLinearSolver="true" />
+    <advanced advancedTransient="false" nonLinearSolver="false" />
    </settings>
    <general>
     <caltype />
-    <tsolver imethod="IDAS" time="0.0" tstop="80" cint="5" maxabserror="0.00001" maxrelerror="0.00001" reportMode="IS_CINT" nsteps="10" initIntegStep="-1" maxIntegStep="-1" tsmitg="FALSE" warnStepReduct="FALSE" rdigits="9" />
+    <tsolver imethod="IDAS" time="0.0" tstop="15" cint="0.5" maxabserror="0.00001" maxrelerror="0.00001" reportMode="IS_CINT" nsteps="10" initIntegStep="-1" maxIntegStep="-1" tsmitg="FALSE" warnStepReduct="FALSE" rdigits="9" />
     <nlsolver smethod="NR" tolerance="0.00001" toleranceUser="0.000001" toleranceUsed="suggested" toltype="RELTOL" maxiter="10000" maxfval="40000" maxjaceval="60" maxbroyden="60" />
     <debug level="3" />
     <stopSimulation stopAlgebraicsFails="yes" stopBadOperation="no" />
@@ -21,50 +21,68 @@
    </general>
    <global>
     <bounds>
-     <variable id="Conversor.g" alias="" value="31" inputType="Function" independentColumn="Not available" dependentColumn="Not available" />
-     <variable id="Seccion1.entrada.Pout" alias="" value="6e6" inputType="Constant value" independentColumn="Not available" dependentColumn="Not available" />
+     <variable id="Conversor.entrada.Tin" alias="" value="3330" inputType="Constant value" independentColumn="Not available" dependentColumn="Not available" />
+     <variable id="Conversor.entrada.g" alias="" value="30" inputType="Constant value" independentColumn="Not available" dependentColumn="Not available" />
     </bounds>
     <initial>
+     <variable id="Seccion1.Y[2]." alias="Seccion1.Y[2]" value="" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
      <variable id="Seccion1.S[2]." alias="Seccion1.S[2]" value="" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
      <variable id="Seccion1.Ap[2]." alias="Seccion1.Ap[2]" value="" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
+     <variable id="Seccion1.Y[3]." alias="Seccion1.Y[3]" value="" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
      <variable id="Seccion1.S[3]." alias="Seccion1.S[3]" value="" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
      <variable id="Seccion1.Ap[3]." alias="Seccion1.Ap[3]" value="" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
+     <variable id="Seccion2.Y[2]." alias="Seccion2.Y[2]" value="" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
      <variable id="Seccion2.S[2]." alias="Seccion2.S[2]" value="" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
      <variable id="Seccion2.Ap[2]." alias="Seccion2.Ap[2]" value="" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
+     <variable id="Seccion2.Y[3]." alias="Seccion2.Y[3]" value="" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
      <variable id="Seccion2.S[3]." alias="Seccion2.S[3]" value="" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
      <variable id="Seccion2.Ap[3]." alias="Seccion2.Ap[3]" value="" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
-     <variable id="Seccion2.salida.S" alias="" value="4.09E-01" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
-     <variable id="Seccion2.salida.Ap" alias="" value="1.33E-02" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
-     <variable id="Pared.salida.S" alias="" value="4.09E-01" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
-     <variable id="Pared.salida.Ap" alias="" value="1.33E-02" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
+     <variable id="Seccion2.salida.Y" alias="" value="1" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
+     <variable id="Seccion2.salida.S" alias="" value="1" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
+     <variable id="Seccion2.salida.Ap" alias="" value="1" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
+     <variable id="Pared.salida.Y" alias="" value="1" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
+     <variable id="Pared.salida.S" alias="" value="1" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
+     <variable id="Pared.salida.Ap" alias="" value="1" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
+     <variable id="Seccion1.salida.Y" alias="" value="1" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
      <variable id="Seccion1.salida.S" alias="" value="4.09E-01" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
      <variable id="Seccion1.salida.Ap" alias="" value="1.33E-02" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
-     <variable id="Seccion1.U[3]" alias="" value="100" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
-     <variable id="Seccion1.U[4]" alias="" value="120" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
-     <variable id="Seccion2.P[1]" alias="" value="6e6" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
-     <variable id="Seccion2.U[2]" alias="" value="130" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
-     <variable id="Seccion2.U[4]" alias="" value="150" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
+     <variable id="Seccion2.P[3]" alias="" value="5.27E+06" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
+     <variable id="Seccion1.P[1]" alias="" value="5.27E+06" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
+     <variable id="Seccion1.P[2]" alias="" value="5.27E+06" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
+     <variable id="Seccion1.P[3]" alias="" value="5.27E+06" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
+     <variable id="Seccion2.P[1]" alias="" value="5.27E+06" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
+     <variable id="Seccion2.P[2]" alias="" value="5.27E+06" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
+     <variable id="Seccion2.U[3]" alias="" value="400" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
     </initial>
     <closure>
+     <equation left="Seccion1.Y[2]'" oper="=" right="0.5 * (Seccion1.rp0[2] + Seccion1.rp0[1])" toltype="" tolerance="" internal="yes" />
      <equation left="Seccion1.S[2]'" oper="=" right="2 * MATH.PI * 0.5 * (Seccion1.rp0[2] + Seccion1.rp0[1])" toltype="" tolerance="" internal="yes" />
      <equation left="Seccion1.Ap[2]'" oper="=" right="Seccion1.S[2] * 0.5 * (Seccion1.rp0[2] + Seccion1.rp0[1])" toltype="" tolerance="" internal="yes" />
+     <equation left="Seccion1.Y[3]'" oper="=" right="0.5 * (Seccion1.rp0[3] + Seccion1.rp0[2])" toltype="" tolerance="" internal="yes" />
      <equation left="Seccion1.S[3]'" oper="=" right="2 * MATH.PI * 0.5 * (Seccion1.rp0[3] + Seccion1.rp0[2])" toltype="" tolerance="" internal="yes" />
      <equation left="Seccion1.Ap[3]'" oper="=" right="Seccion1.S[3] * 0.5 * (Seccion1.rp0[3] + Seccion1.rp0[2])" toltype="" tolerance="" internal="yes" />
+     <equation left="Seccion2.Y[2]'" oper="=" right="0.5 * (Seccion2.rp0[2] + Seccion2.rp0[1])" toltype="" tolerance="" internal="yes" />
      <equation left="Seccion2.S[2]'" oper="=" right="2 * MATH.PI * 0.5 * (Seccion2.rp0[2] + Seccion2.rp0[1])" toltype="" tolerance="" internal="yes" />
      <equation left="Seccion2.Ap[2]'" oper="=" right="Seccion2.S[2] * 0.5 * (Seccion2.rp0[2] + Seccion2.rp0[1])" toltype="" tolerance="" internal="yes" />
+     <equation left="Seccion2.Y[3]'" oper="=" right="0.5 * (Seccion2.rp0[3] + Seccion2.rp0[2])" toltype="" tolerance="" internal="yes" />
      <equation left="Seccion2.S[3]'" oper="=" right="2 * MATH.PI * 0.5 * (Seccion2.rp0[3] + Seccion2.rp0[2])" toltype="" tolerance="" internal="yes" />
      <equation left="Seccion2.Ap[3]'" oper="=" right="Seccion2.S[3] * 0.5 * (Seccion2.rp0[3] + Seccion2.rp0[2])" toltype="" tolerance="" internal="yes" />
-     <equation left="Seccion2.salida.S'" oper="=" right="2 * MATH.PI * Conversor.entrada.rp0_intermedia" toltype="" tolerance="" internal="yes" />
-     <equation left="Seccion2.salida.Ap'" oper="=" right="Seccion2.salida.S * Conversor.entrada.rp0_intermedia" toltype="" tolerance="" internal="yes" />
-     <equation left="Pared.salida.S'" oper="=" right="2 * MATH.PI * Seccion1.entrada.rp0_intermedia" toltype="" tolerance="" internal="yes" />
-     <equation left="Pared.salida.Ap'" oper="=" right="Pared.salida.S * Seccion1.entrada.rp0_intermedia" toltype="" tolerance="" internal="yes" />
-     <equation left="Seccion1.salida.S'" oper="=" right="2 * MATH.PI * Seccion2.entrada.rp0_intermedia" toltype="" tolerance="" internal="yes" />
-     <equation left="Seccion1.salida.Ap'" oper="=" right="Seccion1.salida.S * Seccion2.entrada.rp0_intermedia" toltype="" tolerance="" internal="yes" />
-     <equation left="Seccion1.T[2]" oper="=" right="Seccion1.Tt[2] * 1 / (1 + 0.5 * (Seccion1.gamma - 1) * Seccion1.MACH[2] ** 2)" toltype="" tolerance="" internal="yes" />
-     <equation left="Seccion1.T[3]" oper="=" right="Seccion1.Tt[3] * 1 / (1 + 0.5 * (Seccion1.gamma - 1) * Seccion1.MACH[3] ** 2)" toltype="" tolerance="" internal="yes" />
-     <equation left="Seccion2.T[2]" oper="=" right="Seccion2.Tt[2] * 1 / (1 + 0.5 * (Seccion2.gamma - 1) * Seccion2.MACH[2] ** 2)" toltype="" tolerance="" internal="yes" />
-     <equation left="Conversor.entrada.Pin" oper="=" right="Conversor.Ptdischarge * (1 + 0.5 * (Conversor.gamma - 1) * Conversor.MACH ** 2) ** -(Conversor.gamma / (Conversor.gamma - 1))" toltype="" tolerance="" internal="yes" />
-     <equation left="Seccion2.T[3]" oper="=" right="Seccion2.Tt[3] * 1 / (1 + 0.5 * (Seccion2.gamma - 1) * Seccion2.MACH[3] ** 2)" toltype="" tolerance="" internal="yes" />
+     <equation left="Seccion2.salida.Y'" oper="=" right="Conversor.entrada.rp0_intermedia" toltype="" tolerance="" internal="yes" />
+     <equation left="Seccion2.salida.S'" oper="=" right="2 * MATH.PI * Seccion2.salida.Y'" toltype="" tolerance="" internal="yes" />
+     <equation left="Seccion2.salida.Ap'" oper="=" right="Seccion2.salida.S * Seccion2.salida.Y'" toltype="" tolerance="" internal="yes" />
+     <equation left="Pared.salida.Y'" oper="=" right="Seccion1.entrada.rp0_intermedia" toltype="" tolerance="" internal="yes" />
+     <equation left="Pared.salida.S'" oper="=" right="2 * MATH.PI * Pared.salida.Y'" toltype="" tolerance="" internal="yes" />
+     <equation left="Pared.salida.Ap'" oper="=" right="Pared.salida.S * Pared.salida.Y'" toltype="" tolerance="" internal="yes" />
+     <equation left="Seccion1.salida.Y'" oper="=" right="Seccion2.entrada.rp0_intermedia" toltype="" tolerance="" internal="yes" />
+     <equation left="Seccion1.salida.S'" oper="=" right="2 * MATH.PI * Seccion1.salida.Y'" toltype="" tolerance="" internal="yes" />
+     <equation left="Seccion1.salida.Ap'" oper="=" right="Seccion1.salida.S * Seccion1.salida.Y'" toltype="" tolerance="" internal="yes" />
+     <equation left="Conversor.Ptdischarge" oper="=" right="Conversor.entrada.Pin * (1 + 0.5 * (Conversor.gamma - 1) * Conversor.MACH ** 2) ** (Conversor.gamma / (Conversor.gamma - 1))" toltype="" tolerance="" internal="yes" />
+     <equation left="Seccion1.g[3] + Seccion1.dg[3] + Seccion2.dg[1] + Seccion2.dg[2]" oper="=" right="Seccion2.g[3]" toltype="" tolerance="" internal="yes" />
+     <equation left="Seccion2.U[3]" oper="=" right="Seccion2.g[3] / (Seccion2.Rho[2] * Seccion2.Ap[3])" toltype="" tolerance="" internal="yes" />
+     <equation left="Seccion2.T[3]" oper="=" right="Seccion2.T[2] - 0.5 * (Seccion2.gamma - 1) / (Seccion2.gamma * Seccion2.R_gas) * (Seccion2.U[3] ** 2 - Seccion2.U[2] ** 2)" toltype="" tolerance="" internal="yes" />
+     <equation left="Seccion2.g[2] + Seccion2.dg[2]" oper="=" right="Seccion2.g[3]" toltype="" tolerance="" internal="yes" />
+     <equation left="Seccion2.rp0[2]" oper="=" right="Seccion2.Factor_a * Seccion2.P[2] ** Seccion2.Exponente" toltype="" tolerance="" internal="yes" />
+     <equation left="Seccion1.dg[1] + Seccion1.dg[2] + Seccion1.dg[3] + Seccion2.dg[1] + Seccion2.dg[2]" oper="=" right="Seccion2.g[3]" toltype="" tolerance="" internal="yes" />
     </closure>
    </global>
   </transient>

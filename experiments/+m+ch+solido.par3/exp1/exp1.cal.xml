@@ -11,7 +11,7 @@
    </settings>
    <general>
     <caltype />
-    <tsolver imethod="IDAS" time="0.0" tstop="8.5" cint="0.5" maxabserror="0.000001" maxrelerror="0.000001" reportMode="IS_STEP" nsteps="1" initIntegStep="-1" maxIntegStep="-1" tsmitg="FALSE" warnStepReduct="FALSE" rdigits="9" />
+    <tsolver imethod="IDAS" time="0.0" tstop="80" cint="0.5" maxabserror="0.000001" maxrelerror="0.000001" reportMode="IS_STEP" nsteps="1" initIntegStep="-1" maxIntegStep="-1" tsmitg="FALSE" warnStepReduct="FALSE" rdigits="9" />
     <nlsolver smethod="NR" tolerance="0.000001" toleranceUser="0.000001" toleranceUsed="suggested" toltype="RELTOL" maxiter="10000" maxfval="40000" maxjaceval="60" maxbroyden="60" />
     <debug level="3" />
     <stopSimulation stopAlgebraicsFails="yes" stopBadOperation="no" />

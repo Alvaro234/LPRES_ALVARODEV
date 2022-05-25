@@ -2,18 +2,18 @@
 <experiment version="1.4.0">
 	<experimentViews>
 		<tab name="Tab_2">
-			<plotWindow title="Plot_1" x="0" y="407" dx="1658" dy="402">
+			<plotWindow title="Plot_1" x="1148" y="0" dx="1148" dy="1075">
 				<plot id="Plot_1" graphType="plot_time">
 						<title value="">
 							<font/>
 						</title>
 						<axeX variableName="TIME">
 							<titleAxe value="TIME"/>
-							<scale scaleType="auto"/>
+							<scale minCurrent="0.8" maxCurrent="15.2" scaleType="current"/>
 						</axeX>
 						<axeY>
 							<titleAxe value=""/>
-							<scale scaleType="auto"/>
+							<scale minCurrent="0.335" maxCurrent="0.965" scaleType="current"/>
 						</axeY>
 						<layout>
 							<font/>
@@ -34,7 +34,7 @@
 					
 					</plot>
 			</plotWindow>
-			<plotWindow title="Plot_2" x="0" y="0" dx="1658" dy="407">
+			<plotWindow title="Plot_2" x="0" y="0" dx="1148" dy="1075">
 				<plot id="Plot_2" graphType="plot_time">
 						<title value="">
 							<font/>
@@ -172,7 +172,7 @@
 			</plotWindow>
 		</tab>
 		<tab name="Tab_8">
-			<plotWindow title="Plot_1" x="0" y="0" dx="350" dy="250" state="maximized">
+			<plotWindow title="Plot_1" x="0" y="0" dx="2296" dy="1075">
 				<plot id="Plot_1" graphType="plot_time">
 						<title value="">
 							<font/>
@@ -206,7 +206,7 @@
 			</plotWindow>
 		</tab>
 		<tab name="Tab_4">
-			<tableWindow title="Table_1" x="0" y="382" dx="1658" dy="382">
+			<tableWindow title="Table_1" x="0" y="537" dx="2296" dy="537">
 				<findBar visible="f" names="t" sensitive="f"/>
 				<table id="Table_1" colums="true">
 					<var name="Seccion1.T[1]"/>
@@ -224,7 +224,7 @@
 					<var name="Seccion2.g[4]"/>
 				</table>
 			</tableWindow>
-			<tableWindow title="Table_2" x="0" y="0" dx="1658" dy="382">
+			<tableWindow title="Table_2" x="0" y="0" dx="2296" dy="537">
 				<findBar visible="f" names="t" sensitive="f"/>
 				<table id="Table_2" colums="true">
 					<var name="Seccion1.P[1]"/>
@@ -244,9 +244,23 @@
 			</tableWindow>
 		</tab>
 		<tab name="Tab_3">
-			<tableWindow title="Table_1" x="0" y="0" dx="350" dy="250" state="maximized">
+			<tableWindow title="" x="0" y="537" dx="2296" dy="537">
 				<findBar visible="f" names="t" sensitive="f"/>
 				<table id="Table_1" colums="true">
+					<var name="#Status"/>
+					<var name="Seccion1.Ap[1]"/>
+					<var name="Seccion1.Ap[2]"/>
+					<var name="Seccion1.Ap[3]"/>
+					<var name="Seccion1.Ap[4]"/>
+					<var name="Seccion2.Ap[1]"/>
+					<var name="Seccion2.Ap[2]"/>
+					<var name="Seccion2.Ap[3]"/>
+					<var name="Seccion2.Ap[4]"/>
+				</table>
+			</tableWindow>
+			<tableWindow title="Table_2" x="0" y="0" dx="2296" dy="537">
+				<findBar visible="f" names="t" sensitive="f"/>
+				<table id="Table_2" colums="true">
 					<var name="Seccion1.Ab[1]"/>
 					<var name="Seccion1.Ab[2]"/>
 					<var name="Seccion1.Ab[3]"/>
@@ -294,7 +308,7 @@
 		</tab>
 	</experimentViews>
 
-	<watch width="250" height="792" visible="true" pos="right" >
+	<watch width="250" height="1109" visible="true" pos="right" >
 		<currentTab name="view"/>
 		<variables>
 			<tab name="initial"> 
@@ -331,11 +345,11 @@
 
 	<playback visible="t"/>
 
-	<outputWindow height="200" width="1920" visible="true" pos="bottom" />
+	<outputWindow height="200" width="2560" visible="true" pos="bottom" />
 
 	<alarms globalEnabled="TRUE">
 	</alarms>
 
 
-	<mainWindow  mode="maximized" currentTab="Tab_4" />
+	<mainWindow  mode="maximized" currentTab="Tab_2" />
 </experiment>

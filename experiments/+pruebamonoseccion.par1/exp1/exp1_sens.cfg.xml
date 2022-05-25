@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE experiment SYSTEM "DTDFILE_FULLPATH">
+<experiment version="1.3.0">
+	<watch width="268" height="192" visible="true" pos="right">
+		<currentTab name="view"/>
+		<variables>
+			<tab name="initial">
+			</tab>
+			<tab name="inputs">
+			</tab>
+			<tab name="view">
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[01]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[02]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[03]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[04]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[05]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[06]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[07]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[08]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[09]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[10]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[11]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[12]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[13]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[14]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[15]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[16]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[17]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[18]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[19]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[20]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[21]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[22]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[23]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[24]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[25]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[26]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[27]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[28]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[29]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[30]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[31]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[32]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[33]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[34]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[35]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[36]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[37]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[38]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[39]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[40]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[41]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[42]"/>
+				<var name="LPRES_EXAMPLES_ALVAROG234.initialRes[43]"/>
+			</tab>
+		</variables>
+		<layout>
+			<tab name="initial">
+				<column name="name" width="100"/>
+				<column name="value" width="100"/>
+				<column name="units" width="100"/>
+				<column name="category" width="100"/>
+				<column name="type" width="100"/>
+			</tab>
+			<tab name="inputs">
+				<column name="name" width="100"/>
+				<column name="value" width="100"/>
+				<column name="units" width="100"/>
+				<column name="category" width="100"/>
+				<column name="type" width="100"/>
+			</tab>
+			<tab name="view">
+				<column name="name" width="100"/>
+				<column name="value" width="100"/>
+				<column name="units" width="100"/>
+				<column name="category" width="100"/>
+			</tab>
+		</layout>
+	</watch>
+	<outputWindow height="192" width="1280" visible="true" pos="bottom" />
+	<alarms globalEnabled="TRUE">
+	</alarms>
+	<mainWindow  mode="maximized" currentTab="Res 1" />
+</experiment>

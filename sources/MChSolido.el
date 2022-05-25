@@ -23,52 +23,26 @@ NOTAS
 COMPONENT MChSolido(INTEGER nodos = 11)
 	-- De momento sin puertos	
 	DATA
-			-- DATOS GENERALES COMBUSTIBLE Y PARAMETROS COMBUSTION
 			REAL Rho_P = 1750	UNITS "kg/m3"
 			REAL gamma =	1.33	
-			--REAL Peso_molecular =	27	UNITS "g/mol"
-			--REAL G_gamma= 0.6726	
 			REAL Viscosidad_camara =	1.80E-05	
 			BOOLEAN Combustion_erosiva = TRUE	
 			REAL gth =	35	
 			REAL Temperatura_de_combustion =3300 UNITS	"K"
 			REAL ce_estrella =	1498.7	UNITS "m/s"
-			--REAL Velocidad_recesion_70 =	7	UNITS "mm/s"
 			REAL Exponente =	0.4	
 			REAL Factor_a =	1.27955E-05	
 			REAL R_gas = 307.93  UNITS "J/kgK"			
-			
 			-- DATOS MOTOR
 			REAL Area_de_garganta	 = 8.00E-03	UNITS "m2"
-			--REAL Presion_de_camara= 4.20E+06	UNITS "Pa"
-			--REAL Tiempo_de_combustion = 85	UNITS "s"
 			REAL Klemmug = 280.64	
-			--REAL Area_de_Combustion =	2.25E+00 UNITS "m2"
-			--REAL Parametro_Jota_inicial=0.6	
-			--REAL Num_Mach_port	= 0.350
 			REAL Par_func_Y =	0.404
-			--REAL Area_port = 1.33E-02 UNITS "m2"
-			--REAL Diametro_port = 1.30E-01 UNITS "m" 
-			--REAL Perimetro_port = 4.09E-01 UNITS "m" 
-			--REAL LD_port	= 42.10
-			--REAL web = 5.95E-01 UNITS "m" 
-			--REAL Diametro_camara =	1.32E+00 UNITS "m" 
-			--REAL Gasto_f =	2.24E+01 UNITS "kg/s" 
-			--REAL Coef_Volumetrico =	0.990
-			--REAL Esbeltez_LD_camara =	4.15
-			REAL L = 5.48E+00 UNITS "m" 
-			
-			
-			
-			
-			
-				
+			REAL L = 5.48E+00 UNITS "m" 				
 	DECLS
 			CONST REAL Pi = 3.1415926
 			REAL Coord [nodos]  UNITS "m"	
 			REAL dx			
 			REAL Ab[nodos] UNITS "m2"
-			
 			REAL Kp[nodos]
 			REAL Jx[nodos]
 			REAL g0[nodos]  UNITS "no_units"
@@ -89,14 +63,11 @@ COMPONENT MChSolido(INTEGER nodos = 11)
 			REAL S[nodos] 
 			REAL Ap[nodos] 
 			REAL eta_temp[nodos]
-			
-	
 	INIT
 		FOR(i IN 1,nodos)
 			S[i] = 4.09E-01
 			Ap[i] = 1.33E-02
 		END FOR
-	
 	CONTINUOUS	
 		-- Condiciones de contorno
 		dx = L/(nodos-1)
@@ -127,17 +98,14 @@ COMPONENT MChSolido(INTEGER nodos = 11)
 			MACH[i]= U[i]/SoundSpeed[i]
 			Tt[i] = T[i]*(1+0.5*(gamma-1)*MACH[i]**2)
 			Pt[i] = P[i]*(Tt[i]/T[i])**(gamma/(gamma-1))
-			
-			--S[i]  =	S_t0[i] + 2*Pi*rp0[i]*eta[i]*TIME  --Evolucion temporal del perimetro y el area de canal en el tiempo para un canal cilindrico
-			--Ap[i] =  Ap_t0[i] + S[i]*rp0[i]*eta[i]*TIME  -- De momento no cambia con el tiempo ¿?
-		   S[i]'  =	2*Pi*rp0[i]*eta[i]
-			Ap[i]' =  S[i]*rp0[i]*eta[i]
+		   S[i]'  =	2*Pi*   rp0[i]*eta[i]
+			Ap[i]' =  S[i]*  rp0[i]*eta[i]
 		END EXPAND_BLOCK
 		
 		EXPAND_BLOCK (i IN 1,nodos-1)		
 		   Ab[i+1] = Ab[i]+0.5*(S[i]+S[i+1])*dx
 			
-			dg[i+1] = 0.5* Rho_P*(rp0[i]*S[i]+rp0[i+1]*S[i+1])*dx   --Añadir terminos de masa de ignicion?
+			dg[i+1] = 0.5* Rho_P*(rp0[i]*S[i]+rp0[i+1]*S[i+1])*dx  
 			
 			g[i+1] = g[i]+ dg[i+1]   
 			

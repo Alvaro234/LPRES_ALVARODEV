@@ -7,17 +7,22 @@ COMPONENT Pared
 	PORTS
 		OUT test salida
 	DATA
-	
+		REAL Tc = 3330
+		
 	DECLS
+		BOUND REAL Pheadend
+	INIT
 	
 	CONTINUOUS 
 	
 	salida.Pout = salida.Pin
+	salida.Pin = Pheadend
 	salida.Tin = salida.Tout
-	salida.Tout = 3300
+	salida.Tout = Tc		
 	salida.U = 0
-	salida.Coord = 0
 	salida.g = 0
+	salida.Coord = 0
+	
 	
 	
 END COMPONENT

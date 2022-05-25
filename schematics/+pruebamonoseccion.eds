@@ -14,41 +14,31 @@
 
 	<component id="Seccion1" library="LPRES_EXAMPLES_ALVAROG234" type="MChSolido2" layer="1" elPosition="0"  hotPort="salida" >
 	
-		<symbol cx="180" cy="122" sx="185" sy="77" dx="92" dy="156" onLabel="true" />
+		<symbol cx="180" cy="122" sx="185" sy="77" dx="140" dy="156" onLabel="true" />
 	
-		<label cx="31" cy="12" dx="240" dy="320" />
+		<label cx="31" cy="12" dx="288" dy="320" />
 	
 		<instanceData>
+			<datum id="N" value="10" pos="P" />
 			<datum id="Comb_Erosiva" value="FALSE" pos="P" />
-			<datum id="L" value="2.5" pos="D" />
+			<datum id="Tc" value="3056" pos="D" />
+			<datum id="L" value="0.708" pos="D" />
 		</instanceData>
 	
 	</component>
-
-	<component id="Seccion2" library="LPRES_EXAMPLES_ALVAROG234" type="MChSolido2" layer="1" elPosition="1"  hotPort="salida" >
-	
-		<symbol cx="180" cy="122" sx="185" sy="77" dx="316" dy="156" onLabel="true" />
-	
-		<label cx="31" cy="12" dx="464" dy="320" />
-	
-		<instanceData>
-			<datum id="Comb_Erosiva" value="FALSE" pos="P" />
-			<datum id="L" value="2.5" pos="D" />
-		</instanceData>
-	
-	</component>
-
-	<connector id="Connector_1" sShape="Seccion1" sPort="salida" eShape="Seccion2" ePort="entrada" elPosition="0" dx="100" dy="-75.5"  />
 
 	<component id="Conversor" library="LPRES_EXAMPLES_ALVAROG234" type="Conversor" layer="1" elPosition="4" >
 	
-		<symbol cx="256" cy="188" sx="337" sy="97" dx="516" dy="92" onLabel="true" />
+		<symbol cx="256" cy="188" sx="337" sy="97" dx="444" dy="92" onLabel="true" />
 	
-		<label cx="32.5" cy="12" dx="739" dy="289" />
+		<label cx="32.5" cy="12" dx="667" dy="289" />
+	
+		<instanceData>
+			<datum id="A_th" value="4.34E-4" pos="D" />
+			<datum id="gamma" value="1.21" pos="D" />
+		</instanceData>
 	
 	</component>
-
-	<connector id="Connector_3" sShape="Seccion2" sPort="salida" eShape="Conversor" ePort="entrada" elPosition="4"  />
 
 	<component id="Pared" library="LPRES_EXAMPLES_ALVAROG234" type="Pared" layer="1" elPosition="5"  hotPort="salida" >
 	
@@ -56,9 +46,15 @@
 	
 		<label cx="21" cy="12" dx="83" dy="315" />
 	
+		<instanceData>
+			<datum id="Tc" value="3056" pos="D" />
+		</instanceData>
+	
 	</component>
 
 	<connector id="Connector_2" sShape="Pared" sPort="salida" eShape="Seccion1" ePort="entrada" elPosition="5"  />
+
+	<connector id="Connector_1" sShape="Seccion1" sPort="salida" eShape="Conversor" ePort="entrada" elPosition="6"  />
 
 	<bodyEL>
 	<![CDATA[-- EL code of the schematic.

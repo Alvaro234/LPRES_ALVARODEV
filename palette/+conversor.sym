@@ -6,13 +6,40 @@
 
 	<componentType id="Conversor" >
 
-		<rect id="Rectangle_1" cx="110" cy="96" sx="12" sy="16"  color="85,170,255" gradientColor="255,255,255" gradientType="GL" position="100"  />
+		<ellipse id="Ellipse_1" cx="246" cy="88" rx="126" ry="48" dx="52" dy="100"  color="255,0,0" gradientColor="255,255,0" gradientType="GL" position="100"  />
 
-		<port id="entrada" library="LPRES_EXAMPLES_ALVAROG234" type="test" >
+		<g id="Group_1" dx="-118" dy="-22" rotation="-90" >
+			<closedBezier id="ClosedBezier_1" points="252,160 304,160 308,160 308,160 300,196 292,196 292,196 304,200 316,212 324,260 236,260 236,260 236,260 244,212 256,200 268,196 260,196 252,160 252,160" color="170,0,127" aliasing="true"  />
+			<line id="Line_2" points="264,200 296,200" dy="-8" aliasing="true"  />
+			<line id="Line_4" points="260,184 300,184" aliasing="true"  />
+			<line id="Line_3" points="240,240 320,240" dy="8" aliasing="true"  />
+			<line id="Line_5" points="244,232 316,232" dy="4" aliasing="true"  />
+			<line id="Line_6" points="248,224 312,224" aliasing="true"  />
+			<line id="Line_7" points="252,216 308,216" dy="-4" aliasing="true"  />
+			<line id="Line_8" points="272,208 296,208" dx="-4" dy="-12" aliasing="true"  />
+			<line id="Line_11" points="256,176 296,176" dx="4" aliasing="true"  />
+			<line id="Line_12" points="256,168 304,168" aliasing="true"  />
+			<g id="Group_3" dx="-30" dy="-26" rotation="90" >
+				<g id="Group_2" dx="20" dy="-24" >
+					<line id="Line_13" points="320,176 308,176"  start_arrow="true" dx="-24" dy="24"  />
+					<line id="Line_14" points="300,200 296,200"  />
+				</g>
+				<line id="Line_15" points="304,176 300,176"  />
+			</g>
+			<g id="Group_4" dx="-114" dy="94" rotation="90" >
+				<g id="Group_5" dx="100" dy="-24" >
+					<line id="Line_16" points="320,176 308,176"  start_arrow="true" dx="-24" dy="24"  />
+					<line id="Line_17" points="300,200 296,200"  />
+				</g>
+				<line id="Line_18" points="400,176 404,176"  />
+			</g>
+		</g>
+
+		<port id="entrada" library="LPRES_EXAMPLES_ALVAROG234" type="test"  hotPort="entrada" >
 		
-				<symbol dx="96" dy="96" onLabel="true" />
+				<symbol dx="92" dy="188" onLabel="true" />
 		
-				<label cx="25.5" cy="12" dx="37" dy="84" />
+				<label cx="25.5" cy="12" dx="33" dy="176" />
 		
 		</port>
 

@@ -6,7 +6,11 @@
 
 	<componentType id="Pared" >
 
-		<rect id="Rectangle_1" cx="110" cy="96" sx="12" sy="16"  color="85,170,255" gradientColor="255,255,255" gradientType="GL" position="100"  />
+		<ellipse id="Ellipse_1" cx="70" cy="96" rx="-42" ry="-32" dx="12" color="255,170,0"  />
+
+		<rect id="Rectangle_1" cx="92" cy="120" sx="48" sy="64" dx="8" dy="-24" color="255,170,0"  />
+
+		<line id="Line_3" points="76,128 76,64"  />
 
 		<port id="salida" library="LPRES_EXAMPLES_ALVAROG234" type="test" >
 		
