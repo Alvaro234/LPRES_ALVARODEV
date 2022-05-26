@@ -17,12 +17,8 @@ COMPONENT Conversor
 		BOUND REAL Ptdischarge
 		REAL Rho
 		REAL SoundSpeed
-		REAL MACH
-		--REAL T
-		
+		REAL MACH	
 	CONTINUOUS		
-		--entrada.A_th = A_th
-		--entrada.c_star = c_star
 		entrada.Pin = entrada.Pout
 		entrada.Tin = entrada.Tout
 		entrada.etain = entrada.etaout

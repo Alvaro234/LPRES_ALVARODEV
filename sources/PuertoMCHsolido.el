@@ -13,10 +13,7 @@ EQUAL							 REAL S					   UNITS u_m				RANGE ZERO,Inf			"Perimeter of port"
 EQUAL							 REAL Y					   UNITS u_m				RANGE ZERO,Inf			"Lateral coordinate"				
 EQUAL		                REAL U                 UNITS u_m           RANGE ZERO,Inf       "Flow speed"			
 EQUAL							 REAL Coord				   UNITS u_m				RANGE ZERO,Inf			"Coordinate"
-						 		 --REAL c_star				UNITS u_m				RANGE ZERO,Inf
-							    --REAL A_th				   UNITS u_m				RANGE ZERO,Inf
-
-
+						 		 
 								 REAL Pout				   UNITS u_m				RANGE ZERO,Inf		   "Pre-interface pressure"
 							 	 REAL Pin				   UNITS u_m				RANGE ZERO,Inf		   "Post-interface pressure"
 							 	 REAL Tout				   UNITS u_m				RANGE ZERO,Inf		   "Pre-interface temp"
@@ -30,10 +27,10 @@ REAL rp0_intermedia
 
 
 CONTINUOUS
-rp0_intermedia = ((1.27955E-05)* (0.5*(Pin+Pout))**0.4 )*0.5*(etaout+etain)   -- ¿Hay que pasar variables de la ley de vieille?
+rp0_intermedia = ((4.092E-05)* (0.5*(Pin+Pout))**0.36)*0.5*(etaout+etain)   -- ¿Hay que pasar variables de la ley de vieille?
 Y' = rp0_intermedia
 S'  =	2*MATH.PI*Y' 
-Ap' = S*Y'
+Ap' =S*Y'
 
 
 // nuevo P[i+1] = P[i]-((g[i])*(U[i+1]-U[i]) + dg[i]*U[i+1])/Ap[i+1]

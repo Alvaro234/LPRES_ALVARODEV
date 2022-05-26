@@ -58,29 +58,18 @@ COMPONENT MChSolido2(INTEGER N = 3, BOOLEAN Comb_Erosiva = TRUE )
 				REAL Re0[N]
 				REAL eta_temp[N]
 				REAL eta[N]
-				-- Parametros semilla --
-				/*REAL P0
-				REAL Ab0
-				REAL c_star 
-				REAL A_th */
+			
 	
 	INIT							-----------Configuracion geometrica inicial-----------
 		FOR(i IN 1,N+1)
 			Y[i] = 0
 			S[i] = 2*MATH.PI*0.5*0.0254
-			Ap[i] = MATH.PI*(0.5*0.0254)**2
-		 --Ab0=Ab0+0.5*(S[i]+S[i+1])*(L/N)
-			
-			
-			--P0 = (Rho_P*Factor_a*c_star*Ab0/A_th)**(1/(1-Exponente))
+		   Ap[i] = MATH.PI*(0.5*0.0254)**2
 		END FOR
-			
-	
 	CONTINUOUS	
 		-- Condiciones de contorno
 		------------ Datos puerto -------------
-		/*c_star = salida.c_star
-		A_th = salida.A_th*/
+		
 		
 		
 		g[1] = entrada.g
@@ -116,10 +105,10 @@ COMPONENT MChSolido2(INTEGER N = 3, BOOLEAN Comb_Erosiva = TRUE )
 		
 		----------------------------------------------------------------INTERFACES (De 1 a N+1)---------------------------------------------------------------------
 		dx = L/N
-		EXPAND_BLOCK(i IN 2,N+1)
-			Coord[i] = Coord[i-1] + dx			 
-			g[i] = g[i-1]+dg[i-1]
-			U[i] = (g[i])/(Rho[i-1]*Ap[i])   -- ¿Rho deberia ser la media entre volumenes adyacentes?
+		EXPAND_BLOCK(i IN 1,N)
+			Coord[i+1] = Coord[i] + dx			 
+			g[i+1] = g[i]+dg[i]
+			U[i+1] = (g[i+1])/(Rho[i]*Ap[i+1])   -- ¿Rho deberia ser la media entre volumenes adyacentes?
 		END EXPAND_BLOCK	
 		EXPAND_BLOCK(i IN 2,N)
 			Y[i]' = 	0.5*(rp0[i]*eta[i]+rp0[i-1]*eta[i-1]) 
@@ -131,17 +120,18 @@ COMPONENT MChSolido2(INTEGER N = 3, BOOLEAN Comb_Erosiva = TRUE )
 		EXPAND_BLOCK (i IN 1,N)  -- 1 a N 
 			Ab[i] = 0.5*(S[i]+S[i+1])*dx			
 			dg[i] = Rho_P*rp0[i]*Ab[i] 			-- ¿Añadir terminos de masa de ignicion?
-			rp0[i] = (Factor_a*P[i]**Exponente) 
-			-- Variables de remanso -- 
+			rp0[i] = (Factor_a*P[i]**Exponente)
+			
 			Rho[i] = P[i] /(R_gas*T[i])
 			SoundSpeed[i]= sqrt(gamma*R_gas*T[i])
 			MACH[i]= (0.5*(U[i]+U[i+1]))/SoundSpeed[i]    -- Hacer velocidad media? Y la velocidad del sonido es la media?
 			Tt[i] = T[i]*(1+0.5*(gamma-1)*MACH[i]**2) 
 			pt[i] = P[i]*(Tt[i]/T[i])**(gamma/(gamma-1))
-			--pt[i] = P[i]*(1+0.5*(gamma-1)*MACH[i]**2)**(gamma/(gamma-1)) ----pt[i]=P[i]*(Tt[i]/T[i])**(gamma/(gamma-1))
+			
 		END EXPAND_BLOCK 
-		EXPAND_BLOCK(i IN 1,N-1)  -- 2 a N (1 viene dado por el componente previo, sea una pared u otra seccion de propelente)
-			P[i+1] = P[i]  - ((g[i])*(U[i+1]-U[i]) + dg[i]*U[i+1])/Ap[i+1]		
+		EXPAND_BLOCK(i IN 1,N-1)  -- 1 a N-1 define todos los volumenes mediante diferencias entre ellos, es necesaria una presion en un extremo?
+			P[i+1] = P[i]  - ((g[i])*(U[i+1]-U[i]) + (dg[i])*U[i+1])/(0.5*(Ap[i]+Ap[i+1]))		--Algo falla en las presiones, un orden de mag por debajo de lo esperado
+			--P[i+1] = P[i]-((Rho[i]*U[i]*Ap[i])*(U[i+1]-U[i])+g[i+1]*U[i+1])/(0.5*(Ap[i+1]+Ap[i]))
 			
 			Tt[i+1] = (g[i]*Tt[i]+dg[i]*Tc)/(g[i+1])	
 			--T[i+1] = T[i] - ((0.5*(gamma-1))/(gamma*R_gas))  *  (U[i+1]**2 - U[i]**2) 
