@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<partitionInfo version="1.0" library="LPRES_EXAMPLES_ALVAROG234" component="Pruebamonoseccion" partition="par1">
+<partitionInfo version="1.0" library="LPRES_EXAMPLES_ALVAROG234" component="Pruebamonoseccion" partition="par2">
 <noDerivatives value="FALSE"/>
-<inhibitReductionConstantCoefEqts value="TRUE"/>
+<inhibitReductionConstantCoefEqts value="FALSE"/>
 <generatePartitionClass value="FALSE"/>
-<removeNotUsedVars value="TRUE"/>
+<removeNotUsedVars value="FALSE"/>
 <showPropertyPanel value="FALSE"/>
 <generateProtectedMathFunctions value="TRUE"/>
 <generatePerformanceMeters value="FALSE"/>
@@ -13,9 +13,6 @@
 <generateMaxSignificantDigits value="TRUE"/>
 <generateParResiduesForDiff value="FALSE"/>
 <generateAdvancedBox value="disabled"/>
-<boundaries>
-  <variable name="Conversor.entrada.etain"/>
-</boundaries>
 <dynamics>
   <variable name="Seccion1.Y[02]"/>
   <variable name="Seccion1.S[02]"/>
@@ -52,8 +49,6 @@
   <variable name="Pared.salida.Ap"/>
 </dynamics>
 <algebraics>
-  <variable name="Conversor.entrada.Pin"/>
-  <variable name="Conversor.entrada.Tin"/>
   <variable name="Seccion1.P[01]"/>
   <variable name="Seccion1.P[02]"/>
   <variable name="Seccion1.P[03]"/>
@@ -64,6 +59,7 @@
   <variable name="Seccion1.P[08]"/>
   <variable name="Seccion1.P[09]"/>
   <variable name="Seccion1.P[10]"/>
+  <variable name="Seccion1.T[10]"/>
 </algebraics>
 <residues>
 </residues>

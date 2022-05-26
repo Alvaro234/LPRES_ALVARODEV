@@ -20,8 +20,8 @@
 	
 		<instanceData>
 			<datum id="N" value="10" pos="P" />
-			<datum id="Comb_Erosiva" value="FALSE" pos="P" />
 			<datum id="Tc" value="3056" pos="D" />
+			<datum id="Viscosidad_camara" value="8.19e-05" pos="D" />
 			<datum id="L" value="0.708" pos="D" />
 		</instanceData>
 	
@@ -35,7 +35,6 @@
 	
 		<instanceData>
 			<datum id="A_th" value="4.34E-4" pos="D" />
-			<datum id="gamma" value="1.21" pos="D" />
 		</instanceData>
 	
 	</component>

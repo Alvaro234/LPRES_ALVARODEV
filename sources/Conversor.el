@@ -21,9 +21,12 @@ COMPONENT Conversor
 		--REAL T
 		
 	CONTINUOUS		
-		
+		--entrada.A_th = A_th
+		--entrada.c_star = c_star
 		entrada.Pin = entrada.Pout
 		entrada.Tin = entrada.Tout
+		entrada.etain = entrada.etaout
+		 
 		Rho = entrada.Pin /(R_gas*entrada.Tin)
 		SoundSpeed = sqrt(gamma*R_gas*entrada.Tin)
 		MACH = entrada.U/SoundSpeed

@@ -22,8 +22,8 @@ COMPONENT MChSolido2(INTEGER N = 3, BOOLEAN Comb_Erosiva = TRUE )
 			REAL Exponente =	0.4	
 			REAL Factor_a =	1.27955E-05	
 			-- Combustion erosiva
-			--REAL Viscosidad_camara =	1.80E-05	
-			--REAL gth =	35	
+			REAL Viscosidad_camara =	1.80E-05	
+		   REAL gth =	35	
 			-- DATOS GEOMETRIA
 			REAL L = 5 UNITS "m" 			
 			REAL D = 1 UNITS "m"
@@ -52,22 +52,37 @@ COMPONENT MChSolido2(INTEGER N = 3, BOOLEAN Comb_Erosiva = TRUE )
 				REAL Tt[N]
 				REAL pt[N]
 				-- Parametros de combustion erosiva --
-				/* REAL Kp[N+1]
-				REAL Jx[N+1]
-				REAL g0[N+1]  
-				REAL Re[N+1]
-				REAL eta_temp[N+1]
-				REAL eta[N+1] */
+				-- Modelo de mukunda --
+				REAL g_i[N]
+				REAL g0_i[N]  
+				REAL Re0[N]
+				REAL eta_temp[N]
+				REAL eta[N]
+				-- Parametros semilla --
+				/*REAL P0
+				REAL Ab0
+				REAL c_star 
+				REAL A_th */
 	
 	INIT							-----------Configuracion geometrica inicial-----------
 		FOR(i IN 1,N+1)
 			Y[i] = 0
 			S[i] = 2*MATH.PI*0.5*0.0254
 			Ap[i] = MATH.PI*(0.5*0.0254)**2
+		 --Ab0=Ab0+0.5*(S[i]+S[i+1])*(L/N)
+			
+			
+			--P0 = (Rho_P*Factor_a*c_star*Ab0/A_th)**(1/(1-Exponente))
 		END FOR
+			
+	
 	CONTINUOUS	
 		-- Condiciones de contorno
-		------------ Datos puerto (WIP)-------------
+		------------ Datos puerto -------------
+		/*c_star = salida.c_star
+		A_th = salida.A_th*/
+		
+		
 		g[1] = entrada.g
 		U[1]= entrada.U
 		Coord [1]= entrada.Coord
@@ -94,8 +109,11 @@ COMPONENT MChSolido2(INTEGER N = 3, BOOLEAN Comb_Erosiva = TRUE )
 		
 		P[1]= entrada.Pout
 		T[1]= entrada.Tout
+		eta[1]=entrada.etaout
 		P[N]= salida.Pin
 		T[N]= salida.Tin 
+		eta[N]=salida.etain
+		
 		----------------------------------------------------------------INTERFACES (De 1 a N+1)---------------------------------------------------------------------
 		dx = L/N
 		EXPAND_BLOCK(i IN 2,N+1)
@@ -104,16 +122,16 @@ COMPONENT MChSolido2(INTEGER N = 3, BOOLEAN Comb_Erosiva = TRUE )
 			U[i] = (g[i])/(Rho[i-1]*Ap[i])   -- ¿Rho deberia ser la media entre volumenes adyacentes?
 		END EXPAND_BLOCK	
 		EXPAND_BLOCK(i IN 2,N)
-			Y[i]' = 	0.5*(rp0[i]+rp0[i-1])
-			S[i]'  =	2*MATH.PI* 0.5*(rp0[i]+rp0[i-1]) --Y[i]'  --*eta[i]
-			Ap[i]' = S[i] *     0.5*(rp0[i]+rp0[i-1])   --*eta[i]
+			Y[i]' = 	0.5*(rp0[i]*eta[i]+rp0[i-1]*eta[i-1]) 
+			S[i]'  =	2*MATH.PI*Y[i]'-- 0.5*(rp0[i]+rp0[i-1]) --Y[i]'  --*eta[i]
+			Ap[i]' = S[i] * Y[i]'--    0.5*(rp0[i]+rp0[i-1])   --*eta[i]
 		END EXPAND_BLOCK
 ---------------------------------------------------------------------- VOLUMEN DISCRETO (De 1 a N)--------------------------------------------------------------
 		
 		EXPAND_BLOCK (i IN 1,N)  -- 1 a N 
 			Ab[i] = 0.5*(S[i]+S[i+1])*dx			
 			dg[i] = Rho_P*rp0[i]*Ab[i] 			-- ¿Añadir terminos de masa de ignicion?
-			rp0[i] = Factor_a*P[i]**Exponente   --*eta[i]?  
+			rp0[i] = (Factor_a*P[i]**Exponente) 
 			-- Variables de remanso -- 
 			Rho[i] = P[i] /(R_gas*T[i])
 			SoundSpeed[i]= sqrt(gamma*R_gas*T[i])
@@ -132,34 +150,26 @@ COMPONENT MChSolido2(INTEGER N = 3, BOOLEAN Comb_Erosiva = TRUE )
 	
 ------------------------------------------------------------------------ Combustión erosiva en interfaces (De 1 a N+1) ----------------------------------------------------------------
 		
-	/*	
+		
 		IF (Comb_Erosiva == TRUE) INSERT
 			EXPAND_BLOCK(i IN 1,N)  -- 1 a N
-			Kp[i] = Ap[i]/Ab[i]
-			Jx[i] = Kp[i]/Klemmug
-			g0[i] = (g[i]/Ap[i])/(Rho_P*rp0[i])
-			Re[i] = ((Rho_P*rp0[i]*  4*Ap[i])/S[i]  )/Viscosidad_camara  -- El diametro hidraulico se puede definir con el volumen asi no se necesita S solo Ab, 4*Volumen/Ab
-			eta_temp[i] =	1 + 0.023*(g0[i]**0.8-gth**0.8) 
+			g0_i[i] = (Rho[i]*0.5*(U[i]+U[i+1]))/(Rho_P*rp0[i])
+			g_i[i] = g0_i[i]*(Re0[i]/1000)**-0.125
+			Re0[i] = (Rho_P*rp0[i]*(S[i]/MATH.PI))/Viscosidad_camara  -- El diametro hidraulico se puede definir con el volumen asi no se necesita S solo Ab, 4*Volumen/Ab
+			eta_temp[i] =	1 + 0.023*(g_i[i]**0.8-gth**0.8) 
 			eta[i] = IF(eta_temp[i]<1) 1 ELSE eta_temp[i]
 			END EXPAND_BLOCK 
-			Kp[N+1] = Ap[N+1]/Ab[N]  -- La ultima interfaz toma los datos del ultimo volumen ¿
-			Jx[N+1] = Kp[N+1]/Klemmug
-			g0[N+1] = (g[N+1]/Ap[N+1])/(Rho_P*rp0[N+1])
-			Re[N+1] = ((Rho_P*rp0[N+1]*4*Ap[N+1])/S[N+1])/Viscosidad_camara
-			eta_temp[N+1] =	1 + 0.023*(g0[N+1]**0.8-gth**0.8) 
-			eta[N+1] = IF(eta_temp[N+1]<1) 1 ELSE eta_temp[N+1]
 		ELSE
-			EXPAND_BLOCK(i IN 1,N+1)  -- 1 a N
-			Kp[i] = 0
-			Jx[i] = 0
-			g0[i] = 0
-			Re[i] = 0
+			EXPAND_BLOCK(i IN 1,N)  -- 1 a N
+			g_i[i] = 0
+			g0_i[i] = 0
+			Re0[i] = 0
 			eta_temp[i] = 0
 			eta[i] = 1
 			END EXPAND_BLOCK 
 		END IF
 		
-	*/
+	
 	
 	
 	

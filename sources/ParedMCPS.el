@@ -18,6 +18,7 @@ COMPONENT Pared
 	salida.Pout = salida.Pin
 	salida.Pin = Pheadend
 	salida.Tin = salida.Tout
+	salida.etain = salida.etaout
 	salida.Tout = Tc		
 	salida.U = 0
 	salida.g = 0
