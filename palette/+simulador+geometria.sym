@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" label-status="allshowed" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="SimuladorGeometria" >
+
+		<rect id="Rectangle_1" cx="113.5" cy="100" sx="19" sy="24"  color="85,170,255" gradientColor="255,255,255" gradientType="GL" position="100"  />
+
+		<editor used="false">
+		</editor>
+
+	</componentType>
+</palette>

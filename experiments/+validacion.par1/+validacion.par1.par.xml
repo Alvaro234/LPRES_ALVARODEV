@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<partitionInfo version="1.0" library="LPRES_EXAMPLES_ALVAROG234" component="Validacion" partition="par1">
+<noDerivatives value="FALSE"/>
+<inhibitReductionConstantCoefEqts value="TRUE"/>
+<generatePartitionClass value="FALSE"/>
+<removeNotUsedVars value="TRUE"/>
+<showPropertyPanel value="FALSE"/>
+<generateProtectedMathFunctions value="TRUE"/>
+<generatePerformanceMeters value="FALSE"/>
+<generateObfuscatedCpp value="FALSE"/>
+<generateParInfoHTML value="TRUE"/>
+<generateParInfoExtra value="FALSE"/>
+<generateMaxSignificantDigits value="TRUE"/>
+<generateParResiduesForDiff value="FALSE"/>
+<generateAdvancedBox value="disabled"/>
+<dynamics>
+  <variable name="Seccion1.Y[1]"/>
+  <variable name="Seccion1.Y[2]"/>
+  <variable name="Seccion1.Y[6]"/>
+  <variable name="Seccion1.Y[5]"/>
+  <variable name="Seccion1.Y[3]"/>
+  <variable name="Seccion1.Y[4]"/>
+  <variable name="Seccion1.Ap[1]"/>
+  <variable name="Seccion1.Ap[2]"/>
+  <variable name="Seccion1.Ap[3]"/>
+  <variable name="Seccion1.Ap[4]"/>
+  <variable name="Seccion1.Ap[5]"/>
+  <variable name="Seccion1.Ap[6]"/>
+  <variable name="Seccion2.Y[1]"/>
+  <variable name="Seccion2.Y[2]"/>
+  <variable name="Seccion2.Y[6]"/>
+  <variable name="Seccion2.Y[5]"/>
+  <variable name="Seccion2.Y[3]"/>
+  <variable name="Seccion2.Y[4]"/>
+  <variable name="Seccion2.Ap[1]"/>
+  <variable name="Seccion2.Ap[2]"/>
+  <variable name="Seccion2.Ap[3]"/>
+  <variable name="Seccion2.Ap[4]"/>
+  <variable name="Seccion2.Ap[5]"/>
+  <variable name="Seccion2.Ap[6]"/>
+  <variable name="Seccionmono.Y[01]"/>
+  <variable name="Seccionmono.Y[02]"/>
+  <variable name="Seccionmono.Y[11]"/>
+  <variable name="Seccionmono.Y[10]"/>
+  <variable name="Seccionmono.Y[03]"/>
+  <variable name="Seccionmono.Y[04]"/>
+  <variable name="Seccionmono.Y[05]"/>
+  <variable name="Seccionmono.Y[06]"/>
+  <variable name="Seccionmono.Y[07]"/>
+  <variable name="Seccionmono.Y[08]"/>
+  <variable name="Seccionmono.Y[09]"/>
+  <variable name="Seccionmono.Ap[01]"/>
+  <variable name="Seccionmono.Ap[02]"/>
+  <variable name="Seccionmono.Ap[03]"/>
+  <variable name="Seccionmono.Ap[04]"/>
+  <variable name="Seccionmono.Ap[05]"/>
+  <variable name="Seccionmono.Ap[06]"/>
+  <variable name="Seccionmono.Ap[07]"/>
+  <variable name="Seccionmono.Ap[08]"/>
+  <variable name="Seccionmono.Ap[09]"/>
+  <variable name="Seccionmono.Ap[10]"/>
+  <variable name="Seccionmono.Ap[11]"/>
+</dynamics>
+<algebraics>
+  <variable name="Seccion1.P[1]"/>
+  <variable name="Seccion1.P[2]"/>
+  <variable name="Seccion1.P[3]"/>
+  <variable name="Seccion1.P[4]"/>
+  <variable name="Seccion1.P[5]"/>
+  <variable name="Seccion2.P[1]"/>
+  <variable name="Seccion2.P[2]"/>
+  <variable name="Seccion2.P[3]"/>
+  <variable name="Seccion2.P[4]"/>
+  <variable name="Seccion2.P[5]"/>
+  <variable name="Seccionmono.P[01]"/>
+  <variable name="Seccionmono.P[02]"/>
+  <variable name="Seccionmono.P[03]"/>
+  <variable name="Seccionmono.P[04]"/>
+  <variable name="Seccionmono.P[05]"/>
+  <variable name="Seccionmono.P[06]"/>
+  <variable name="Seccionmono.P[07]"/>
+  <variable name="Seccionmono.P[08]"/>
+  <variable name="Seccionmono.P[09]"/>
+  <variable name="Seccionmono.P[10]"/>
+</algebraics>
+<residues>
+</residues>
+</partitionInfo>

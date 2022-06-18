@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" label-status="allshowed" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="MChSolido3" >
+
+		<rect id="Rectangle_1" cx="184" cy="116" sx="176" sy="80" dy="36" color="255,255,255"  />
+
+		<line id="Line_1" points="144,128 264,128" dx="-44" dy="24" lineColor="255,0,0"   />
+
+		<polygon id="Polygon_2" points="256,128 248,120 248,136" dx="-28" dy="24" lineColor="255,0,0"   />
+
+		<rect id="Rectangle_5" cx="172" cy="88" sx="144" sy="24" dx="12" dy="92" color="255,85,0"  />
+
+		<rect id="Rectangle_6" cx="172" cy="88" sx="144" sy="24" dx="12" dy="36" color="255,85,0"  />
+
+		<port id="entrada" library="LPRES_EXAMPLES_ALVAROG234" type="SRB2"  hotPort="entrada" >
+		
+				<symbol dx="96" dy="152" onLabel="true" />
+		
+				<label cx="25.5" cy="12" dx="37" dy="140" />
+		
+		</port>
+
+		<port id="salida" library="LPRES_EXAMPLES_ALVAROG234" type="SRB2"  hotPort="salida" >
+		
+				<symbol dx="272" dy="152" onLabel="true" />
+		
+				<label cx="21" cy="12" dx="280" dy="140" />
+		
+		</port>
+
+		<editor used="false">
+		</editor>
+
+	</componentType>
+</palette>

@@ -1,0 +1,50 @@
+ /*-----------------------------------------------------------------------------------------
+ LIBRARY: LPRES_EXAMPLES_ALVAROG234
+ COMPONENT: Pruebamonoseccion
+ PARTITION: par2
+ EXPERIMENT: exp1
+ TEMPLATE: TRANSIENT
+ CREATION DATE: 07/06/2022
+-----------------------------------------------------------------------------------------*/
+
+EXPERIMENT exp1 ON Pruebamonoseccion.par2
+   DECLS
+   OBJECTS
+   INIT
+      -- initial values for state variables
+
+      -- initial values for algebraics
+      Seccion1.P[01] = 6E6
+      Seccion1.P[02] = 6E6
+      Seccion1.P[03] = 6E6
+      Seccion1.P[04] = 6E6
+      Seccion1.P[05] = 6E6
+      Seccion1.P[06] = 6E6
+      Seccion1.P[07] = 6E6
+      Seccion1.P[08] = 6E6
+      Seccion1.P[09] = 6E6
+      Seccion1.P[10] = 6E6
+      Seccion1.T[10] = 300    
+
+   BOUNDS
+   BODY
+      -- REPORT_TABLE("results.rpt", "*") -- create an automatic report of variables
+      DEBUG_LEVEL= 4   -- valid range is [0,4]
+      IMETHOD= IDAS -- integration method
+
+      -- set tolerances for transient (REL_ERROR & ABS_ERROR) and steady (TOLERANCE) solvers
+      REL_ERROR = 1e-06
+      ABS_ERROR = 1e-06
+      TOLERANCE = 1e-06
+
+      INIT_INTEG_STEP = -1 -- initial integration step size (-1 uses default) 
+      MAX_INTEG_STEP = -1 -- maximum integration step size (-1 uses default) 
+      NSTEPS = 1 -- Only for explicit solvers use CINT/NSTEPS as integration step size
+      REPORT_MODE = IS_CINT -- Report results at every CINT and event detection.
+
+      -- simulate a transient in range[TIME,TSTOP] reporting at every CINT
+      TIME = 0
+      TSTOP = 1.6
+      CINT = 0.01
+      INTEG()
+END EXPERIMENT

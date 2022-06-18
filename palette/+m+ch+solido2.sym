@@ -6,29 +6,29 @@
 
 	<componentType id="MChSolido2" >
 
-		<rect id="Rectangle_1" cx="184" cy="118" sx="176" sy="76" dx="-4" dy="4" color="255,255,255"  />
+		<rect id="Rectangle_1" cx="184" cy="116" sx="176" sy="80" dy="20" color="255,255,255"  />
 
-		<line id="Line_2" points="192,128 256,128" dx="-4" dy="-4" lineColor="255,0,0"   />
+		<line id="Line_2" points="144,128 264,128" dx="-44" dy="8" lineColor="255,0,0"   />
 
-		<polygon id="Polygon_1" points="256,128 248,120 248,136 256,128" dx="4" dy="-4" lineColor="255,0,0"   />
+		<polygon id="Polygon_1" points="256,128 248,120 248,136" dx="-28" dy="8" lineColor="255,0,0"   />
 
-		<rect id="Rectangle_3" cx="170" cy="88" sx="148" sy="24" dx="8" dy="60" color="255,85,0"  />
+		<rect id="Rectangle_3" cx="172" cy="88" sx="144" sy="24" dx="12" dy="76" color="255,85,0"  />
 
-		<rect id="Rectangle_2" cx="170" cy="88" sx="148" sy="24" dx="8" dy="8" color="255,85,0"  />
+		<rect id="Rectangle_2" cx="172" cy="88" sx="144" sy="24" dx="12" dy="20" color="255,85,0"  />
 
-		<port id="entrada" library="LPRES_EXAMPLES_ALVAROG234" type="test"  hotPort="entrada" >
+		<port id="entrada" library="LPRES_EXAMPLES_ALVAROG234" type="SRB"  hotPort="entrada" >
 		
-				<symbol dx="92" dy="124" onLabel="true" />
+				<symbol dx="96" dy="136" onLabel="true" />
 		
-				<label cx="25.5" cy="12" dx="33" dy="112" />
+				<label cx="25.5" cy="12" dx="37" dy="124" />
 		
 		</port>
 
-		<port id="salida" library="LPRES_EXAMPLES_ALVAROG234" type="test"  hotPort="salida" >
+		<port id="salida" library="LPRES_EXAMPLES_ALVAROG234" type="SRB"  hotPort="salida" >
 		
-				<symbol dx="268" dy="124" onLabel="true" />
+				<symbol dx="272" dy="136" onLabel="true" />
 		
-				<label cx="21" cy="12" dx="276" dy="112" />
+				<label cx="21" cy="12" dx="280" dy="124" />
 		
 		</port>
 

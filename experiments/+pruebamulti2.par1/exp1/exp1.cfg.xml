@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<experiment version="1.4.0">
+	<experimentViews>
+		<tab name="Tab_1">
+			<tableWindow title="" x="0" y="716" dx="2296" dy="358">
+				<findBar visible="f" names="t" sensitive="f"/>
+				<table id="Table_1" colums="true">
+					<var name="Seccion1.P[1]"/>
+					<var name="Seccion1.P[2]"/>
+					<var name="Seccion1.P[3]"/>
+					<var name="Seccion1.P[4]"/>
+					<var name="Seccion1.P[5]"/>
+					<var name="Seccion2.P[1]"/>
+					<var name="Seccion2.P[2]"/>
+					<var name="Seccion2.P[3]"/>
+					<var name="Seccion2.P[4]"/>
+					<var name="Seccion2.P[5]"/>
+				</table>
+			</tableWindow>
+			<tableWindow title="" x="0" y="358" dx="2296" dy="358">
+				<findBar visible="f" names="t" sensitive="f"/>
+				<table id="Table_2" colums="true">
+					<var name="Seccion1.Uc[1]"/>
+					<var name="Seccion1.Uc[2]"/>
+					<var name="Seccion1.Uc[3]"/>
+					<var name="Seccion1.Uc[4]"/>
+					<var name="Seccion1.Uc[5]"/>
+					<var name="Seccion2.Uc[1]"/>
+					<var name="Seccion2.Uc[2]"/>
+					<var name="Seccion2.Uc[3]"/>
+					<var name="Seccion2.Uc[4]"/>
+					<var name="Seccion2.Uc[5]"/>
+				</table>
+			</tableWindow>
+			<tableWindow title="_1" x="0" y="0" dx="2296" dy="358">
+				<findBar visible="f" names="t" sensitive="f"/>
+				<table id="_1" colums="true">
+					<var name="Seccion1.T[1]"/>
+					<var name="Seccion1.T[2]"/>
+					<var name="Seccion1.T[3]"/>
+					<var name="Seccion1.T[4]"/>
+					<var name="Seccion1.T[5]"/>
+					<var name="Seccion2.T[1]"/>
+					<var name="Seccion2.T[2]"/>
+					<var name="Seccion2.T[3]"/>
+					<var name="Seccion2.T[4]"/>
+					<var name="Seccion2.T[5]"/>
+				</table>
+			</tableWindow>
+		</tab>
+		<tab name="Tab_2">
+			<plotWindow title="Plot_1" x="0" y="0" dx="350" dy="250" state="maximized">
+				<plot id="Plot_1" graphType="plot_time">
+						<title value="">
+							<font/>
+						</title>
+						<axeX variableName="TIME">
+							<titleAxe value="TIME"/>
+							<scale scaleType="auto"/>
+						</axeX>
+						<axeY>
+							<titleAxe value=""/>
+							<scale scaleType="auto"/>
+						</axeY>
+						<layout>
+							<font/>
+							<majorGrid/>
+							<minorGrid/>
+						</layout>
+						<legend>
+							<font/>
+						</legend>
+						<chartStyles>
+							<var name="Seccion2.P[5]" nick=""/>
+						</chartStyles>
+					
+					</plot>
+			</plotWindow>
+		</tab>
+		<tab name="Tab_3">
+			<plotWindow title="Plot_1" x="0" y="0" dx="350" dy="250" state="maximized">
+				<plot id="Plot_1" graphType="plot_var">
+						<title value="">
+							<font/>
+						</title>
+						<axeX>
+							<titleAxe value=""/>
+						</axeX>
+						<axeY>
+							<titleAxe value=""/>
+							<scale/>
+						</axeY>
+						<layout>
+							<font/>
+							<majorGrid/>
+							<minorGrid/>
+						</layout>
+						<legend>
+							<font/>
+						</legend>
+						<chartStyles>
+							<var name="#line" isMainLine="true"/>
+							<var name="Seccion1.Ap[1]" nick=""/>
+							<var name="Seccion1.Ap[2]" nick=""/>
+							<var name="Seccion1.Ap[3]" nick=""/>
+							<var name="Seccion1.Ap[4]" nick=""/>
+							<var name="Seccion1.Ap[5]" nick=""/>
+							<var name="Seccion1.Ap[6]" nick=""/>
+							<var name="Seccion2.Ap[1]" nick=""/>
+							<var name="Seccion2.Ap[2]" nick=""/>
+							<var name="Seccion2.Ap[3]" nick=""/>
+							<var name="Seccion2.Ap[4]" nick=""/>
+							<var name="Seccion2.Ap[5]" nick=""/>
+							<var name="Seccion2.Ap[6]" nick=""/>
+						</chartStyles>
+					
+					</plot>
+			</plotWindow>
+		</tab>
+		<tab name="Tab_4">
+			<plotWindow title="Plot_1" x="0" y="0" dx="350" dy="250" state="maximized">
+				<plot id="Plot_1" graphType="plot_var">
+						<title value="">
+							<font/>
+						</title>
+						<axeX>
+							<titleAxe value=""/>
+						</axeX>
+						<axeY>
+							<titleAxe value=""/>
+							<scale/>
+						</axeY>
+						<layout>
+							<font/>
+							<majorGrid/>
+							<minorGrid/>
+						</layout>
+						<legend>
+							<font/>
+						</legend>
+						<chartStyles>
+							<var name="#line" isMainLine="true"/>
+							<var name="Seccion1.Y[1]" nick=""/>
+							<var name="Seccion1.Y[2]" nick=""/>
+							<var name="Seccion1.Y[3]" nick=""/>
+							<var name="Seccion1.Y[4]" nick=""/>
+							<var name="Seccion1.Y[5]" nick=""/>
+							<var name="Seccion1.Y[6]" nick=""/>
+							<var name="Seccion2.Y[1]" nick=""/>
+							<var name="Seccion2.Y[2]" nick=""/>
+							<var name="Seccion2.Y[3]" nick=""/>
+							<var name="Seccion2.Y[4]" nick=""/>
+							<var name="Seccion2.Y[5]" nick=""/>
+							<var name="Seccion2.Y[6]" nick=""/>
+						</chartStyles>
+					
+					</plot>
+			</plotWindow>
+		</tab>
+		<tab name="Tab_5">
+			<plotWindow title="Plot_1" x="0" y="0" dx="350" dy="250" state="maximized">
+				<plot id="Plot_1" graphType="plot_var">
+						<title value="">
+							<font/>
+						</title>
+						<axeX>
+							<titleAxe value=""/>
+						</axeX>
+						<axeY>
+							<titleAxe value=""/>
+							<scale/>
+						</axeY>
+						<layout>
+							<font/>
+							<majorGrid/>
+							<minorGrid/>
+						</layout>
+						<legend>
+							<font/>
+						</legend>
+						<chartStyles>
+							<var name="#line" isMainLine="true"/>
+							<var name="Seccion1.rp0[1]" nick=""/>
+							<var name="Seccion1.rp0[2]" nick=""/>
+							<var name="Seccion1.rp0[3]" nick=""/>
+							<var name="Seccion1.rp0[4]" nick=""/>
+							<var name="Seccion1.rp0[5]" nick=""/>
+							<var name="Seccion2.rp0[1]" nick=""/>
+							<var name="Seccion2.rp0[2]" nick=""/>
+							<var name="Seccion2.rp0[3]" nick=""/>
+							<var name="Seccion2.rp0[4]" nick=""/>
+							<var name="Seccion2.rp0[5]" nick=""/>
+						</chartStyles>
+					
+					</plot>
+			</plotWindow>
+		</tab>
+		<tab name="Tab_6">
+			<tableWindow title="" x="0" y="0" dx="350" dy="250" state="maximized">
+				<findBar visible="f" names="t" sensitive="f"/>
+				<table id="Table_1" colums="true">
+					<var name="Seccion1.eta[1]"/>
+					<var name="Seccion1.eta[2]"/>
+					<var name="Seccion1.eta[3]"/>
+					<var name="Seccion1.eta[4]"/>
+					<var name="Seccion1.eta[5]"/>
+					<var name="Seccion2.eta[1]"/>
+					<var name="Seccion2.eta[2]"/>
+					<var name="Seccion2.eta[3]"/>
+					<var name="Seccion2.eta[4]"/>
+					<var name="Seccion2.eta[5]"/>
+				</table>
+			</tableWindow>
+		</tab>
+		<tab name="Tab_7">
+			<plotWindow title="Plot_1" x="0" y="0" dx="350" dy="250" state="maximized">
+				<plot id="Plot_1" graphType="plot_var">
+						<title value="">
+							<font/>
+						</title>
+						<axeX>
+							<titleAxe value=""/>
+						</axeX>
+						<axeY>
+							<titleAxe value=""/>
+							<scale/>
+						</axeY>
+						<layout>
+							<font/>
+							<majorGrid/>
+							<minorGrid/>
+						</layout>
+						<legend>
+							<font/>
+						</legend>
+						<chartStyles>
+							<var name="#line" isMainLine="true"/>
+							<var name="Seccion1.P[1]" nick=""/>
+							<var name="Seccion1.P[2]" nick=""/>
+							<var name="Seccion1.P[3]" nick=""/>
+							<var name="Seccion1.P[4]" nick=""/>
+							<var name="Seccion1.P[5]" nick=""/>
+							<var name="Seccion2.P[1]" nick=""/>
+							<var name="Seccion2.P[2]" nick=""/>
+							<var name="Seccion2.P[3]" nick=""/>
+							<var name="Seccion2.P[4]" nick=""/>
+							<var name="Seccion2.P[5]" nick=""/>
+						</chartStyles>
+					
+					</plot>
+			</plotWindow>
+		</tab>
+	</experimentViews>
+
+	<watch width="672" height="1109" visible="true" pos="right" >
+		<currentTab name="view"/>
+		<variables>
+			<tab name="initial"> 
+			</tab> 
+			<tab name="inputs"> 
+			</tab> 
+			<tab name="view"> 
+				<var name="Seccion1.Combustion[1]"/>
+				<var name="Seccion1.Combustion[2]"/>
+				<var name="Seccion1.Combustion[3]"/>
+				<var name="Seccion1.Combustion[4]"/>
+				<var name="Seccion1.Combustion[5]"/>
+				<var name="Seccion1.Combustion[6]"/>
+				<var name="Seccion2.Combustion[1]"/>
+				<var name="Seccion2.Combustion[2]"/>
+				<var name="Seccion2.Combustion[3]"/>
+				<var name="Seccion2.Combustion[4]"/>
+				<var name="Seccion2.Combustion[5]"/>
+				<var name="Seccion2.Combustion[6]"/>
+			</tab> 
+		</variables>
+		<layout>
+			<tab name="initial"> 
+				<column name="name" width="150"/> 
+				<column name="value" width="150"/> 
+				<column name="units" width="150"/> 
+				<column name="category" width="150"/> 
+				<column name="type" width="150"/> 
+			</tab> 
+			<tab name="inputs"> 
+				<column name="name" width="150"/> 
+				<column name="value" width="150"/> 
+				<column name="units" width="150"/> 
+				<column name="category" width="150"/> 
+			</tab> 
+			<tab name="view"> 
+				<column name="name" width="209"/> 
+				<column name="value" width="150"/> 
+				<column name="units" width="150"/> 
+				<column name="category" width="150"/> 
+			</tab> 
+		</layout>
+	</watch>
+
+
+
+	<playback visible="t"/>
+
+	<outputWindow height="200" width="2560" visible="true" pos="bottom" />
+
+	<alarms globalEnabled="TRUE">
+	</alarms>
+
+
+	<mainWindow  mode="maximized" currentTab="Tab_2" />
+</experiment>

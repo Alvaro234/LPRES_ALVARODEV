@@ -4,11 +4,11 @@
 
 	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
 
-	<componentType id="Conversor" >
+	<componentType id="Conversor2" >
 
-		<ellipse id="Ellipse_1" cx="246" cy="88" rx="126" ry="48" dx="52" dy="100"  color="255,0,0" gradientColor="255,255,0" gradientType="GL" position="100"  />
+		<ellipse id="Ellipse_1" cx="246" cy="88" rx="126" ry="48" dx="56" dy="8"  color="255,0,0" gradientColor="255,255,0" gradientType="GL" position="100"  />
 
-		<g id="Group_1" dx="-118" dy="-22" rotation="-90" >
+		<g id="Group_1" dx="-114" dy="-114" rotation="-90" >
 			<closedBezier id="ClosedBezier_1" points="252,160 304,160 308,160 308,160 300,196 292,196 292,196 304,200 316,212 324,260 236,260 236,260 236,260 244,212 256,200 268,196 260,196 252,160 252,160" color="170,0,127" aliasing="true"  />
 			<line id="Line_2" points="264,200 296,200" dy="-8" aliasing="true"  />
 			<line id="Line_4" points="260,184 300,184" aliasing="true"  />
@@ -35,11 +35,11 @@
 			</g>
 		</g>
 
-		<port id="entrada" library="LPRES_EXAMPLES_ALVAROG234" type="SRB"  hotPort="entrada" >
+		<port id="entrada" library="LPRES_EXAMPLES_ALVAROG234" type="SRB2" >
 		
-				<symbol dx="96" dy="188" onLabel="true" />
+				<symbol dx="96" dy="96" onLabel="true" />
 		
-				<label cx="25.5" cy="12" dx="37" dy="176" />
+				<label cx="25.5" cy="12" dx="37" dy="84" />
 		
 		</port>
 

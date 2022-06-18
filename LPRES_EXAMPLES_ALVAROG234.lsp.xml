@@ -2,15 +2,20 @@
 <library version="1.1.1">
  <filedeps>
   <file name="version.el"/>
-  <file name="F404_AFT.eds"/>
-  <file name="GasGenerator.eds"/>
-  <file name="Turbine_ch_test.eds"/>
   <file name="MChSolido.el"/>
   <file name="MChSolido2.el"/>
   <file name="ParedMCPS.el"/>
   <file name="Conversor.el"/>
   <file name="PuertoMCHsolido.el"/>
   <file name="Pruebamonoseccion.eds"/>
+  <file name="PruebaMultiseccion.eds"/>
+  <file name="Pruebageometria.el"/>
+  <file name="MChSolido3.el"/>
+  <file name="Pruebamono2.eds"/>
+  <file name="Geometriafinal.eds"/>
+  <file name="Pruebamulti2.eds"/>
+  <file name="Validacion.eds"/>
+  <file name="SRBexperimento.eds"/>
  </filedeps>
  <libdeps>
  </libdeps>

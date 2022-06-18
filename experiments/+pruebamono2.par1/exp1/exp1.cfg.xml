@@ -40,7 +40,7 @@
 			</plotWindow>
 		</tab>
 		<tab name="Pressure/time">
-			<plotWindow title="Plot_1" x="0" y="0" dx="350" dy="250" state="maximized">
+			<plotWindow title="Plot_1" x="1039" y="0" dx="1039" dy="1075">
 				<plot id="Plot_1" graphType="plot_time">
 						<title value="">
 							<font/>
@@ -63,6 +63,33 @@
 						</legend>
 						<chartStyles>
 							<var name="Seccion1.P[10]" nick=""/>
+						</chartStyles>
+					
+					</plot>
+			</plotWindow>
+			<plotWindow title="Plot_2" x="0" y="0" dx="1039" dy="1075">
+				<plot id="Plot_2" graphType="plot_x_y">
+						<title value="">
+							<font/>
+						</title>
+						<axeX variableName="Seccion1.Y[01]">
+							<titleAxe value="Seccion1.Y[01]"/>
+							<scale scaleType="auto"/>
+						</axeX>
+						<axeY>
+							<titleAxe value=""/>
+							<scale scaleType="auto"/>
+						</axeY>
+						<layout>
+							<font/>
+							<majorGrid/>
+							<minorGrid/>
+						</layout>
+						<legend>
+							<font/>
+						</legend>
+						<chartStyles>
+							<var name="Seccion1.Ab_total" nick=""/>
 						</chartStyles>
 					
 					</plot>
@@ -106,80 +133,6 @@
 					</plot>
 			</plotWindow>
 		</tab>
-		<tab name="Ab&#38;Temp/time">
-			<plotWindow title="Plot_2" x="-101" y="0" dx="1036" dy="1075">
-				<plot id="Plot_2" graphType="plot_time">
-						<title value="">
-							<font/>
-						</title>
-						<axeX variableName="TIME">
-							<titleAxe value="TIME"/>
-							<scale scaleType="auto"/>
-						</axeX>
-						<axeY>
-							<titleAxe value=""/>
-							<scale scaleType="auto"/>
-						</axeY>
-						<layout>
-							<font/>
-							<majorGrid/>
-							<minorGrid/>
-						</layout>
-						<legend>
-							<font/>
-						</legend>
-						<chartStyles>
-							<var name="Seccion1.Ab[01]" nick=""/>
-							<var name="Seccion1.Ab[02]" nick=""/>
-							<var name="Seccion1.Ab[03]" nick=""/>
-							<var name="Seccion1.Ab[04]" nick=""/>
-							<var name="Seccion1.Ab[05]" nick=""/>
-							<var name="Seccion1.Ab[06]" nick=""/>
-							<var name="Seccion1.Ab[07]" nick=""/>
-							<var name="Seccion1.Ab[08]" nick=""/>
-							<var name="Seccion1.Ab[09]" nick=""/>
-							<var name="Seccion1.Ab[10]" nick=""/>
-						</chartStyles>
-					
-					</plot>
-			</plotWindow>
-			<plotWindow title="Plot_1" x="935" y="0" dx="1036" dy="1075">
-				<plot id="Plot_1" graphType="plot_time">
-						<title value="">
-							<font/>
-						</title>
-						<axeX variableName="TIME">
-							<titleAxe value="TIME"/>
-							<scale scaleType="auto"/>
-						</axeX>
-						<axeY>
-							<titleAxe value=""/>
-							<scale scaleType="auto"/>
-						</axeY>
-						<layout>
-							<font/>
-							<majorGrid/>
-							<minorGrid/>
-						</layout>
-						<legend>
-							<font/>
-						</legend>
-						<chartStyles>
-							<var name="Seccion1.T[01]" nick=""/>
-							<var name="Seccion1.T[02]" nick=""/>
-							<var name="Seccion1.T[03]" nick=""/>
-							<var name="Seccion1.T[04]" nick=""/>
-							<var name="Seccion1.T[05]" nick=""/>
-							<var name="Seccion2.T[1]" nick=""/>
-							<var name="Seccion2.T[2]" nick=""/>
-							<var name="Seccion2.T[3]" nick=""/>
-							<var name="Seccion2.T[4]" nick=""/>
-							<var name="Seccion2.T[5]" nick=""/>
-						</chartStyles>
-					
-					</plot>
-			</plotWindow>
-		</tab>
 		<tab name="Mass flux/time">
 			<plotWindow title="Plot_1" x="0" y="0" dx="350" dy="250" state="maximized">
 				<plot id="Plot_1" graphType="plot_time">
@@ -209,12 +162,11 @@
 							<var name="Seccion1.g[04]" nick=""/>
 							<var name="Seccion1.g[05]" nick=""/>
 							<var name="Seccion1.g[06]" nick=""/>
-							<var name="Seccion2.g[1]" nick=""/>
-							<var name="Seccion2.g[2]" nick=""/>
-							<var name="Seccion2.g[3]" nick=""/>
-							<var name="Seccion2.g[4]" nick=""/>
-							<var name="Seccion2.g[5]" nick=""/>
-							<var name="Seccion2.g[6]" nick=""/>
+							<var name="Seccion1.g[07]" nick=""/>
+							<var name="Seccion1.g[08]" nick=""/>
+							<var name="Seccion1.g[09]" nick=""/>
+							<var name="Seccion1.g[10]" nick=""/>
+							<var name="Seccion1.g[11]" nick=""/>
 						</chartStyles>
 					
 					</plot>
@@ -296,65 +248,26 @@
 					</plot>
 			</plotWindow>
 		</tab>
-		<tab name="T/Space">
-			<plotWindow title="Plot_1" x="0" y="0" dx="350" dy="250" state="maximized">
-				<plot id="Plot_1" graphType="plot_var">
-						<title value="">
-							<font/>
-						</title>
-						<axeX>
-							<titleAxe value=""/>
-						</axeX>
-						<axeY>
-							<titleAxe value=""/>
-							<scale/>
-						</axeY>
-						<layout>
-							<font/>
-							<majorGrid/>
-							<minorGrid/>
-						</layout>
-						<legend>
-							<font/>
-						</legend>
-						<chartStyles>
-							<var name="#line" isMainLine="true"/>
-							<var name="Seccion1.T[01]" nick=""/>
-							<var name="Seccion1.T[02]" nick=""/>
-							<var name="Seccion1.T[03]" nick=""/>
-							<var name="Seccion1.T[04]" nick=""/>
-							<var name="Seccion1.T[05]" nick=""/>
-							<var name="Seccion1.T[06]" nick=""/>
-							<var name="Seccion1.T[07]" nick=""/>
-							<var name="Seccion1.T[08]" nick=""/>
-							<var name="Seccion1.T[09]" nick=""/>
-							<var name="Seccion1.T[10]" nick=""/>
-						</chartStyles>
-					
-					</plot>
-			</plotWindow>
-		</tab>
 		<tab name="UTP">
-			<tableWindow title="" x="0" y="716" dx="2058" dy="358">
-				<findBar visible="f" names="t" sensitive="f"/>
-				<table id="Table_1" colums="true">
-					<var name="TIME"/>
-					<var name="Seccion1.U[1]"/>
-					<var name="Seccion1.U[2]"/>
-					<var name="Seccion1.U[3]"/>
-					<var name="Seccion1.U[4]"/>
-					<var name="Seccion1.U[5]"/>
-					<var name="Seccion1.U[6]"/>
-					<var name="Seccion1.U[07]"/>
-					<var name="Seccion1.U[08]"/>
-					<var name="Seccion1.U[09]"/>
-					<var name="Seccion1.U[10]"/>
-					<var name="Seccion1.U[11]"/>
-				</table>
-			</tableWindow>
-			<tableWindow title="" x="0" y="358" dx="2058" dy="358">
+			<tableWindow title="Table_2" x="0" y="716" dx="2296" dy="358">
 				<findBar visible="f" names="t" sensitive="f"/>
 				<table id="Table_2" colums="true">
+					<var name="TIME"/>
+					<var name="Seccion1.Uc[01]"/>
+					<var name="Seccion1.Uc[02]"/>
+					<var name="Seccion1.Uc[03]"/>
+					<var name="Seccion1.Uc[04]"/>
+					<var name="Seccion1.Uc[05]"/>
+					<var name="Seccion1.Uc[06]"/>
+					<var name="Seccion1.Uc[07]"/>
+					<var name="Seccion1.Uc[08]"/>
+					<var name="Seccion1.Uc[09]"/>
+					<var name="Seccion1.Uc[10]"/>
+				</table>
+			</tableWindow>
+			<tableWindow title="" x="0" y="358" dx="2296" dy="358">
+				<findBar visible="f" names="t" sensitive="f"/>
+				<table id="Table_1" colums="true">
 					<var name="TIME"/>
 					<var name="Seccion1.T[01]"/>
 					<var name="Seccion1.T[02]"/>
@@ -368,7 +281,7 @@
 					<var name="Seccion1.T[10]"/>
 				</table>
 			</tableWindow>
-			<tableWindow title="" x="0" y="0" dx="2058" dy="358">
+			<tableWindow title="Table_3" x="0" y="0" dx="2296" dy="358">
 				<findBar visible="f" names="t" sensitive="f"/>
 				<table id="Table_3" colums="true">
 					<var name="TIME"/>
@@ -385,6 +298,44 @@
 				</table>
 			</tableWindow>
 		</tab>
+		<tab name="Ab&#38;Temp/time">
+			<plotWindow title="Plot_2" x="0" y="0" dx="350" dy="250" state="maximized">
+				<plot id="Plot_2" graphType="plot_time">
+						<title value="">
+							<font/>
+						</title>
+						<axeX variableName="TIME">
+							<titleAxe value="TIME"/>
+							<scale scaleType="auto"/>
+						</axeX>
+						<axeY>
+							<titleAxe value=""/>
+							<scale scaleType="auto"/>
+						</axeY>
+						<layout>
+							<font/>
+							<majorGrid/>
+							<minorGrid/>
+						</layout>
+						<legend>
+							<font/>
+						</legend>
+						<chartStyles>
+							<var name="Seccion1.Ab[01]" nick=""/>
+							<var name="Seccion1.Ab[02]" nick=""/>
+							<var name="Seccion1.Ab[03]" nick=""/>
+							<var name="Seccion1.Ab[04]" nick=""/>
+							<var name="Seccion1.Ab[05]" nick=""/>
+							<var name="Seccion1.Ab[06]" nick=""/>
+							<var name="Seccion1.Ab[07]" nick=""/>
+							<var name="Seccion1.Ab[08]" nick=""/>
+							<var name="Seccion1.Ab[09]" nick=""/>
+							<var name="Seccion1.Ab[10]" nick=""/>
+						</chartStyles>
+					
+					</plot>
+			</plotWindow>
+		</tab>
 		<tab name="Y/time">
 			<plotWindow title="Plot_1" x="0" y="0" dx="350" dy="250" state="maximized">
 				<plot id="Plot_1" graphType="plot_time">
@@ -393,11 +344,11 @@
 						</title>
 						<axeX variableName="TIME">
 							<titleAxe value="TIME"/>
-							<scale minCurrent="1.11022e-16" maxCurrent="1.6" scaleType="current"/>
+							<scale scaleType="auto"/>
 						</axeX>
 						<axeY>
 							<titleAxe value=""/>
-							<scale minCurrent="0" maxCurrent="0.02" scaleType="current"/>
+							<scale scaleType="auto"/>
 						</axeY>
 						<layout>
 							<font/>
@@ -500,44 +451,6 @@
 					</plot>
 			</plotWindow>
 		</tab>
-		<tab name="Tab_3">
-			<plotWindow title="Plot_1" x="0" y="0" dx="350" dy="250" state="maximized">
-				<plot id="Plot_1" graphType="plot_var">
-						<title value="">
-							<font/>
-						</title>
-						<axeX>
-							<titleAxe value=""/>
-						</axeX>
-						<axeY>
-							<titleAxe value=""/>
-							<scale/>
-						</axeY>
-						<layout>
-							<font/>
-							<majorGrid/>
-							<minorGrid/>
-						</layout>
-						<legend>
-							<font/>
-						</legend>
-						<chartStyles>
-							<var name="#line" isMainLine="true"/>
-							<var name="Seccion1.dg[01]" nick=""/>
-							<var name="Seccion1.dg[02]" nick=""/>
-							<var name="Seccion1.dg[03]" nick=""/>
-							<var name="Seccion1.dg[04]" nick=""/>
-							<var name="Seccion1.dg[05]" nick=""/>
-							<var name="Seccion1.dg[06]" nick=""/>
-							<var name="Seccion1.dg[07]" nick=""/>
-							<var name="Seccion1.dg[08]" nick=""/>
-							<var name="Seccion1.dg[09]" nick=""/>
-							<var name="Seccion1.dg[10]" nick=""/>
-						</chartStyles>
-					
-					</plot>
-			</plotWindow>
-		</tab>
 		<tab name="Ap/space">
 			<plotWindow title="Plot_1" x="0" y="0" dx="350" dy="250" state="maximized">
 				<plot id="Plot_1" graphType="plot_var">
@@ -595,23 +508,7 @@
 			</tableWindow>
 		</tab>
 		<tab name="Remansos">
-			<tableWindow title="" x="0" y="498" dx="1997" dy="498">
-				<findBar visible="f" names="t" sensitive="f"/>
-				<table id="Table_1" colums="true">
-					<var name="TIME"/>
-					<var name="Seccion1.pt[01]"/>
-					<var name="Seccion1.pt[02]"/>
-					<var name="Seccion1.pt[03]"/>
-					<var name="Seccion1.pt[04]"/>
-					<var name="Seccion1.pt[05]"/>
-					<var name="Seccion1.pt[06]"/>
-					<var name="Seccion1.pt[07]"/>
-					<var name="Seccion1.pt[08]"/>
-					<var name="Seccion1.pt[09]"/>
-					<var name="Seccion1.pt[10]"/>
-				</table>
-			</tableWindow>
-			<tableWindow title="_1" x="0" y="0" dx="1997" dy="498">
+			<tableWindow title="_1" x="0" y="537" dx="2079" dy="537">
 				<findBar visible="f" names="t" sensitive="f"/>
 				<table id="_1" colums="true">
 					<var name="TIME"/>
@@ -625,6 +522,22 @@
 					<var name="Seccion1.Tt[08]"/>
 					<var name="Seccion1.Tt[09]"/>
 					<var name="Seccion1.Tt[10]"/>
+				</table>
+			</tableWindow>
+			<tableWindow title="Table_1" x="0" y="0" dx="2079" dy="537">
+				<findBar visible="f" names="t" sensitive="f"/>
+				<table id="Table_1" colums="true">
+					<var name="TIME"/>
+					<var name="Seccion1.Pt[01]"/>
+					<var name="Seccion1.Pt[02]"/>
+					<var name="Seccion1.Pt[03]"/>
+					<var name="Seccion1.Pt[04]"/>
+					<var name="Seccion1.Pt[05]"/>
+					<var name="Seccion1.Pt[06]"/>
+					<var name="Seccion1.Pt[07]"/>
+					<var name="Seccion1.Pt[08]"/>
+					<var name="Seccion1.Pt[09]"/>
+					<var name="Seccion1.Pt[10]"/>
 				</table>
 			</tableWindow>
 		</tab>
@@ -649,17 +562,16 @@
 		</tab>
 		<tab name="Tab_2">
 			<plotWindow title="Plot_1" x="0" y="0" dx="350" dy="250" state="maximized">
-				<plot id="Plot_1" graphType="plot_time">
+				<plot id="Plot_1" graphType="plot_var">
 						<title value="">
 							<font/>
 						</title>
-						<axeX variableName="TIME">
-							<titleAxe value="TIME"/>
-							<scale scaleType="auto"/>
+						<axeX>
+							<titleAxe value=""/>
 						</axeX>
 						<axeY>
 							<titleAxe value=""/>
-							<scale scaleType="auto"/>
+							<scale/>
 						</axeY>
 						<layout>
 							<font/>
@@ -670,26 +582,17 @@
 							<font/>
 						</legend>
 						<chartStyles>
-							<var name="Seccion1.r0[10]" nick=""/>
-							<var name="Seccion1.rp0[10]" nick=""/>
-							<var name="Seccion1.r0[01]" nick=""/>
-							<var name="Seccion1.r0[02]" nick=""/>
-							<var name="Seccion1.r0[03]" nick=""/>
-							<var name="Seccion1.r0[04]" nick=""/>
-							<var name="Seccion1.r0[05]" nick=""/>
-							<var name="Seccion1.r0[06]" nick=""/>
-							<var name="Seccion1.r0[07]" nick=""/>
-							<var name="Seccion1.r0[08]" nick=""/>
-							<var name="Seccion1.r0[09]" nick=""/>
-							<var name="Seccion1.rp0[01]" nick=""/>
-							<var name="Seccion1.rp0[02]" nick=""/>
-							<var name="Seccion1.rp0[03]" nick=""/>
-							<var name="Seccion1.rp0[04]" nick=""/>
-							<var name="Seccion1.rp0[05]" nick=""/>
-							<var name="Seccion1.rp0[06]" nick=""/>
-							<var name="Seccion1.rp0[07]" nick=""/>
-							<var name="Seccion1.rp0[08]" nick=""/>
-							<var name="Seccion1.rp0[09]" nick=""/>
+							<var name="#line" isMainLine="true"/>
+							<var name="Seccion1.T[01]" nick=""/>
+							<var name="Seccion1.T[02]" nick=""/>
+							<var name="Seccion1.T[03]" nick=""/>
+							<var name="Seccion1.T[04]" nick=""/>
+							<var name="Seccion1.T[05]" nick=""/>
+							<var name="Seccion1.T[06]" nick=""/>
+							<var name="Seccion1.T[07]" nick=""/>
+							<var name="Seccion1.T[08]" nick=""/>
+							<var name="Seccion1.T[09]" nick=""/>
+							<var name="Seccion1.T[10]" nick=""/>
 						</chartStyles>
 					
 					</plot>
@@ -697,7 +600,7 @@
 		</tab>
 	</experimentViews>
 
-	<watch width="549" height="1031" visible="true" pos="right" >
+	<watch width="467" height="1109" visible="true" pos="right" >
 		<currentTab name="view"/>
 		<variables>
 			<tab name="initial"> 
@@ -705,8 +608,13 @@
 			<tab name="inputs"> 
 			</tab> 
 			<tab name="view"> 
-				<var name="Seccion1.D"/>
+				<var name="Seccion1.V_total"/>
+				<var name="Seccion1.Masa_total"/>
+				<var name="Seccion1.LoadFraction"/>
+				<var name="Seccion1.L"/>
 				<var name="Seccion1.D0"/>
+				<var name="Seccion1.D"/>
+				<var name="Seccion1.Ab_total"/>
 				<var name="Seccion1.Combustion[01]"/>
 				<var name="Seccion1.Combustion[02]"/>
 				<var name="Seccion1.Combustion[03]"/>
@@ -718,10 +626,7 @@
 				<var name="Seccion1.Combustion[09]"/>
 				<var name="Seccion1.Combustion[10]"/>
 				<var name="Seccion1.Combustion[11]"/>
-				<var name="Seccion1.Ab_total"/>
-				<var name="Seccion1.LoadFraction"/>
-				<var name="Seccion1.Masa_total"/>
-				<var name="Seccion1.V_total"/>
+				<var name="Seccion1.Y[01]"/>
 			</tab> 
 		</variables>
 		<layout>
@@ -739,7 +644,7 @@
 				<column name="category" width="150"/> 
 			</tab> 
 			<tab name="view"> 
-				<column name="name" width="150"/> 
+				<column name="name" width="239"/> 
 				<column name="value" width="150"/> 
 				<column name="units" width="150"/> 
 				<column name="category" width="150"/> 
@@ -751,11 +656,11 @@
 
 	<playback visible="t"/>
 
-	<outputWindow height="278" width="2560" visible="true" pos="bottom" />
+	<outputWindow height="200" width="2560" visible="true" pos="bottom" />
 
 	<alarms globalEnabled="TRUE">
 	</alarms>
 
 
-	<mainWindow  mode="maximized" currentTab="Pressure/time" />
+	<mainWindow  mode="maximized" currentTab="Ap/space" />
 </experiment>

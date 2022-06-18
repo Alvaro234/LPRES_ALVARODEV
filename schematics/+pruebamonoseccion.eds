@@ -12,11 +12,23 @@
 		<![CDATA[&#60;!DOCTYPE HTML PUBLIC &#34;-//W3C//DTD HTML 4.0//EN&#34; &#34;http://www.w3.org/TR/REC-html40/strict.dtd&#34;&#62;&#60;html&#62;&#60;head&#62;&#60;meta name=&#34;qrichtext&#34; content=&#34;1&#34; /&#62;&#60;style type=&#34;text/css&#34;&#62;p, li { white-space: pre-wrap; }&#60;/style&#62;&#60;/head&#62;&#60;body style=&#34; font-family:&#39;Arial&#39;; font-size:10pt; font-weight:400; font-style:normal;&#34;&#62;&#60;p style=&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&#34;&#62;&#60;span style=&#34; font-size:10pt;&#34;&#62;LIBRARY: LPRES_EXAMPLES_ALVAROG234&#60;br /&#62;FILE: Prueba&#60;br /&#62;CREATION DATE: 06/04/2022&#60;/span&#62;&#60;/p&#62;&#60;/body&#62;&#60;/html&#62;]]>
 	</text>
 
-	<component id="Seccion1" library="LPRES_EXAMPLES_ALVAROG234" type="MChSolido2" layer="1" elPosition="0"  hotPort="salida" >
+	<component id="Pared" library="LPRES_EXAMPLES_ALVAROG234" type="Pared" layer="1" elPosition="5"  hotPort="salida" >
 	
-		<symbol cx="180" cy="122" sx="185" sy="77" dx="140" dy="156" onLabel="true" />
+		<symbol cx="84" cy="96" sx="89" sy="69" dx="124" dy="180" onLabel="true" />
 	
-		<label cx="31" cy="12" dx="288" dy="320" />
+		<label cx="21" cy="12" dx="187" dy="311" />
+	
+		<instanceData>
+			<datum id="Tc" value="3056" pos="D" />
+		</instanceData>
+	
+	</component>
+
+	<component id="Seccion1" library="LPRES_EXAMPLES_ALVAROG234" type="MChSolido2" layer="1" elPosition="6"  hotPort="salida" >
+	
+		<symbol cx="180" cy="122" sx="185" sy="77" dx="212" dy="156" onLabel="true" />
+	
+		<label cx="31" cy="12" dx="360" dy="320" />
 	
 		<instanceData>
 			<datum id="N" value="10" pos="P" />
@@ -32,11 +44,11 @@
 	
 	</component>
 
-	<component id="Conversor" library="LPRES_EXAMPLES_ALVAROG234" type="Conversor" layer="1" elPosition="4" >
+	<component id="Conversor" library="LPRES_EXAMPLES_ALVAROG234" type="Conversor" layer="1" elPosition="7" >
 	
-		<symbol cx="256" cy="188" sx="337" sy="97" dx="444" dy="92" onLabel="true" />
+		<symbol cx="257" cy="188" sx="335" sy="97" dx="451" dy="92" onLabel="true" />
 	
-		<label cx="32.5" cy="12" dx="667" dy="289" />
+		<label cx="32.5" cy="12" dx="675" dy="289" />
 	
 		<instanceData>
 			<datum id="c_star" value="1515.53" pos="D" />
@@ -47,21 +59,9 @@
 	
 	</component>
 
-	<component id="Pared" library="LPRES_EXAMPLES_ALVAROG234" type="Pared" layer="1" elPosition="5"  hotPort="salida" >
-	
-		<symbol cx="84" cy="96" sx="89" sy="69" dx="20" dy="184" onLabel="true" />
-	
-		<label cx="21" cy="12" dx="83" dy="315" />
-	
-		<instanceData>
-			<datum id="Tc" value="3056" pos="D" />
-		</instanceData>
-	
-	</component>
+	<connector id="Connector_1" sShape="Seccion1" sPort="salida" eShape="Conversor" ePort="entrada" elPosition="0"  />
 
-	<connector id="Connector_2" sShape="Pared" sPort="salida" eShape="Seccion1" ePort="entrada" elPosition="5"  />
-
-	<connector id="Connector_1" sShape="Seccion1" sPort="salida" eShape="Conversor" ePort="entrada" elPosition="6"  />
+	<connector id="Connector_2" sShape="Pared" sPort="salida" eShape="Seccion1" ePort="entrada" elPosition="1"  />
 
 	<bodyEL>
 	<![CDATA[-- EL code of the schematic.

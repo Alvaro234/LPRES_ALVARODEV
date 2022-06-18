@@ -5,37 +5,37 @@
 -----------------------------------------------------------------------------------------*/
 USE MATH VERSION "3.2"
 
-PORT test SINGLE
-		
-SUM	                   REAL g                 UNITS u_kg_s         RANGE ZERO,Inf       "Mass flow"
+PORT SRB SINGLE
+	
 EQUAL		                REAL Ap                UNITS u_m2           RANGE ZERO,Inf       "Port Area"
 EQUAL							 REAL S					   UNITS u_m				RANGE ZERO,Inf			"Perimeter of port"
-EQUAL							 REAL Y					   UNITS u_m				RANGE ZERO,Inf			"Lateral coordinate"				
-EQUAL		                REAL U                 UNITS u_m           RANGE ZERO,Inf       "Flow speed"			
+EQUAL							 REAL Y					   UNITS u_m				RANGE ZERO,Inf			"Lateral coordinate"			
+			
 EQUAL							 REAL Coord				   UNITS u_m				RANGE ZERO,Inf			"Coordinate"
+EQUAL							 REAL Tt				     UNITS u_K				RANGE ZERO,Inf		   "Total temperature"
+EQUAL                    REAL g                 UNITS u_kg_s         RANGE ZERO,Inf       "Mass flow"	
+--EQUAL		                REAL U                 UNITS u_m_s           RANGE ZERO,Inf       "Flow speed"			
 						 		 
-								 REAL Pout				   UNITS u_m				RANGE ZERO,Inf		   "Pre-interface pressure"
-							 	 REAL Pin				   UNITS u_m				RANGE ZERO,Inf		   "Post-interface pressure"
-							 	 REAL Tout				   UNITS u_m				RANGE ZERO,Inf		   "Pre-interface temp"
-								 REAL Tin				   UNITS u_m				RANGE ZERO,Inf		   "Post-interface temp"	
+EQUAL							 REAL Pout				   UNITS u_Pa				RANGE ZERO,Inf		   "Pre-interface pressure" --mirar
+EQUAL							 REAL Pin				   UNITS u_Pa				RANGE ZERO,Inf		   "Post-interface pressure"
+EQUAL							 REAL dgout				   UNITS u_kg_s			RANGE ZERO,Inf		   "Pre-interface pressure"
+EQUAL							 REAL dgin				   UNITS u_kg_s			RANGE ZERO,Inf		   "Post-interface pressure"
+EQUAL							 REAL Ucout				   UNITS u_m_s				RANGE ZERO,Inf		   "Pre-interface pressure"
+EQUAL							 REAL Ucin				   UNITS u_m_s				RANGE ZERO,Inf		   "Post-interface pressure"
+EQUAL							 REAL Apcout				UNITS u_m2				RANGE ZERO,Inf		   "Pre-interface pressure"
+EQUAL							 REAL Apcin				   UNITS u_m2				RANGE ZERO,Inf		   "Post-interface pressure"
+EQUAL                    REAL gprev             UNITS u_kg_s         RANGE ZERO,Inf       "Mass flow"	
 
-							    REAL etaout				UNITS u_m				RANGE ZERO,Inf		   "Pre-interface erosion"
-						       REAL etain				   UNITS u_m				RANGE ZERO,Inf		   "Post-interface erosion"	
-
--- Prueba
-REAL rp0_intermedia						
-
+EQUAL							 REAL r0in				   UNITS u_m				RANGE ZERO,Inf		   "Pre-interface erosion"
+EQUAL						    REAL r0out				   UNITS u_m				RANGE ZERO,Inf		   "Post-interface erosion"
+EQUAL					    	 REAL Combustion				   UNITS u_m				RANGE ZERO,Inf "Combustion state"
+		
 
 CONTINUOUS
-rp0_intermedia = ((4.092E-05)* (0.5*(Pin+Pout))**0.36)*0.5*(etaout+etain)   -- ¿Hay que pasar variables de la ley de vieille?
-Y' = rp0_intermedia
-S'  =	2*MATH.PI*Y' 
-Ap' =S*Y'
+			Y' = 	0.5*(r0out+r0in)*Combustion  -- Revisar
+			S'  =	2*MATH.PI*Y'     				
+			Ap' = S * Y'
 
-
-// nuevo P[i+1] = P[i]-((g[i])*(U[i+1]-U[i]) + dg[i]*U[i+1])/Ap[i+1]
-	
---Pout = Pin - (g*U)/Ap	// 0.5 * rho * v**2
-
+		  (g+0.5*dgout)*Ucout + Apcout*Pout = (gprev+0.5*dgin)*Ucin+Apcin*Pin  -- Ec cant mov
 
 END PORT

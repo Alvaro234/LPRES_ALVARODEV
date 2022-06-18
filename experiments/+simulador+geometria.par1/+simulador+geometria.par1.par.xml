@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<partitionInfo version="1.0" library="LPRES_EXAMPLES_ALVAROG234" component="SimuladorGeometria" partition="par1">
+<noDerivatives value="FALSE"/>
+<inhibitReductionConstantCoefEqts value="TRUE"/>
+<generatePartitionClass value="FALSE"/>
+<removeNotUsedVars value="FALSE"/>
+<showPropertyPanel value="FALSE"/>
+<generateProtectedMathFunctions value="TRUE"/>
+<generatePerformanceMeters value="FALSE"/>
+<generateObfuscatedCpp value="FALSE"/>
+<generateParInfoHTML value="TRUE"/>
+<generateParInfoExtra value="FALSE"/>
+<generateMaxSignificantDigits value="TRUE"/>
+<generateParResiduesForDiff value="FALSE"/>
+<generateAdvancedBox value="disabled"/>
+<dynamics>
+  <variable name="Y[01]"/>
+  <variable name="Ap[01]"/>
+  <variable name="Y[02]"/>
+  <variable name="Ap[02]"/>
+  <variable name="Y[03]"/>
+  <variable name="Ap[03]"/>
+  <variable name="Y[04]"/>
+  <variable name="Ap[04]"/>
+  <variable name="Y[05]"/>
+  <variable name="Ap[05]"/>
+  <variable name="Y[06]"/>
+  <variable name="Ap[06]"/>
+  <variable name="Y[07]"/>
+  <variable name="Ap[07]"/>
+  <variable name="Y[08]"/>
+  <variable name="Ap[08]"/>
+  <variable name="Y[09]"/>
+  <variable name="Ap[09]"/>
+  <variable name="Y[10]"/>
+  <variable name="Ap[10]"/>
+  <variable name="Y[11]"/>
+  <variable name="Ap[11]"/>
+</dynamics>
+<residues>
+</residues>
+</partitionInfo>

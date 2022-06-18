@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<experiment version="1.4.0">
+	<experimentViews>
+		<tab name="P/time">
+			<plotWindow title="Plot_1" x="0" y="0" dx="350" dy="250" state="maximized">
+				<plot id="Plot_1" graphType="plot_time">
+						<title value="">
+							<font/>
+						</title>
+						<axeX variableName="TIME">
+							<titleAxe value="TIME"/>
+							<scale scaleType="auto"/>
+						</axeX>
+						<axeY>
+							<titleAxe value=""/>
+							<scale scaleType="auto"/>
+						</axeY>
+						<layout>
+							<font/>
+							<majorGrid/>
+							<minorGrid/>
+						</layout>
+						<legend>
+							<font/>
+						</legend>
+						<chartStyles>
+							<var name="Seccion2.P[5]" nick=""/>
+							<var name="Seccionmono.P[10]" nick=""/>
+						</chartStyles>
+					
+					</plot>
+			</plotWindow>
+		</tab>
+		<tab name="Gsalida/time">
+			<plotWindow title="Plot_2" x="0" y="0" dx="350" dy="250" state="maximized">
+				<plot id="Plot_2" graphType="plot_time">
+						<title value="">
+							<font/>
+						</title>
+						<axeX variableName="TIME">
+							<titleAxe value="TIME"/>
+							<scale scaleType="auto"/>
+						</axeX>
+						<axeY>
+							<titleAxe value=""/>
+							<scale scaleType="auto"/>
+						</axeY>
+						<layout>
+							<font/>
+							<majorGrid/>
+							<minorGrid/>
+						</layout>
+						<legend>
+							<font/>
+						</legend>
+						<chartStyles>
+							<var name="Seccion2.g[6]" nick=""/>
+							<var name="Seccionmono.g[11]" nick=""/>
+						</chartStyles>
+					
+					</plot>
+			</plotWindow>
+		</tab>
+		<tab name="Ap/space">
+			<plotWindow title="Plot_1" x="0" y="537" dx="2296" dy="537">
+				<plot id="Plot_1" graphType="plot_var">
+						<title value="">
+							<font/>
+						</title>
+						<axeX variableName="TIME">
+							<titleAxe value=""/>
+						</axeX>
+						<axeY>
+							<titleAxe value=""/>
+							<scale/>
+						</axeY>
+						<layout>
+							<font/>
+							<majorGrid/>
+							<minorGrid/>
+						</layout>
+						<legend>
+							<font/>
+						</legend>
+						<chartStyles>
+							<var name="#line" isMainLine="true"/>
+							<var name="Seccion1.Ap[1]" nick=""/>
+							<var name="Seccion1.Ap[2]" nick=""/>
+							<var name="Seccion1.Ap[3]" nick=""/>
+							<var name="Seccion1.Ap[4]" nick=""/>
+							<var name="Seccion1.Ap[5]" nick=""/>
+							<var name="Seccion1.Ap[6]" nick=""/>
+							<var name="Seccion2.Ap[1]" nick=""/>
+							<var name="Seccion2.Ap[2]" nick=""/>
+							<var name="Seccion2.Ap[3]" nick=""/>
+							<var name="Seccion2.Ap[4]" nick=""/>
+							<var name="Seccion2.Ap[5]" nick=""/>
+							<var name="Seccion2.Ap[6]" nick=""/>
+						</chartStyles>
+					
+					</plot>
+			</plotWindow>
+			<plotWindow title="Plot_2" x="0" y="0" dx="2296" dy="537">
+				<plot id="Plot_2" graphType="plot_var">
+						<title value="">
+							<font/>
+						</title>
+						<axeX variableName="TIME">
+							<titleAxe value=""/>
+						</axeX>
+						<axeY>
+							<titleAxe value=""/>
+							<scale/>
+						</axeY>
+						<layout>
+							<font/>
+							<majorGrid/>
+							<minorGrid/>
+						</layout>
+						<legend>
+							<font/>
+						</legend>
+						<chartStyles>
+							<var name="#line" isMainLine="true"/>
+							<var name="Seccionmono.Ap[01]" nick=""/>
+							<var name="Seccionmono.Ap[02]" nick=""/>
+							<var name="Seccionmono.Ap[03]" nick=""/>
+							<var name="Seccionmono.Ap[04]" nick=""/>
+							<var name="Seccionmono.Ap[05]" nick=""/>
+							<var name="Seccionmono.Ap[06]" nick=""/>
+							<var name="Seccionmono.Ap[07]" nick=""/>
+							<var name="Seccionmono.Ap[08]" nick=""/>
+							<var name="Seccionmono.Ap[09]" nick=""/>
+							<var name="Seccionmono.Ap[10]" nick=""/>
+							<var name="Seccionmono.Ap[11]" nick=""/>
+						</chartStyles>
+					
+					</plot>
+			</plotWindow>
+		</tab>
+		<tab name="Y/space">
+			<plotWindow title="Plot_1" x="0" y="537" dx="2296" dy="537">
+				<plot id="Plot_1" graphType="plot_var">
+						<title value="">
+							<font/>
+						</title>
+						<axeX variableName="TIME">
+							<titleAxe value=""/>
+						</axeX>
+						<axeY>
+							<titleAxe value=""/>
+							<scale/>
+						</axeY>
+						<layout>
+							<font/>
+							<majorGrid/>
+							<minorGrid/>
+						</layout>
+						<legend>
+							<font/>
+						</legend>
+						<chartStyles>
+							<var name="#line" isMainLine="true"/>
+							<var name="Seccion1.Y[1]" nick=""/>
+							<var name="Seccion1.Y[2]" nick=""/>
+							<var name="Seccion1.Y[3]" nick=""/>
+							<var name="Seccion1.Y[4]" nick=""/>
+							<var name="Seccion1.Y[5]" nick=""/>
+							<var name="Seccion1.Y[6]" nick=""/>
+							<var name="Seccion2.Y[1]" nick=""/>
+							<var name="Seccion2.Y[2]" nick=""/>
+							<var name="Seccion2.Y[3]" nick=""/>
+							<var name="Seccion2.Y[4]" nick=""/>
+							<var name="Seccion2.Y[5]" nick=""/>
+							<var name="Seccion2.Y[6]" nick=""/>
+						</chartStyles>
+					
+					</plot>
+			</plotWindow>
+			<plotWindow title="Plot_2" x="0" y="0" dx="2296" dy="537">
+				<plot id="Plot_2" graphType="plot_var">
+						<title value="">
+							<font/>
+						</title>
+						<axeX variableName="TIME">
+							<titleAxe value=""/>
+						</axeX>
+						<axeY>
+							<titleAxe value=""/>
+							<scale/>
+						</axeY>
+						<layout>
+							<font/>
+							<majorGrid/>
+							<minorGrid/>
+						</layout>
+						<legend>
+							<font/>
+						</legend>
+						<chartStyles>
+							<var name="#line" isMainLine="true"/>
+							<var name="Seccionmono.Y[01]" nick=""/>
+							<var name="Seccionmono.Y[02]" nick=""/>
+							<var name="Seccionmono.Y[03]" nick=""/>
+							<var name="Seccionmono.Y[04]" nick=""/>
+							<var name="Seccionmono.Y[05]" nick=""/>
+							<var name="Seccionmono.Y[06]" nick=""/>
+							<var name="Seccionmono.Y[07]" nick=""/>
+							<var name="Seccionmono.Y[08]" nick=""/>
+							<var name="Seccionmono.Y[09]" nick=""/>
+							<var name="Seccionmono.Y[10]" nick=""/>
+							<var name="Seccionmono.Y[11]" nick=""/>
+						</chartStyles>
+					
+					</plot>
+			</plotWindow>
+		</tab>
+	</experimentViews>
+
+	<watch width="250" height="1109" visible="true" pos="right" >
+		<currentTab name="view"/>
+		<variables>
+			<tab name="initial"> 
+			</tab> 
+			<tab name="inputs"> 
+			</tab> 
+			<tab name="view"> 
+			</tab> 
+		</variables>
+		<layout>
+			<tab name="initial"> 
+				<column name="name" width="150"/> 
+				<column name="value" width="150"/> 
+				<column name="units" width="150"/> 
+				<column name="category" width="150"/> 
+				<column name="type" width="150"/> 
+			</tab> 
+			<tab name="inputs"> 
+				<column name="name" width="150"/> 
+				<column name="value" width="150"/> 
+				<column name="units" width="150"/> 
+				<column name="category" width="150"/> 
+			</tab> 
+			<tab name="view"> 
+				<column name="name" width="150"/> 
+				<column name="value" width="150"/> 
+				<column name="units" width="150"/> 
+				<column name="category" width="150"/> 
+			</tab> 
+		</layout>
+	</watch>
+
+
+
+	<playback visible="t"/>
+
+	<outputWindow height="200" width="2560" visible="true" pos="bottom" />
+
+	<alarms globalEnabled="TRUE">
+	</alarms>
+
+
+	<mainWindow  mode="maximized" currentTab="P/time" />
+</experiment>
