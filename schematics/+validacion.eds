@@ -9,7 +9,7 @@
 	</layers>
 	
 	<text id="Text_1" cx="139.5" cy="28" sx="279" sy="56" lineType="0"  color="255,255,220" dx="812" dy="706" layer="1"  >
-		<![CDATA[&#60;!DOCTYPE HTML PUBLIC &#34;-//W3C//DTD HTML 4.0//EN&#34; &#34;http://www.w3.org/TR/REC-html40/strict.dtd&#34;&#62;&#60;html&#62;&#60;head&#62;&#60;meta name=&#34;qrichtext&#34; content=&#34;1&#34; /&#62;&#60;style type=&#34;text/css&#34;&#62;p, li { white-space: pre-wrap; }&#60;/style&#62;&#60;/head&#62;&#60;body style=&#34; font-family:&#39;Arial&#39;; font-size:10pt; font-weight:400; font-style:normal;&#34;&#62;&#60;p style=&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&#34;&#62;LIBRARY: LPRES_EXAMPLES_ALVAROG234&#60;br /&#62;FILE: Validacion&#60;br /&#62;CREATION DATE: 18/06/2022&#60;/p&#62;&#60;/body&#62;&#60;/html&#62;]]>
+		<![CDATA[&#60;!DOCTYPE HTML PUBLIC &#34;-//W3C//DTD HTML 4.0//EN&#34; &#34;http://www.w3.org/TR/REC-html40/strict.dtd&#34;&#62;&#60;html&#62;&#60;head&#62;&#60;meta name=&#34;qrichtext&#34; content=&#34;1&#34; /&#62;&#60;style type=&#34;text/css&#34;&#62;p, li { white-space: pre-wrap; }&#60;/style&#62;&#60;/head&#62;&#60;body style=&#34; font-family:&#39;Arial&#39;; font-size:10pt; font-weight:400; font-style:normal;&#34;&#62;&#60;p style=&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&#34;&#62;&#60;span style=&#34; font-size:10pt;&#34;&#62;LIBRARY: LPRES_EXAMPLES_ALVAROG234&#60;br /&#62;FILE: Validacion&#60;br /&#62;CREATION DATE: 18/06/2022&#60;/span&#62;&#60;/p&#62;&#60;/body&#62;&#60;/html&#62;]]>
 	</text>
 
 	<component id="Conversor" library="LPRES_EXAMPLES_ALVAROG234" type="Conversor2" layer="1" >
@@ -22,7 +22,9 @@
 			<datum id="c_star" value="1515.53" pos="D" />
 			<datum id="R_gas" value="318" pos="D" />
 			<datum id="gamma" value="1.22" pos="D" />
-			<datum id="A_th" value="4.34E-4" pos="D" />
+			<datum id="D0" value="0.0235" pos="D" />
+			<datum id="ER" value="12" pos="D" />
+			<datum id="alfa" value="0.00015" pos="D" />
 		</instanceData>
 	
 	</component>
@@ -37,7 +39,9 @@
 			<datum id="c_star" value="1515.53" pos="D" />
 			<datum id="R_gas" value="318" pos="D" />
 			<datum id="gamma" value="1.22" pos="D" />
-			<datum id="A_th" value="4.34E-4" pos="D" />
+			<datum id="D0" value="0.0235" pos="D" />
+			<datum id="ER" value="12" pos="D" />
+			<datum id="alfa" value="0.00015" pos="D" />
 		</instanceData>
 	
 	</component>
@@ -54,7 +58,7 @@
 
 	<component id="Pared" library="LPRES_EXAMPLES_ALVAROG234" type="Pared2" layer="1" >
 	
-		<symbol cx="82" cy="96" sx="101" sy="69" xScale="1" yScale="1.11594" dx="34" dy="92" onLabel="true" />
+		<symbol cx="82" cy="96" sx="101" sy="69" yScale="1.11594" dx="34" dy="92" onLabel="true" />
 	
 		<label cx="21" cy="12" dx="94.5" dy="201" />
 	
@@ -158,8 +162,6 @@
 -- You can edit the parameters clicking over them.
 
 COMPONENT %NAME% 
-
-
 END COMPONENT
 ]]>
 	</bodyEL>

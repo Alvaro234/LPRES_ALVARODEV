@@ -16,6 +16,7 @@
   <file name="Pruebamulti2.eds"/>
   <file name="Validacion.eds"/>
   <file name="SRBexperimento.eds"/>
+  <file name="CilConic.eds"/>
  </filedeps>
  <libdeps>
  </libdeps>

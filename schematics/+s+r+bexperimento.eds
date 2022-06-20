@@ -9,10 +9,10 @@
 	</layers>
 	
 	<text id="Text_1" cx="139.5" cy="28" sx="279" sy="56" lineType="0"  color="255,255,220" dx="812" dy="706" layer="1"  >
-		<![CDATA[&#60;!DOCTYPE HTML PUBLIC &#34;-//W3C//DTD HTML 4.0//EN&#34; &#34;http://www.w3.org/TR/REC-html40/strict.dtd&#34;&#62;&#60;html&#62;&#60;head&#62;&#60;meta name=&#34;qrichtext&#34; content=&#34;1&#34; /&#62;&#60;style type=&#34;text/css&#34;&#62;p, li { white-space: pre-wrap; }&#60;/style&#62;&#60;/head&#62;&#60;body style=&#34; font-family:&#39;Arial&#39;; font-size:10pt; font-weight:400; font-style:normal;&#34;&#62;&#60;p style=&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&#34;&#62;LIBRARY: LPRES_EXAMPLES_ALVAROG234&#60;br /&#62;FILE: SRBexperimento&#60;br /&#62;CREATION DATE: 18/06/2022&#60;/p&#62;&#60;/body&#62;&#60;/html&#62;]]>
+		<![CDATA[&#60;!DOCTYPE HTML PUBLIC &#34;-//W3C//DTD HTML 4.0//EN&#34; &#34;http://www.w3.org/TR/REC-html40/strict.dtd&#34;&#62;&#60;html&#62;&#60;head&#62;&#60;meta name=&#34;qrichtext&#34; content=&#34;1&#34; /&#62;&#60;style type=&#34;text/css&#34;&#62;p, li { white-space: pre-wrap; }&#60;/style&#62;&#60;/head&#62;&#60;body style=&#34; font-family:&#39;Arial&#39;; font-size:10pt; font-weight:400; font-style:normal;&#34;&#62;&#60;p style=&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&#34;&#62;&#60;span style=&#34; font-size:10pt;&#34;&#62;LIBRARY: LPRES_EXAMPLES_ALVAROG234&#60;br /&#62;FILE: SRBexperimento&#60;br /&#62;CREATION DATE: 18/06/2022&#60;/span&#62;&#60;/p&#62;&#60;/body&#62;&#60;/html&#62;]]>
 	</text>
 
-	<image id="Image_1" cx="540" cy="400" sx="568" sy="480" file="Image_1.png" dx="186" dy="-86" layer="1"  />
+	<image id="Image_1" cx="580" cy="372" sx="488" sy="424" file="Image_1.png" dx="264" dy="-152" layer="1"  />
 
 	<component id="Conversor2_1" library="LPRES_EXAMPLES_ALVAROG234" type="Conversor2" layer="1" >
 	
@@ -25,7 +25,7 @@
 			<datum id="R_gas" value="300" pos="D" />
 			<datum id="gamma" value="1.18" pos="D" />
 			<datum id="D0" value="3.79" pos="D" />
-			<datum id="A_th" value="1.468" pos="D" />
+			<datum id="ER" value="7.72" pos="D" />
 		</instanceData>
 	
 	</component>
@@ -37,7 +37,7 @@
 		<label cx="19" cy="12" dx="159" dy="443" />
 	
 		<instanceData>
-			<datum id="N" value="7" pos="P" />
+			<datum id="N" value="10" pos="P" />
 			<datum id="gamma" value="1.18" pos="D" />
 			<datum id="Rho_P" value="1772" pos="D" />
 			<datum id="R_gas" value="300" pos="D" />
@@ -47,6 +47,8 @@
 			<datum id="S_y_1" value="{{0,1.3}, {4,12.5}}" pos="D" />
 			<datum id="S_y_N" value="{{0,1.3}, {4,12.5}}" pos="D" />
 			<datum id="L" value="8" pos="D" />
+			<datum id="D" value="3.71" pos="D" />
+			<datum id="D0" value="1" pos="D" />
 		</instanceData>
 	
 	</component>
@@ -58,6 +60,7 @@
 		<label cx="19" cy="12" dx="159" dy="243" />
 	
 		<instanceData>
+			<datum id="N" value="10" pos="P" />
 			<datum id="gamma" value="1.18" pos="D" />
 			<datum id="Rho_P" value="1772" pos="D" />
 			<datum id="R_gas" value="300" pos="D" />
@@ -67,15 +70,17 @@
 			<datum id="S_y_1" value="{{0,0.3,0.6,1,2}, {5,5,1,0,0}}" pos="D" />
 			<datum id="S_y_N" value="{{0,0.3,0.6,1,2}, {5,5,1,0,0}}" pos="D" />
 			<datum id="L" value="4" pos="D" />
+			<datum id="D" value="3.71" pos="D" />
+			<datum id="D0" value="1" pos="D" />
 		</instanceData>
 	
 	</component>
 
 	<component id="Pared" library="LPRES_EXAMPLES_ALVAROG234" type="Pared2" layer="1" >
 	
-		<symbol cx="82" cy="96" sx="101" sy="69" dx="2" dy="-38" onLabel="true" />
+		<symbol cx="82" cy="96" sx="101" sy="69" dy="-40" onLabel="true" />
 	
-		<label cx="21" cy="12" dx="62.5" dy="93" />
+		<label cx="21" cy="12" dx="60.5" dy="91" />
 	
 		<instanceData>
 			<datum id="Tc" value="3480" pos="D" />
@@ -90,6 +95,7 @@
 		<label cx="19" cy="12" dx="263" dy="643" />
 	
 		<instanceData>
+			<datum id="N" value="10" pos="P" />
 			<datum id="gamma" value="1.18" pos="D" />
 			<datum id="Rho_P" value="1772" pos="D" />
 			<datum id="R_gas" value="300" pos="D" />
@@ -99,17 +105,21 @@
 			<datum id="S_y_1" value="{{0,0.5}, {9,12.5}}" pos="D" />
 			<datum id="S_y_N" value="{{0,0.5}, {9,12.5}}" pos="D" />
 			<datum id="L" value="4" pos="D" />
+			<datum id="D" value="3.71" pos="D" />
+			<datum id="D0" value="1.5" pos="D" />
 		</instanceData>
 	
 	</component>
 
-	<connector id="Connector_1" sShape="Pared" sPort="salida" eShape="Sec1" ePort="entrada" points="168,48"  intermediate1="1" dx="10" dy="10"  />
+	<connector id="Connector_1" sShape="Pared" sPort="salida" eShape="Sec1" ePort="entrada" points="178,56"  intermediate1="1"  />
 
-	<connector id="Connector_2" sShape="Sec1" sPort="salida" eShape="Sec2" ePort="entrada" dx="10" dy="10"  />
+	<connector id="Connector_2" sShape="Sec1" sPort="salida" eShape="Sec2" ePort="entrada"  />
 
-	<connector id="Connector_3" sShape="Sec2" sPort="salida" eShape="Sec3" ePort="entrada" points="168,592" dx="10" dy="10"  />
+	<connector id="Connector_3" sShape="Sec2" sPort="salida" eShape="Sec3" ePort="entrada" points="178,602"  />
 
-	<connector id="Connector_4" sShape="Sec3" sPort="salida" eShape="Conversor2_1" ePort="entrada" dx="10" dy="10"  />
+	<connector id="Connector_4" sShape="Sec3" sPort="salida" eShape="Conversor2_1" ePort="entrada"  />
+
+	<image id="Image_2" cx="309" cy="562.5" sx="286" sy="521" file="Image_2.png" dx="138" dy="-294" layer="1"  />
 
 	<bodyEL>
 	<![CDATA[-- EL code of the schematic.
@@ -117,8 +127,6 @@
 -- You can edit the parameters clicking over them.
 
 COMPONENT %NAME% 
-
-
 END COMPONENT
 ]]>
 	</bodyEL>

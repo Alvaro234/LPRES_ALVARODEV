@@ -11,7 +11,7 @@
    </settings>
    <general>
     <caltype />
-    <tsolver imethod="IDAS" time="0.0" tstop="15.0" cint="15.0" maxabserror="0.000001" maxrelerror="0.000001" reportMode="IS_STEP" nsteps="1" initIntegStep="-1" maxIntegStep="-1" tsmitg="FALSE" warnStepReduct="FALSE" rdigits="9" />
+    <tsolver imethod="IDAS" time="0.0" tstop="15.0" cint="0.01" maxabserror="0.000001" maxrelerror="0.000001" reportMode="IS_CINT" nsteps="1" initIntegStep="-1" maxIntegStep="-1" tsmitg="FALSE" warnStepReduct="FALSE" rdigits="9" />
     <nlsolver smethod="NR" tolerance="0.000001" toleranceUser="0.000001" toleranceUsed="suggested" toltype="RELTOL" maxiter="10000" maxfval="40000" maxjaceval="60" maxbroyden="60" />
     <debug level="1" />
     <stopSimulation stopAlgebraicsFails="yes" stopBadOperation="no" />
@@ -22,6 +22,10 @@
    <global>
     <bounds />
     <initial>
+     <variable id="Conversor.rth" alias="" value="" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
+     <variable id="Conversor.TotalImpulse" alias="" value="" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
+     <variable id="Conversor_1.rth" alias="" value="" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
+     <variable id="Conversor_1.TotalImpulse" alias="" value="" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
      <variable id="Seccion1.Y[1]." alias="Seccion1.Y[1]" value="" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
      <variable id="Seccion1.Y[2]." alias="Seccion1.Y[2]" value="" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
      <variable id="Seccion1.Y[6]." alias="Seccion1.Y[6]" value="" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
@@ -90,6 +94,10 @@
      <variable id="Seccionmono.P[10]" alias="" value="6E6" dxAbs="1.5e-08" dxRel="1.5e-08" maxStepAbs="1.79769313e+308" maxStepRel="1.79769313e+308" minJacPert="0." maxJacPert="0." />
     </initial>
     <closure>
+     <equation left="Conversor.rth'" oper="=" right="Conversor.alfa" toltype="" tolerance="" internal="yes" />
+     <equation left="Conversor.TotalImpulse'" oper="=" right="Conversor.T" toltype="" tolerance="" internal="yes" />
+     <equation left="Conversor_1.rth'" oper="=" right="Conversor_1.alfa" toltype="" tolerance="" internal="yes" />
+     <equation left="Conversor_1.TotalImpulse'" oper="=" right="Conversor_1.T" toltype="" tolerance="" internal="yes" />
      <equation left="Seccion1.Y[1]'" oper="=" right="(2 * Seccion1.r0[1] - Seccion1.Y[2]') * Seccion1.Combustion[1]" toltype="" tolerance="" internal="yes" />
      <equation left="Seccion1.Y[2]'" oper="=" right="0.5 * (Seccion1.r0[2] + Seccion1.r0[1]) * Seccion1.Combustion[2]" toltype="" tolerance="" internal="yes" />
      <equation left="Seccion1.Y[6]'" oper="=" right="(2 * Seccion1.r0[5] - Seccion1.Y[5]') * Seccion1.Combustion[6]" toltype="" tolerance="" internal="yes" />

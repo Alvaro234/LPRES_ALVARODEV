@@ -1,36 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <experiment version="1.4.0">
 	<experimentViews>
-		<tab name="Empuje">
-			<plotWindow title="Plot_1" x="0" y="0" dx="350" dy="250" state="maximized">
-				<plot id="Plot_1" graphType="plot_time">
-						<title value="">
-							<font/>
-						</title>
-						<axeX variableName="TIME">
-							<titleAxe value="TIME"/>
-							<scale scaleType="auto"/>
-						</axeX>
-						<axeY>
-							<titleAxe value=""/>
-							<scale scaleType="auto"/>
-						</axeY>
-						<layout>
-							<font/>
-							<majorGrid/>
-							<minorGrid/>
-						</layout>
-						<legend>
-							<font/>
-						</legend>
-						<chartStyles>
-							<var name="Conversor.T" nick=""/>
-							<var name="Conversor_1.T" nick=""/>
-						</chartStyles>
-					
-					</plot>
-			</plotWindow>
-		</tab>
 		<tab name="P/time">
 			<plotWindow title="Plot_1" x="0" y="0" dx="350" dy="250" state="maximized">
 				<plot id="Plot_1" graphType="plot_time">
@@ -54,8 +24,8 @@
 							<font/>
 						</legend>
 						<chartStyles>
-							<var name="Seccion1.P[1]" nick=""/>
-							<var name="Seccionmono.P[01]" nick=""/>
+							<var name="Seccion2.P[5]" nick=""/>
+							<var name="Seccionmono.P[10]" nick=""/>
 						</chartStyles>
 					
 					</plot>
@@ -92,44 +62,7 @@
 			</plotWindow>
 		</tab>
 		<tab name="Ap/space">
-			<plotWindow title="Plot_2" x="0" y="537" dx="2028" dy="537">
-				<plot id="Plot_2" graphType="plot_var">
-						<title value="">
-							<font/>
-						</title>
-						<axeX>
-							<titleAxe value=""/>
-						</axeX>
-						<axeY>
-							<titleAxe value=""/>
-							<scale/>
-						</axeY>
-						<layout>
-							<font/>
-							<majorGrid/>
-							<minorGrid/>
-						</layout>
-						<legend>
-							<font/>
-						</legend>
-						<chartStyles>
-							<var name="#line" isMainLine="true"/>
-							<var name="Seccionmono.Ap[01]" nick=""/>
-							<var name="Seccionmono.Ap[02]" nick=""/>
-							<var name="Seccionmono.Ap[03]" nick=""/>
-							<var name="Seccionmono.Ap[04]" nick=""/>
-							<var name="Seccionmono.Ap[05]" nick=""/>
-							<var name="Seccionmono.Ap[06]" nick=""/>
-							<var name="Seccionmono.Ap[07]" nick=""/>
-							<var name="Seccionmono.Ap[08]" nick=""/>
-							<var name="Seccionmono.Ap[09]" nick=""/>
-							<var name="Seccionmono.Ap[10]" nick=""/>
-							<var name="Seccionmono.Ap[11]" nick=""/>
-						</chartStyles>
-					
-					</plot>
-			</plotWindow>
-			<plotWindow title="Plot_1" x="0" y="0" dx="2028" dy="537">
+			<plotWindow title="Plot_1" x="0" y="537" dx="2296" dy="537">
 				<plot id="Plot_1" graphType="plot_var">
 						<title value="">
 							<font/>
@@ -167,9 +100,46 @@
 					
 					</plot>
 			</plotWindow>
+			<plotWindow title="Plot_2" x="0" y="0" dx="2296" dy="537">
+				<plot id="Plot_2" graphType="plot_var">
+						<title value="">
+							<font/>
+						</title>
+						<axeX>
+							<titleAxe value=""/>
+						</axeX>
+						<axeY>
+							<titleAxe value=""/>
+							<scale/>
+						</axeY>
+						<layout>
+							<font/>
+							<majorGrid/>
+							<minorGrid/>
+						</layout>
+						<legend>
+							<font/>
+						</legend>
+						<chartStyles>
+							<var name="#line" isMainLine="true"/>
+							<var name="Seccionmono.Ap[01]" nick=""/>
+							<var name="Seccionmono.Ap[02]" nick=""/>
+							<var name="Seccionmono.Ap[03]" nick=""/>
+							<var name="Seccionmono.Ap[04]" nick=""/>
+							<var name="Seccionmono.Ap[05]" nick=""/>
+							<var name="Seccionmono.Ap[06]" nick=""/>
+							<var name="Seccionmono.Ap[07]" nick=""/>
+							<var name="Seccionmono.Ap[08]" nick=""/>
+							<var name="Seccionmono.Ap[09]" nick=""/>
+							<var name="Seccionmono.Ap[10]" nick=""/>
+							<var name="Seccionmono.Ap[11]" nick=""/>
+						</chartStyles>
+					
+					</plot>
+			</plotWindow>
 		</tab>
 		<tab name="Y/space">
-			<plotWindow title="Plot_1" x="0" y="537" dx="2028" dy="537">
+			<plotWindow title="Plot_1" x="0" y="537" dx="2296" dy="537">
 				<plot id="Plot_1" graphType="plot_var">
 						<title value="">
 							<font/>
@@ -207,7 +177,7 @@
 					
 					</plot>
 			</plotWindow>
-			<plotWindow title="Plot_2" x="0" y="0" dx="2028" dy="537">
+			<plotWindow title="Plot_2" x="0" y="0" dx="2296" dy="537">
 				<plot id="Plot_2" graphType="plot_var">
 						<title value="">
 							<font/>
@@ -245,9 +215,38 @@
 					</plot>
 			</plotWindow>
 		</tab>
+		<tab name="Tab_1">
+			<plotWindow title="Plot_1" x="0" y="0" dx="350" dy="250" state="maximized">
+				<plot id="Plot_1" graphType="plot_time">
+						<title value="">
+							<font/>
+						</title>
+						<axeX variableName="TIME">
+							<titleAxe value="TIME"/>
+							<scale scaleType="auto"/>
+						</axeX>
+						<axeY>
+							<titleAxe value=""/>
+							<scale scaleType="auto"/>
+						</axeY>
+						<layout>
+							<font/>
+							<majorGrid/>
+							<minorGrid/>
+						</layout>
+						<legend>
+							<font/>
+						</legend>
+						<chartStyles>
+							<var name="Conversor.T" nick=""/>
+						</chartStyles>
+					
+					</plot>
+			</plotWindow>
+		</tab>
 	</experimentViews>
 
-	<watch width="518" height="1109" visible="true" pos="right" >
+	<watch width="250" height="1109" visible="true" pos="right" >
 		<currentTab name="view"/>
 		<variables>
 			<tab name="initial"> 
@@ -257,34 +256,6 @@
 			<tab name="view"> 
 				<var name="Seccion1.Masa_total"/>
 				<var name="Seccion2.Masa_total"/>
-				<var name="Seccionmono.Masa_total"/>
-				<var name="Seccion1.Combustion[1]"/>
-				<var name="Seccion1.Combustion[2]"/>
-				<var name="Seccion1.Combustion[3]"/>
-				<var name="Seccion1.Combustion[4]"/>
-				<var name="Seccion1.Combustion[5]"/>
-				<var name="Seccion1.Combustion[6]"/>
-				<var name="Seccion2.Combustion[1]"/>
-				<var name="Seccion2.Combustion[2]"/>
-				<var name="Seccion2.Combustion[3]"/>
-				<var name="Seccion2.Combustion[4]"/>
-				<var name="Seccion2.Combustion[5]"/>
-				<var name="Seccion2.Combustion[6]"/>
-				<var name="Seccionmono.Combustion[01]"/>
-				<var name="Seccionmono.Combustion[02]"/>
-				<var name="Seccionmono.Combustion[03]"/>
-				<var name="Seccionmono.Combustion[04]"/>
-				<var name="Seccionmono.Combustion[05]"/>
-				<var name="Seccionmono.Combustion[06]"/>
-				<var name="Seccionmono.Combustion[07]"/>
-				<var name="Seccionmono.Combustion[08]"/>
-				<var name="Seccionmono.Combustion[09]"/>
-				<var name="Seccionmono.Combustion[10]"/>
-				<var name="Seccionmono.Combustion[11]"/>
-				<var name="Conversor.ISP"/>
-				<var name="Conversor.TotalImpulse"/>
-				<var name="Conversor_1.ISP"/>
-				<var name="Conversor_1.TotalImpulse"/>
 			</tab> 
 		</variables>
 		<layout>
@@ -302,8 +273,8 @@
 				<column name="category" width="150"/> 
 			</tab> 
 			<tab name="view"> 
-				<column name="name" width="280"/> 
-				<column name="value" width="112"/> 
+				<column name="name" width="150"/> 
+				<column name="value" width="150"/> 
 				<column name="units" width="150"/> 
 				<column name="category" width="150"/> 
 			</tab> 
@@ -320,5 +291,5 @@
 	</alarms>
 
 
-	<mainWindow  mode="maximized" currentTab="P/time" />
+	<mainWindow  mode="maximized" currentTab="Y/space" />
 </experiment>
