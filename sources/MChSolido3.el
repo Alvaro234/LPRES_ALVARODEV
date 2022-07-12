@@ -12,9 +12,6 @@ EQUAL                    REAL g                UNITS u_kg_s       RANGE ZERO,Inf
 EQUAL							 REAL Pt				     UNITS u_Pa			RANGE ZERO,Inf		   "Total temperature"
 EQUAL							 REAL Tt				     UNITS u_K				RANGE ZERO,Inf		   "Total temperature"
 
------ Poner que se pasen las propiedades del gas, gamma y R ??
-
-
 END PORT
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -33,57 +30,48 @@ COMPONENT Pared2
 END COMPONENT
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------
-
 COMPONENT Conversor2
 	PORTS
 		IN SRB2 entrada
 	DATA
 		-- Datos gas y propelente --
-		REAL c_star = 1500
-		REAL R_gas = 307.93
-		REAL gamma = 1.33
+		REAL c_star = 1500			UNITS u_m_s		"Velocidad caracteristica"
+		REAL R_gas = 307.93			UNITS u_J_kgK	 "Constante R del gas"
+		REAL gamma = 1.33				UNITS no_units	 "Relacion de calores especificos"
 		--- Geometria tobera ---
-		REAL D0 = 0.0254
-		
-		REAL ER = 10
-		REAL Pa = 101325
+		REAL D0 = 0.0254		UNITS u_m	"Diametro inicial de la tobera"
+		REAL ER = 10			UNITS no_units "Relacion de areas"
+		REAL Pa = 101325		UNITS u_Pa			   "Ambient pressure"
 		---- Erosion garganta ---
-		REAL alfa = 0.0002		"Velocidad de recesion de la garganta"
+		REAL alfa = 0.0002	UNITS u_m_s	"Velocidad de recesion de la garganta"
 	DECLS
 		------------- 
 		REAL rth			"Recesion de la tobera"
 		REAL A_th = 8.00E-03
 		------------- Actuacion tobera ---------------
-		DISCR REAL Fgamma			
-		REAL Ct
-		REAL T
-		REAL Pexit
-		REAL TotalImpulse
-		REAL ISP
+		DISCR REAL Fgamma			UNITS no_units
+		REAL Ct						UNITS no_units
+		REAL T						UNITS u_N
+		REAL Pexit					UNITS u_Pa
+		REAL TotalImpulse			UNITS u_N
+		REAL ISP						UNITS u_s
 	INIT
 		Fgamma = sqrt(gamma)* ( 2/(gamma+1) )**( (gamma+1)/(2*(gamma-1)) )
 		TotalImpulse = 0
 		rth = D0/2
 		A_th = MATH.PI*(D0/2)**2
 	CONTINUOUS		
-	
 		c_star = (A_th*entrada.Pt)/entrada.g -- Condicion de igualdad de gastos entre combustion y tobera --
-		 
 		------ Erosion lineal de la garganta -----
-		 
 		 rth' = alfa			-- Valor inicial rth = D0/2
 		 A_th=MATH.PI*(rth)**2
-		 
-		 	
-		------------- ECUACIONES TOBERA (Adaptada) ----------------
-			
-		--ER = Fgamma/ (( (Pexit/entrada.Pt)**(1/gamma)) * sqrt((   2*gamma/(gamma-1) )*  (1- (Pexit/entrada.Pt)**((gamma-1)/gamma) )  ))    
-		Pexit = Pa
+		------------- ECUACIONES TOBERA (Adaptada) ----------------    
+		Pexit = Pa			// Tobera daptada
 		Ct = Fgamma*sqrt((   2*gamma/(gamma-1) )*  (1- (Pexit/entrada.Pt)**((gamma-1)/gamma) )       )
 		T = Ct*entrada.Pt*A_th
 		TotalImpulse' = T
 		ISP = TotalImpulse/(entrada.g*9.81)
-		
+		--ER = Fgamma/ (( (Pexit/entrada.Pt)**(1/gamma)) * sqrt((   2*gamma/(gamma-1) )*  (1- (Pexit/entrada.Pt)**((gamma-1)/gamma) )  ))	
 	
 END COMPONENT
 -------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -105,48 +93,48 @@ COMPONENT MChSolido3(INTEGER N = 3, BOOLEAN Comb_Erosiva = TRUE )
 			REAL Viscosidad_camara =	1.80E-05	 "Viscosidad de camara"
 		   REAL gth =	35								 "Parametro de erosion"
 			-- DATOS GEOMETRIA
-			TABLE_1D S_y_1 = { {0, 2}, -- Y
-							  		 {1, 2} } "Tabla S(y) de la interfaz de entrada" -- S 
+			TABLE_1D S_y_1 = { {0, 2}, 
+							  		 {1, 2} } UNITS u_m	"Tabla S(y) de la interfaz de entrada"
 		
-			TABLE_1D S_y_N = { {0, 2}, -- Y
-							  		 {1, 2} }  "Tabla S(y) de la interfaz de salida"-- S	
+			TABLE_1D S_y_N = { {0, 2}, 
+							  		 {1, 2} } UNITS u_m 	"Tabla S(y) de la interfaz de salida"
 							  
-			REAL L = 0. UNITS u_m 		  "Longitud de la seccion"
-			REAL D = 0.0635 UNITS u_m	  "Diametro carcasa cilindrica"
-			REAL D0 = 0.0254 UNITS u_m   "Diametro inicial geometria cilindrica"
+			REAL L = 0. 			UNITS u_m 		  "Longitud de la seccion"
+			REAL D = 0.0635 		UNITS u_m	     "Diametro carcasa cilindrica"
+			REAL D0 = 0.0254 		UNITS u_m        "Diametro inicial geometria cilindrica"
 	DECLS
 				------ Interfaces (1 a N+1)----------------
 
 						-- Parametros geometricos
-				DISCR REAL dx	
-				REAL Y[N+1]
-				REAL S[N+1]
-				REAL Ap[N+1]
-				REAL Coord [N+1]  UNITS "m"	
-				REAL g[N+1]	
-				REAL U[N+1]
-				DISCR REAL Combustion[N+1]
-				DISCR REAL A_carcasa
+				DISCR REAL dx		UNITS u_m
+				REAL Y[N+1]			UNITS u_m
+				REAL S[N+1]			UNITS u_m
+				REAL Ap[N+1]		UNITS u_m2
+				REAL Coord [N+1]  UNITS u_m	
+				REAL g[N+1]			UNITS u_kg_s
+				REAL U[N+1]			UNITS u_m_s
+				DISCR REAL Combustion[N+1]	UNITS no_units
+				DISCR REAL A_carcasa			UNITS u_m2
 				---- "Volumenes" discretos	------ (1 a N)		
-				REAL Ab[N] 				//Area de quemado del volumen
-				REAL dg[N]				//Adicion de masa del volumen
+				REAL Ab[N] 		  UNITS u_m2	//Area de quemado del volumen
+				REAL dg[N]		  UNITS u_kg_s		//Adicion de masa del volumen
 				REAL P[N]        UNITS u_Pa				RANGE ZERO,Inf		   "Pressure"      
-				REAL T[N]			UNITS u_Pa				RANGE ZERO,Inf		   "Temperature"  
-				REAL Uc[N]
-				REAL Apc[N]
-		      -----------------------
-				REAL rp0[N]				//Velocidad de recesion sin erosion
-				REAL r0[N]				//Velocidad de recesion con erosion
-				REAL Rho[N] 		
-				REAL SoundSpeed[N]
-				REAL MACH[N]
-				REAL Tt[N]
-				REAL Pt[N]
-			   ------Calculos de combustible---------
-					REAL Ab_total
-					REAL V_total
-					REAL Masa_total
-					REAL LoadFraction
+				REAL T[N]		  UNITS u_K				RANGE ZERO,Inf		   "Temperature"  
+				REAL Uc[N]		  UNITS u_m_s
+				REAL Apc[N]		  UNITS u_m2
+		      -----------------------				
+				REAL rp0[N]		  UNITS u_m_s	//Velocidad de recesion sin erosion
+				REAL r0[N]		  UNITS u_m_s	//Velocidad de recesion con erosion
+				REAL Rho[N] 	  UNITS u_kg_m3
+				REAL SoundSpeed[N] UNITS u_m_s
+				REAL MACH[N]	  UNITS no_units
+				REAL Tt[N]		  UNITS u_K
+				REAL Pt[N]		  UNITS u_K
+			    ------Calculos de combustible---------
+					REAL Ab_total		UNITS u_m2
+					REAL Vburnt			UNITS u_m3
+					REAL Masaburnt		UNITS u_kg
+					REAL LoadFraction UNITS no_units
 				-- Parametros de combustion erosiva --
 				-- Modelo de mukunda --
 					REAL g_i[N]
@@ -155,26 +143,22 @@ COMPONENT MChSolido3(INTEGER N = 3, BOOLEAN Comb_Erosiva = TRUE )
 					REAL eta_temp[N]
 					REAL eta[N]
 								
-	INIT		-----------Configuracion geometrica inicial, esto es provisional, se tendria que introducir en el experimento?-----------
-		dx = L/N	   -- Malla equiespaciada --- 
-		FOR(i IN 1,N+1)
-			Y[i] = 0
-			
-		   Ap[i] = MATH.PI*(0.5*D0)**2 // De momento los valores de areas iniciales se suponen los de un cilindro
-			
-			A_carcasa = MATH.PI*(D/2)**2
-			Combustion[i] = 1
-		-- Aqui habria que implementar una distribucion de presiones inicial a partir de P0 = (rho_p*a*c_estrella* Abtotal/At)**(1/(1-n)) Quizas con una 
-		-- variable intermedia que inicialice todo P[:] a P0
-		END FOR
+	INIT		
+	   dx = L/N	   -- Malla equiespaciada --- 
+		Vburnt = 0
+		A_carcasa = MATH.PI*(D/2)**2
+			FOR(i IN 1,N+1)
+				Y[i] = 0
+				Ap[i] = MATH.PI*(0.5*D0)**2 // De momento los valores de areas iniciales se suponen los de un cilindro
+				Combustion[i] = 1
+			END FOR
 	DISCRETE
 		EXPAND(i IN 1,N+1)
-			WHEN (Y[i] >= (D-D0)/2) TOL 1E-03 THEN
+			WHEN (Y[i] >= (D-D0)/2) TOL 1E-06 THEN
 				Combustion[i] = 0			// La combustion en una interfaz acaba cuando se llega a la carcasa
 			END WHEN
-			WHEN(SUM(i IN 1,N+1; Combustion[i]) <= N*0.6 ) THEN			-- Cuando la derivada de la masa sea negativa?
+			WHEN(SUM(i IN 1,N+1; Combustion[i]) <= N*0.3 ) THEN			-- Cuando la derivada de la masa sea negativa?
 		      --STOP "******************NO FUEL LEFT*********************" // Realmente es que queden 3 interfaces o menos por quemar
-				// Se podria hacer cuando la masa de propelente sea un 1-5% de la inicial (reg stacionario)?
 			END WHEN
 	CONTINUOUS		
 		------------ Datos puerto ---------------------------------------------------------------------------------------------
@@ -187,15 +171,6 @@ COMPONENT MChSolido3(INTEGER N = 3, BOOLEAN Comb_Erosiva = TRUE )
 		Tt[1] = entrada.Tt
 		Tt[N]= salida.Tt 
 		----------------------------------------------------------------INTERFACES (De 1 a N+1)---------------------------------------------------------------------
-		EXPAND_BLOCK(i IN 1,N)
-			Coord[i+1] = Coord[i] + dx			 
-			g[i+1] = g[i]+dg[i]
-			U[i] = g[i]/(Rho[i]*Ap[i]) 
-		END EXPAND_BLOCK
-			U[N+1] = g[N+1]/(Rho[N]*Ap[N+1])
-		EXPAND_BLOCK(i IN 1,N-1)   
-		(g[i+1]+0.5*dg[i+1])*Uc[i+1] + Apc[i+1]*P[i+1] = (g[i]+0.5*dg[i])*Uc[i]+Apc[i]*P[i]-- Ec cant mov
-		END EXPAND_BLOCK
 		------------------ Geometria -------------------
 			Y[1]'	 = (2*r0[1]-Y[2]')*Combustion[1]		-- Los extremos se aproximan mediante la velocidad de recesion del volumen y la interfaz anterior
 			Y[N+1]'= (2*r0[N]-Y[N]')*Combustion[N+1]
@@ -210,11 +185,21 @@ COMPONENT MChSolido3(INTEGER N = 3, BOOLEAN Comb_Erosiva = TRUE )
 		EXPAND_BLOCK(i IN 1,N+1) 
 			Ap[i]' = S[i] * Y[i]'
 		END EXPAND_BLOCK
+		EXPAND_BLOCK(i IN 1,N)
+			Coord[i+1] = Coord[i] + dx			 
+			g[i+1] = g[i]+dg[i]
+			U[i] = g[i]/(Rho[i]*Ap[i]) 
+		END EXPAND_BLOCK
+			U[N+1] = g[N+1]/(Rho[N]*Ap[N+1])
+		EXPAND_BLOCK(i IN 1,N-1)   
+		(g[i+1]+0.5*dg[i+1])*Uc[i+1] + Apc[i+1]*P[i+1] = (g[i]+0.5*dg[i])*Uc[i]+Apc[i]*P[i]-- Ec cant mov
+		END EXPAND_BLOCK
+		
 ---------------------------------------------------------------------- VOLUMEN DISCRETO (De 1 a N)--------------------------------------------------------------
 		EXPAND_BLOCK (i IN 1,N)  -- 1 a N 
-			Ab[i] = IF((Combustion[i]+Combustion[i+1])==0) 0 ELSE 0.5*(S[i]+S[i+1])*dx
+			Ab[i] = IF((Combustion[i]+Combustion[i+1])==0) 1e-6 ELSE 0.5*(S[i]+S[i+1])*dx
 			
-			dg[i] = Rho_P*rp0[i]*Ab[i] 					-- Aqui rp0 tendria que ser r0 para que el gasto sea correcto... 
+			dg[i] = Rho_P*r0[i]*Ab[i] 					 
 			rp0[i] = (Factor_a*P[i]**Exponente)
 			r0[i] = rp0[i]*eta[i]    
 			
@@ -230,17 +215,17 @@ COMPONENT MChSolido3(INTEGER N = 3, BOOLEAN Comb_Erosiva = TRUE )
 		END EXPAND_BLOCK 
 		EXPAND_BLOCK(i IN 1,N-1)  
 			g[i+1]*Tt[i+1]=g[i]*Tt[i]+dg[i]*Tc   ---Ec energia
+		--T[i+1]*(g[i+1]/g[i]) = T[i]+Tc*(dg[i]/g[i]) -- Intento de correccion de fallo por final de combustion de la interfaz 1 y 2
 		END EXPAND_BLOCK
 
----------------------------------------- Calculos de combustible(De momento no da buenos resultados, repasarla) ----------------------------
+------------------------------- Calculos de combustible(De momento no da buenos resultados (quizas por la falta de transitorio), repasarla) ----------
 	
 	Ab_total = SUM(i IN 1,N; Ab[i] )
-	V_total = SUM(i IN 1,N; Ab[i]*0.5*(Y[i]+Y[i+1]))
-	Masa_total = V_total*Rho_P
-	LoadFraction = V_total/(L*MATH.PI*(D/2)**2)
+	Vburnt' = SUM(i IN 1,N; Ab[i]*0.5*(Y[i]+Y[i+1]))
+	Masaburnt = Vburnt*Rho_P
+	LoadFraction = Vburnt/(L*MATH.PI*(D/2)**2)
 
--------------------------------------------------- Combustión erosiva en volumenes (De 1 a N) ----------------------------------------------------------------
-	
+-------------------------------------------------- Combustión erosiva Mukunda en volumenes (De 1 a N) ----------------------------------------------------------------
 		IF (Comb_Erosiva == TRUE) INSERT
 			EXPAND_BLOCK(i IN 1,N)  -- 1 a N
 			g0_i[i] = (Rho[i]*Uc[i])/(Rho_P*rp0[i])  -- Cuidado con las velocidades aqui
@@ -257,5 +242,6 @@ COMPONENT MChSolido3(INTEGER N = 3, BOOLEAN Comb_Erosiva = TRUE )
 			eta_temp[i] = 0
 			eta[i] = 1
 			END EXPAND_BLOCK 
-		END IF		
+		END IF	
+------------------------------------------------- Combustiónes erosivas extras en volumenes (De 1 a N) ----------------------------------------------------------------
 END COMPONENT

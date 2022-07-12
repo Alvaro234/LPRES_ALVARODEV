@@ -2,7 +2,7 @@
 
 <schematic version="1.2.0" paper="A4" orientation="Landscape" sorting="alphabetic" aliasingInShapes="true" aliasingInUnitSymbols="true" connector-status="allshowed" connector-creation="true" >
 
-	<grid enabled="true" snap="true" hspacing="8" vspacing="8" colorMain="230,230,230" colorSecondary="243,243,243" numberCells="4" margin="true" />
+	<grid enabled="false" snap="true" hspacing="8" vspacing="8" colorMain="230,230,230" colorSecondary="243,243,243" numberCells="4" margin="true" />
 
 	<layers>
 			<layer id="1" name="Layer_1" isVisible="true" isActive="true" />
@@ -82,7 +82,7 @@
 
 	<component id="Seccion1" library="LPRES_EXAMPLES_ALVAROG234" type="MChSolido3" layer="1" >
 	
-		<symbol cx="184" cy="152" sx="185" sy="81" dx="112" dy="40" onLabel="true" />
+		<symbol cx="184" cy="152" sx="185" sy="84" dx="112" dy="40" onLabel="true" />
 	
 		<label cx="31" cy="12" dx="265" dy="201" />
 	
@@ -104,9 +104,9 @@
 
 	<component id="Seccionmono" library="LPRES_EXAMPLES_ALVAROG234" type="MChSolido3" layer="1"  hotPort="salida" >
 	
-		<symbol cx="184" cy="152" sx="185" sy="81" dx="232" dy="238" onLabel="true" />
+		<symbol cx="184" cy="152" sx="185" sy="84" dx="232" dy="240" onLabel="true" />
 	
-		<label cx="43.5" cy="12" dx="372.5" dy="399" />
+		<label cx="43.5" cy="12" dx="372.5" dy="401" />
 	
 		<instanceData>
 			<datum id="N" value="10" pos="P" />
@@ -126,7 +126,7 @@
 
 	<component id="Seccion2" library="LPRES_EXAMPLES_ALVAROG234" type="MChSolido3" layer="1" >
 	
-		<symbol cx="184" cy="152" sx="185" sy="81" dx="368" dy="40" onLabel="true" />
+		<symbol cx="184" cy="152" sx="185" sy="84" dx="368" dy="40" onLabel="true" />
 	
 		<label cx="31" cy="12" dx="521" dy="201" />
 	
@@ -146,15 +146,15 @@
 	
 	</component>
 
-	<connector id="Connector_5" sShape="Seccionmono" sPort="salida" eShape="Conversor_1" ePort="entrada"  />
-
 	<connector id="Connector_1" sShape="Pared" sPort="salida" eShape="Seccion1" ePort="entrada"  />
 
 	<connector id="Connector_2" sShape="Seccion1" sPort="salida" eShape="Seccion2" ePort="entrada"  />
 
-	<connector id="Connector_3" sShape="Seccion2" sPort="salida" eShape="Conversor" ePort="entrada"  />
+	<connector id="Connector_4" sShape="Pared_1" sPort="salida" eShape="Seccionmono" ePort="entrada" points="170,390 328,390"  intermediate2="2"  />
 
-	<connector id="Connector_4" sShape="Pared_1" sPort="salida" eShape="Seccionmono" ePort="entrada" points="170,390"  />
+	<connector id="Connector_5" sShape="Seccionmono" sPort="salida" eShape="Conversor_1" ePort="entrada"  />
+
+	<connector id="Connector_3" sShape="Seccion2" sPort="salida" eShape="Conversor" ePort="entrada"  />
 
 	<bodyEL>
 	<![CDATA[-- EL code of the schematic.

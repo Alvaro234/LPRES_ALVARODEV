@@ -12,6 +12,10 @@
 
 		<line id="Line_3" points="76,128 76,64"  />
 
+		<line id="Line_1" points="16,24 172,168"  />
+
+		<line id="Line_2" points="16,160 168,20"  />
+
 		<port id="salida" library="LPRES_EXAMPLES_ALVAROG234" type="SRB"  hotPort="salida" >
 		
 				<symbol dx="124" dy="100" onLabel="true" />

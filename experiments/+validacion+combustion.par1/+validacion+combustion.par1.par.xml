@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<partitionInfo version="1.0" library="LPRES_EXAMPLES_ALVAROG234" component="Pruebamonoseccion" partition="par2">
+<partitionInfo version="1.0" library="LPRES_EXAMPLES_ALVAROG234" component="ValidacionCombustion" partition="par1">
 <noDerivatives value="FALSE"/>
 <inhibitReductionConstantCoefEqts value="TRUE"/>
 <generatePartitionClass value="FALSE"/>
@@ -14,39 +14,31 @@
 <generateParResiduesForDiff value="FALSE"/>
 <generateAdvancedBox value="disabled"/>
 <dynamics>
+  <variable name="Conversor.rth"/>
+  <variable name="Conversor.TotalImpulse"/>
+  <variable name="Seccion1.Y[01]"/>
   <variable name="Seccion1.Y[02]"/>
-  <variable name="Seccion1.S[02]"/>
-  <variable name="Seccion1.Ap[02]"/>
-  <variable name="Seccion1.Y[03]"/>
-  <variable name="Seccion1.S[03]"/>
-  <variable name="Seccion1.Ap[03]"/>
-  <variable name="Seccion1.Y[04]"/>
-  <variable name="Seccion1.S[04]"/>
-  <variable name="Seccion1.Ap[04]"/>
-  <variable name="Seccion1.Y[05]"/>
-  <variable name="Seccion1.S[05]"/>
-  <variable name="Seccion1.Ap[05]"/>
-  <variable name="Seccion1.Y[06]"/>
-  <variable name="Seccion1.S[06]"/>
-  <variable name="Seccion1.Ap[06]"/>
-  <variable name="Seccion1.Y[07]"/>
-  <variable name="Seccion1.S[07]"/>
-  <variable name="Seccion1.Ap[07]"/>
-  <variable name="Seccion1.Y[08]"/>
-  <variable name="Seccion1.S[08]"/>
-  <variable name="Seccion1.Ap[08]"/>
-  <variable name="Seccion1.Y[09]"/>
-  <variable name="Seccion1.S[09]"/>
-  <variable name="Seccion1.Ap[09]"/>
+  <variable name="Seccion1.Y[11]"/>
   <variable name="Seccion1.Y[10]"/>
-  <variable name="Seccion1.S[10]"/>
+  <variable name="Seccion1.Y[03]"/>
+  <variable name="Seccion1.Y[04]"/>
+  <variable name="Seccion1.Y[05]"/>
+  <variable name="Seccion1.Y[06]"/>
+  <variable name="Seccion1.Y[07]"/>
+  <variable name="Seccion1.Y[08]"/>
+  <variable name="Seccion1.Y[09]"/>
+  <variable name="Seccion1.Ap[01]"/>
+  <variable name="Seccion1.Ap[02]"/>
+  <variable name="Seccion1.Ap[03]"/>
+  <variable name="Seccion1.Ap[04]"/>
+  <variable name="Seccion1.Ap[05]"/>
+  <variable name="Seccion1.Ap[06]"/>
+  <variable name="Seccion1.Ap[07]"/>
+  <variable name="Seccion1.Ap[08]"/>
+  <variable name="Seccion1.Ap[09]"/>
   <variable name="Seccion1.Ap[10]"/>
-  <variable name="Seccion1.salida.Y"/>
-  <variable name="Seccion1.salida.S"/>
-  <variable name="Seccion1.salida.Ap"/>
-  <variable name="Pared.salida.Y"/>
-  <variable name="Pared.salida.S"/>
-  <variable name="Pared.salida.Ap"/>
+  <variable name="Seccion1.Ap[11]"/>
+  <variable name="Seccion1.Vburnt"/>
 </dynamics>
 <algebraics>
   <variable name="Seccion1.P[01]"/>
@@ -59,8 +51,16 @@
   <variable name="Seccion1.P[08]"/>
   <variable name="Seccion1.P[09]"/>
   <variable name="Seccion1.P[10]"/>
-  <variable name="Seccion1.T[10]"/>
-  <variable name="Conversor.entrada.Pout"/>
+  <variable name="Seccion1.eta[01]"/>
+  <variable name="Seccion1.eta[02]"/>
+  <variable name="Seccion1.eta[03]"/>
+  <variable name="Seccion1.eta[04]"/>
+  <variable name="Seccion1.eta[05]"/>
+  <variable name="Seccion1.eta[06]"/>
+  <variable name="Seccion1.eta[07]"/>
+  <variable name="Seccion1.eta[08]"/>
+  <variable name="Seccion1.eta[09]"/>
+  <variable name="Seccion1.eta[10]"/>
 </algebraics>
 <residues>
 </residues>

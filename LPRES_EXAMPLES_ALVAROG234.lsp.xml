@@ -7,16 +7,15 @@
   <file name="ParedMCPS.el"/>
   <file name="Conversor.el"/>
   <file name="PuertoMCHsolido.el"/>
-  <file name="Pruebamonoseccion.eds"/>
-  <file name="PruebaMultiseccion.eds"/>
   <file name="Pruebageometria.el"/>
   <file name="MChSolido3.el"/>
-  <file name="Pruebamono2.eds"/>
-  <file name="Geometriafinal.eds"/>
-  <file name="Pruebamulti2.eds"/>
   <file name="Validacion.eds"/>
   <file name="SRBexperimento.eds"/>
-  <file name="CilConic.eds"/>
+  <file name="ValidacionCilDiscont.eds"/>
+  <file name="ValidacionCombustion.eds"/>
+  <file name="Validacion2.eds"/>
+  <file name="validacion2.eds"/>
+  <file name="ValidacionTrompeta.eds"/>
  </filedeps>
  <libdeps>
  </libdeps>

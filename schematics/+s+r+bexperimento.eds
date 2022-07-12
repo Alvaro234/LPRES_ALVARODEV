@@ -16,15 +16,15 @@
 
 	<component id="Conversor2_1" library="LPRES_EXAMPLES_ALVAROG234" type="Conversor2" layer="1" >
 	
-		<symbol cx="260" cy="96" sx="337" sy="97" dx="322" dy="506" onLabel="true" />
+		<symbol cx="260" cy="96" sx="337" sy="97" dx="320" dy="504" onLabel="true" />
 	
-		<label cx="43" cy="12" dx="539" dy="651" />
+		<label cx="43" cy="12" dx="537" dy="649" />
 	
 		<instanceData>
 			<datum id="c_star" value="1583" pos="D" />
 			<datum id="R_gas" value="300" pos="D" />
 			<datum id="gamma" value="1.18" pos="D" />
-			<datum id="D0" value="3.79" pos="D" />
+			<datum id="D0" value="0.683578" pos="D" />
 			<datum id="ER" value="7.72" pos="D" />
 		</instanceData>
 	
@@ -32,32 +32,32 @@
 
 	<component id="Sec2" library="LPRES_EXAMPLES_ALVAROG234" type="MChSolido3" layer="1" >
 	
-		<symbol cx="184" cy="152" sx="185" sy="81" dx="-6" dy="250" rotation="90" onLabel="true" />
+		<symbol cx="184" cy="152" sx="185" sy="84" dx="-8" dy="248" rotation="90" onLabel="true" />
 	
-		<label cx="19" cy="12" dx="159" dy="443" />
+		<label cx="19" cy="12" dx="157" dy="441" />
 	
 		<instanceData>
-			<datum id="N" value="10" pos="P" />
+			<datum id="N" value="20" pos="P" />
 			<datum id="gamma" value="1.18" pos="D" />
 			<datum id="Rho_P" value="1772" pos="D" />
 			<datum id="R_gas" value="300" pos="D" />
 			<datum id="Tc" value="3480" pos="D" />
 			<datum id="Exponente" value="0.33" pos="D" />
 			<datum id="Factor_a" value="7.69" pos="D" />
-			<datum id="S_y_1" value="{{0,1.3}, {4,12.5}}" pos="D" />
-			<datum id="S_y_N" value="{{0,1.3}, {4,12.5}}" pos="D" />
+			<datum id="S_y_1" value="{{0,1.105}, {4.712,11.6553}}" pos="D" />
+			<datum id="S_y_N" value="{{0,1.105}, {4.712,11.6553}}" pos="D" />
 			<datum id="L" value="8" pos="D" />
 			<datum id="D" value="3.71" pos="D" />
-			<datum id="D0" value="1" pos="D" />
+			<datum id="D0" value="1.25" pos="D" />
 		</instanceData>
 	
 	</component>
 
 	<component id="Sec1" library="LPRES_EXAMPLES_ALVAROG234" type="MChSolido3" layer="1" >
 	
-		<symbol cx="184" cy="152" sx="185" sy="81" dx="-6" dy="50" rotation="90" onLabel="true" />
+		<symbol cx="184" cy="152" sx="185" sy="84" dx="-8" dy="48" rotation="90" onLabel="true" />
 	
-		<label cx="19" cy="12" dx="159" dy="243" />
+		<label cx="19" cy="12" dx="157" dy="241" />
 	
 		<instanceData>
 			<datum id="N" value="10" pos="P" />
@@ -67,8 +67,8 @@
 			<datum id="Tc" value="3480" pos="D" />
 			<datum id="Exponente" value="0.33" pos="D" />
 			<datum id="Factor_a" value="7.69" pos="D" />
-			<datum id="S_y_1" value="{{0,0.3,0.6,1,2}, {5,5,1,0,0}}" pos="D" />
-			<datum id="S_y_N" value="{{0,0.3,0.6,1,2}, {5,5,1,0,0}}" pos="D" />
+			<datum id="S_y_1" value="{{0,0.15,0.3,1,2}, {12,12,3,0,0}}" pos="D" />
+			<datum id="S_y_N" value="{{0,0.15,0.3,1,2}, {12,12,3,0,0}}" pos="D" />
 			<datum id="L" value="4" pos="D" />
 			<datum id="D" value="3.71" pos="D" />
 			<datum id="D0" value="1" pos="D" />
@@ -90,9 +90,9 @@
 
 	<component id="Sec3" library="LPRES_EXAMPLES_ALVAROG234" type="MChSolido3" layer="1" >
 	
-		<symbol cx="184" cy="152" sx="185" sy="81" dx="98" dy="450" onLabel="true" />
+		<symbol cx="184" cy="152" sx="185" sy="84" dx="96" dy="448" onLabel="true" />
 	
-		<label cx="19" cy="12" dx="263" dy="643" />
+		<label cx="19" cy="12" dx="261" dy="641" />
 	
 		<instanceData>
 			<datum id="N" value="10" pos="P" />
@@ -102,8 +102,8 @@
 			<datum id="Tc" value="3480" pos="D" />
 			<datum id="Exponente" value="0.33" pos="D" />
 			<datum id="Factor_a" value="7.69" pos="D" />
-			<datum id="S_y_1" value="{{0,0.5}, {9,12.5}}" pos="D" />
-			<datum id="S_y_N" value="{{0,0.5}, {9,12.5}}" pos="D" />
+			<datum id="S_y_1" value="{{0,0.4}, {9.11,11.6553}}" pos="D" />
+			<datum id="S_y_N" value="{{0,0.4}, {9.11,11.6553}}" pos="D" />
 			<datum id="L" value="4" pos="D" />
 			<datum id="D" value="3.71" pos="D" />
 			<datum id="D0" value="1.5" pos="D" />
@@ -111,11 +111,11 @@
 	
 	</component>
 
-	<connector id="Connector_1" sShape="Pared" sPort="salida" eShape="Sec1" ePort="entrada" points="178,56"  intermediate1="1"  />
+	<connector id="Connector_1" sShape="Pared" sPort="salida" eShape="Sec1" ePort="entrada" points="176,56"  intermediate2="1"  />
 
 	<connector id="Connector_2" sShape="Sec1" sPort="salida" eShape="Sec2" ePort="entrada"  />
 
-	<connector id="Connector_3" sShape="Sec2" sPort="salida" eShape="Sec3" ePort="entrada" points="178,602"  />
+	<connector id="Connector_3" sShape="Sec2" sPort="salida" eShape="Sec3" ePort="entrada" points="178,488 178,602 192,602"  intermediate1="1"  intermediate2="2"  />
 
 	<connector id="Connector_4" sShape="Sec3" sPort="salida" eShape="Conversor2_1" ePort="entrada"  />
 

@@ -38,10 +38,11 @@
   <variable name="Sec1.Ap[09]"/>
   <variable name="Sec1.Ap[10]"/>
   <variable name="Sec1.Ap[11]"/>
+  <variable name="Sec1.Vburnt"/>
   <variable name="Sec2.Y[01]"/>
   <variable name="Sec2.Y[02]"/>
-  <variable name="Sec2.Y[11]"/>
-  <variable name="Sec2.Y[10]"/>
+  <variable name="Sec2.Y[21]"/>
+  <variable name="Sec2.Y[20]"/>
   <variable name="Sec2.Y[03]"/>
   <variable name="Sec2.Y[04]"/>
   <variable name="Sec2.Y[05]"/>
@@ -49,6 +50,16 @@
   <variable name="Sec2.Y[07]"/>
   <variable name="Sec2.Y[08]"/>
   <variable name="Sec2.Y[09]"/>
+  <variable name="Sec2.Y[10]"/>
+  <variable name="Sec2.Y[11]"/>
+  <variable name="Sec2.Y[12]"/>
+  <variable name="Sec2.Y[13]"/>
+  <variable name="Sec2.Y[14]"/>
+  <variable name="Sec2.Y[15]"/>
+  <variable name="Sec2.Y[16]"/>
+  <variable name="Sec2.Y[17]"/>
+  <variable name="Sec2.Y[18]"/>
+  <variable name="Sec2.Y[19]"/>
   <variable name="Sec2.Ap[01]"/>
   <variable name="Sec2.Ap[02]"/>
   <variable name="Sec2.Ap[03]"/>
@@ -60,6 +71,17 @@
   <variable name="Sec2.Ap[09]"/>
   <variable name="Sec2.Ap[10]"/>
   <variable name="Sec2.Ap[11]"/>
+  <variable name="Sec2.Ap[12]"/>
+  <variable name="Sec2.Ap[13]"/>
+  <variable name="Sec2.Ap[14]"/>
+  <variable name="Sec2.Ap[15]"/>
+  <variable name="Sec2.Ap[16]"/>
+  <variable name="Sec2.Ap[17]"/>
+  <variable name="Sec2.Ap[18]"/>
+  <variable name="Sec2.Ap[19]"/>
+  <variable name="Sec2.Ap[20]"/>
+  <variable name="Sec2.Ap[21]"/>
+  <variable name="Sec2.Vburnt"/>
   <variable name="Sec3.Y[01]"/>
   <variable name="Sec3.Y[02]"/>
   <variable name="Sec3.Y[11]"/>
@@ -82,6 +104,7 @@
   <variable name="Sec3.Ap[09]"/>
   <variable name="Sec3.Ap[10]"/>
   <variable name="Sec3.Ap[11]"/>
+  <variable name="Sec3.Vburnt"/>
 </dynamics>
 <algebraics>
   <variable name="Sec1.P[01]"/>
@@ -94,6 +117,16 @@
   <variable name="Sec1.P[08]"/>
   <variable name="Sec1.P[09]"/>
   <variable name="Sec1.P[10]"/>
+  <variable name="Sec1.eta[01]"/>
+  <variable name="Sec1.eta[02]"/>
+  <variable name="Sec1.eta[03]"/>
+  <variable name="Sec1.eta[04]"/>
+  <variable name="Sec1.eta[05]"/>
+  <variable name="Sec1.eta[06]"/>
+  <variable name="Sec1.eta[07]"/>
+  <variable name="Sec1.eta[08]"/>
+  <variable name="Sec1.eta[09]"/>
+  <variable name="Sec1.eta[10]"/>
   <variable name="Sec2.P[01]"/>
   <variable name="Sec2.P[02]"/>
   <variable name="Sec2.P[03]"/>
@@ -104,6 +137,36 @@
   <variable name="Sec2.P[08]"/>
   <variable name="Sec2.P[09]"/>
   <variable name="Sec2.P[10]"/>
+  <variable name="Sec2.P[11]"/>
+  <variable name="Sec2.P[12]"/>
+  <variable name="Sec2.P[13]"/>
+  <variable name="Sec2.P[14]"/>
+  <variable name="Sec2.P[15]"/>
+  <variable name="Sec2.P[16]"/>
+  <variable name="Sec2.P[17]"/>
+  <variable name="Sec2.P[18]"/>
+  <variable name="Sec2.P[19]"/>
+  <variable name="Sec2.P[20]"/>
+  <variable name="Sec2.eta[01]"/>
+  <variable name="Sec2.eta[02]"/>
+  <variable name="Sec2.eta[03]"/>
+  <variable name="Sec2.eta[04]"/>
+  <variable name="Sec2.eta[05]"/>
+  <variable name="Sec2.eta[06]"/>
+  <variable name="Sec2.eta[07]"/>
+  <variable name="Sec2.eta[08]"/>
+  <variable name="Sec2.eta[09]"/>
+  <variable name="Sec2.eta[10]"/>
+  <variable name="Sec2.eta[11]"/>
+  <variable name="Sec2.eta[12]"/>
+  <variable name="Sec2.eta[13]"/>
+  <variable name="Sec2.eta[14]"/>
+  <variable name="Sec2.eta[15]"/>
+  <variable name="Sec2.eta[16]"/>
+  <variable name="Sec2.eta[17]"/>
+  <variable name="Sec2.eta[18]"/>
+  <variable name="Sec2.eta[19]"/>
+  <variable name="Sec2.eta[20]"/>
   <variable name="Sec3.P[01]"/>
   <variable name="Sec3.P[02]"/>
   <variable name="Sec3.P[03]"/>
@@ -114,6 +177,16 @@
   <variable name="Sec3.P[08]"/>
   <variable name="Sec3.P[09]"/>
   <variable name="Sec3.P[10]"/>
+  <variable name="Sec3.eta[01]"/>
+  <variable name="Sec3.eta[02]"/>
+  <variable name="Sec3.eta[03]"/>
+  <variable name="Sec3.eta[04]"/>
+  <variable name="Sec3.eta[05]"/>
+  <variable name="Sec3.eta[06]"/>
+  <variable name="Sec3.eta[07]"/>
+  <variable name="Sec3.eta[08]"/>
+  <variable name="Sec3.eta[09]"/>
+  <variable name="Sec3.eta[10]"/>
 </algebraics>
 <residues>
 </residues>

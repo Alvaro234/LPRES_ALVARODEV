@@ -35,6 +35,10 @@
 			</g>
 		</g>
 
+		<line id="Line_1" points="372,100 104,276"  />
+
+		<line id="Line_9" points="132,96 380,268"  />
+
 		<port id="entrada" library="LPRES_EXAMPLES_ALVAROG234" type="SRB"  hotPort="entrada" >
 		
 				<symbol dx="96" dy="188" onLabel="true" />

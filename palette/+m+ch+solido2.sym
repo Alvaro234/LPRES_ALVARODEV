@@ -16,6 +16,10 @@
 
 		<rect id="Rectangle_2" cx="172" cy="88" sx="144" sy="24" dx="12" dy="20" color="255,85,0"  />
 
+		<line id="Line_1" points="268,64 96,212"  />
+
+		<line id="Line_3" points="96,56 272,216"  />
+
 		<port id="entrada" library="LPRES_EXAMPLES_ALVAROG234" type="SRB"  hotPort="entrada" >
 		
 				<symbol dx="96" dy="136" onLabel="true" />
